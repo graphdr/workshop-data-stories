@@ -1,7 +1,8 @@
 ---
 title: "Day 2"
 description: |
-  Expanding your graphical repertoire
+  Expanding your graphical repertoire: which graph types match 
+  which data structures. 
 ---
 
 ```{r setup, include=FALSE}

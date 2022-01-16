@@ -1,7 +1,8 @@
 ---
 title: "Day 3"
 description: |
-  Case study: Thinking critically about visual information 
+  Thinking critically about visual information: a case study in 
+  detecting and correcting abuses of visual rhetoric. 
 ---
 
 ```{r setup, include=FALSE}
