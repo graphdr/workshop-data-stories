@@ -1,7 +1,8 @@
 ---
 title: "Data stories workshop"
 description: |
-  Welcome to the website. I hope you enjoy it!
+  Extend your graphical repertoire and 
+  enhance your ability to tell stories with data. 
 site: distill::distill_website
 ---
 

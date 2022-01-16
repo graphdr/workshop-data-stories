@@ -6,7 +6,7 @@
       "description": "A brief background ",
       "author": [],
       "contents": "\r\n\r\nData graphics\r\nI started doing data visualization work with an engineering education research group around 2008 and haven’t stopped. The iterative process we developed to “find the story” in our data has been instrumental in shaping my approach to data graphics. You can read more about our research at https://midfield.online/.\r\nMusic\r\nMy dad was a guitar player and taught me my first chords. I’ve been songwriting and performing since my teens. A favorite musical pilgrimage is the annual Swannanoa Gathering near Asheville, NC in late July. I’ve posted some draft tracks to SoundCloud.\r\nWork life\r\nI am a graduate of California State University, Northridge (1991), and the University of Washington (1993, 1995). I taught mechanical engineering courses at Rose-Hulman Institute of Technology from 2000-2020. I retired from teaching in 2020. I also spent some years in industry, primarily in consulting engineering in Anchorage, AK, and Simi Valley, CA, with shorter stints at aerospace firms in Redmond, WA and West Palm Beach, FL.\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-01-16T15:58:52-05:00"
+      "last_modified": "2022-01-16T16:05:52-05:00"
     },
     {
       "path": "day1.html",
@@ -14,7 +14,7 @@
       "description": "Limitations of common graphical elements",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-01-16T15:58:53-05:00"
+      "last_modified": "2022-01-16T16:05:53-05:00"
     },
     {
       "path": "day2.html",
@@ -22,7 +22,7 @@
       "description": "Expanding your graphical repertoire",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-01-16T15:58:54-05:00"
+      "last_modified": "2022-01-16T16:05:53-05:00"
     },
     {
       "path": "day3.html",
@@ -30,15 +30,15 @@
       "description": "Case study: Thinking critically about visual information ",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-01-16T15:58:54-05:00"
+      "last_modified": "2022-01-16T16:05:54-05:00"
     },
     {
       "path": "index.html",
       "title": "Data stories workshop",
-      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "description": "Extend your graphical repertoire and \nenhance your ability to tell stories with data. \n",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-01-16T15:58:54-05:00"
+      "last_modified": "2022-01-16T16:05:54-05:00"
     },
     {
       "path": "license.html",
@@ -46,7 +46,7 @@
       "description": "For text, images, code, and data.",
       "author": [],
       "contents": "\r\nThe following licenses apply to the text, images, code, and data in this website. My goal is to minimize legal encumbrances to the dissemination, sharing, use, and re-use of this work. However, the existing rights of authors whose work is cited are reserved to those authors.\r\nCC-BY 4.0 for my text and images\r\nGPL-3 for my code\r\nCC0 for data\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-01-16T15:58:55-05:00"
+      "last_modified": "2022-01-16T16:05:55-05:00"
     }
   ],
   "collections": []
