@@ -1,0 +1,10 @@
+---
+title: "Day 1"
+description: |
+  Limitations of common graphical elements
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+

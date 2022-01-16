@@ -1,0 +1,10 @@
+---
+title: "Day 2"
+description: |
+  Expanding your graphical repertoire
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+

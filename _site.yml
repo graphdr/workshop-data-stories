@@ -1,0 +1,30 @@
+name: "workshop-data-stories"
+title: "Data stories workshop"
+description: |
+  Data stories workshop
+base_url: https://graphdr.github.io/workshop-data-stories/
+repository_url: https://github.com/graphdr/workshop-data-stories
+navbar:
+  logo:
+    image: images/logo.png
+    href: index.html
+  search: true
+  source_url: true
+  left:
+    - text: "Day 1"
+      href: day1.html
+    - text: "Day 2"
+      href: day2.html
+    - text: "Day 3"
+      href: day3.html
+  right:
+    - text: "License"
+      href: license.html 
+    - text: "About"
+      href: about.html
+output_dir: "docs"
+output: distill::distill_article
+collections:
+  posts:
+    citations: false
+    categories: true

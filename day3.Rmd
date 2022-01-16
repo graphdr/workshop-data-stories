@@ -1,0 +1,10 @@
+---
+title: "Day 3"
+description: |
+  Case study: Thinking critically about visual information 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
