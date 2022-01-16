@@ -6,14 +6,22 @@ description: |
 site: distill::distill_website
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
 
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
+## Introduction
 
-# Learn more about publishing to GitHub Pages at:
-# https://rstudio.github.io/distill/publish_website.html#github-pages
+The workshop has three sessions focusing on different aspects of storytelling with data. 
 
-```
-
+<table>
+  <tr>
+    <td><img src="images/intro-1.png" alt="stacked-bar chart" style="width:300px;height:188px"></td>
+    <td>[Day 1](day1.html) Limitations of common visual elements</td>
+  </tr>
+  <tr>
+    <td><img src="images/intro-2.png" alt="stacked-bar chart" style="width:300px;height:188px"></td>
+    <td>[Day 2](day2.html) Expanding your graphical reprtoire</td>
+  </tr>
+  <tr>
+    <td><img src="images/intro-3.png" alt="stacked-bar chart" style="width:300px;height:188px"></td>
+    <td>[Day 3](day3.html) Case study: Thinking critically about visual information</td>
+  </tr>
+</table>
