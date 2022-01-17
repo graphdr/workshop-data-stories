@@ -8,3 +8,4 @@ description: |
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+[slides](slides/slides-day1-01.html)
