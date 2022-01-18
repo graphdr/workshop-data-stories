@@ -302,7 +302,7 @@ class: left
 .pull-left[
 In going from this design...
 
-<img src="img/3d-pie-preview.png" alt="pie chart preview" style="height:180px;">
+<img src="img/3D-pie-preview.png" alt="pie chart preview" style="height:180px;">
 ]
 
 .pull-right[
@@ -367,6 +367,8 @@ top5 %>%
 
 
 
+
+
 ---
 class: left
 
@@ -410,6 +412,7 @@ f
 
 
 
+
 ---
 class: left
 
@@ -436,6 +439,7 @@ x %>%
 f
 ```
 ]
+
 
 
 
@@ -469,6 +473,8 @@ f
 
 
 
+
+
 ---
 class: left
 
@@ -485,6 +491,8 @@ f <- f +
        y = "") 
 f
 ```
+
+
 
 
 
@@ -537,6 +545,8 @@ f <- ggplot(x, aes(x = pop, y = reorder(country, pop))) +
   scale_x_continuous(breaks = seq(0, 1600, 200), limits = c(0, 1600))
 f
 ```
+
+
 
 
 
