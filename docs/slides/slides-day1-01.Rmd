@@ -44,6 +44,16 @@ class: right
 Richard Layton   
 
 2022-02-14
+
+<br>
+
+<br>
+
+<https://graphdr.github.io/data-stories/>
+
+<https://github.com/graphdr>
+
+<a href="mailto:graphdoctor@gmail.com">graphdoctor@gmail.com</a>
 ]
 
 
@@ -78,7 +88,8 @@ dt1[, pct := round(100 * pop / tot, 0)]
 ]
 
 .pull-right[
-Estimate the percentage of each pie slice
+Estimate the percentage of each pie slice    
+(fill in the blanks).  
 ```{r echo = FALSE}
 top5 <- copy(dt1)
 top5 <- top5[, .(country, pct)]
@@ -106,10 +117,11 @@ class: left
 
 # Judging values along a common axis is a high-accuracy task
 
-The same data is displayed along a common axis.  Make new visual estimates.
+The same data is displayed along a common axis.  
+
+Make new visual estimates (fill in the blanks). 
 
 <br>
-
 .right-column[
 ```{r echo=FALSE, fig.asp=0.4, fig.width = 10}
 ggplot(dt1, aes(x = pct, y = reorder(country, pct))) +
@@ -145,6 +157,8 @@ class: left
 # Judging values along a common axis is a high-accuracy task
 
 Compare your visual estimates to the data values.
+
+<br>
 
 <br>
 
@@ -194,7 +208,7 @@ dt2[, pct := round(100 * pop / tot, 0)]
 ]
 
 .pull-right[
-Estimate the percentage of each pie slice
+Estimate the percentage of each pie slice (fill in the blanks). 
 ```{r echo = FALSE}
 y <- copy(dt2)
 y <- y[, .(country, pct)]
@@ -221,10 +235,11 @@ class: left
 
 # Again, a common scale improves our visual judgments
 
-The same data is displayed along a common axis.  Make new visual estimates.
+The same data is displayed along a common axis. 
+
+Make new visual estimates (fill in the blanks). 
 
 <br>
-
 .right-column[
 
 ```{r echo=FALSE, fig.asp=0.4, fig.width = 10}
@@ -265,6 +280,7 @@ Compare your visual estimates to the data values.
 
 <br>
 
+<br>
 .right-column[
 ```{r echo=FALSE, fig.asp=0.4, fig.width = 10}
 ggplot(dt2, aes(x = pct, y = reorder(country, pct))) +
@@ -343,7 +359,7 @@ class: left
 
 # 3D effects always distort our judgment
 
-Make visual estimates of each country's 2021 population. 
+Make visual estimates of each country's 2021 population (fill in the blanks).
 
 <br>
 
@@ -374,7 +390,7 @@ class: left
 
 # Same data&mdash;without 3D effects&mdash;along a common scale
 
-Make new visual estimates. 
+Make new visual estimates (fill in the blanks).  
 
 <br>
 

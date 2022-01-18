@@ -6,15 +6,15 @@
       "description": "A brief background ",
       "author": [],
       "contents": "\r\n\r\nData graphics\r\nI started doing data visualization work with an engineering education research group around 2008 and haven’t stopped. The iterative process we developed to “find the story” in our data has been instrumental in shaping my approach to data graphics. You can read more about our research at https://midfield.online/.\r\nI occasionally write about visual rhetoric, graph design, and R on my Data Stories blog. Our day 3 case study is built on one of those essays.\r\nMusic\r\nMy dad was a guitar player and taught me my first chords. I’ve been songwriting and performing since my teens. A favorite musical pilgrimage is the annual Swannanoa Gathering near Asheville, NC in late July. I’ve posted some draft tracks to SoundCloud.\r\nWork life\r\nI am a graduate of California State University, Northridge (1991), and the University of Washington (1993, 1995). I taught mechanical engineering courses at Rose-Hulman Institute of Technology from 2000-2020. I retired from teaching in 2020. I also spent some years in industry, primarily in consulting engineering in Anchorage, AK, and Simi Valley, CA, with shorter stints at aerospace firms in Redmond, WA and West Palm Beach, FL.\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-01-18T16:27:11-05:00"
+      "last_modified": "2022-01-18T16:47:55-05:00"
     },
     {
       "path": "index.html",
       "title": "Data stories workshop",
       "description": "Extend your graphical repertoire and \nenhance your ability to tell stories with data. \n",
       "author": [],
-      "contents": "\r\nWelcome\r\nThe workshop has three sessions focusing on different aspects of storytelling with data.\r\nSession 1: Limitations of common graph types\r\nIn the first session we demonstrate avoiding the perceptual limitations of common graph types to\r\nImprove perception of stories in the data\r\nMake it easier to reason quantitatively about the data\r\nThereby enhancing our credibility with the audience\r\n\r\n\r\n\r\nLimitations of common graph types\r\n\r\nSession 2: Expanding your graphical repertoire\r\nIn the second session we illustrate a repertoire of graph types and how they are suited to specific data structures. The session should encourage you to:\r\nUnderstand the structure of one’s data\r\nExplore different graph types suited to the data.\r\nKeep reading and learning—an unfamiliar design may be just what you need.\r\n\r\n\r\n\r\nExpanding your graphical reprtoire\r\n\r\nSession 3: Critical thinking about visual information—a case study\r\nIn the third session we study the visual rhetoric of a deliberate visual lie in the pursuit of restricting reproductive rights. We focus on\r\nHow the authors abuse the conventions of visual rhetoric to serve their rhetorical goals\r\nWhat legitimate stories these data tell\r\nWhat legitimate questions the data raise\r\n\r\n\r\n\r\nCritical thinking about visual information\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-01-18T16:27:11-05:00"
+      "contents": "\r\nWelcome\r\nThe workshop has three sessions focusing on different aspects of storytelling with data.\r\nSession 1: Limitations of common graph types\r\nIn the first session we demonstrate avoiding the perceptual limitations of common graph types to\r\nImprove perception of stories in the data\r\nMake it easier to reason quantitatively about the data\r\nThereby enhancing our credibility with the audience\r\n\r\n\r\n\r\nLimitations of common graph types\r\n\r\nSession 2: Expanding your graphical repertoire\r\nIn the second session we illustrate a repertoire of graph types and how they are suited to specific data structures. The session should encourage you to:\r\nUnderstand the structure of one’s data\r\nExplore different graph types suited to the data.\r\nKeep reading and learning—an unfamiliar design may be just what you need.\r\n\r\n\r\n\r\nExpanding your graphical reprtoire\r\n\r\nSession 3: Critical thinking about visual information—a case study\r\nIn the third session we study the visual rhetoric of a deliberate visual lie in the pursuit of restricting reproductive rights. We focus on\r\nHow the authors abuse the conventions of visual rhetoric to serve their rhetorical goals\r\nWhat legitimate stories these data tell\r\nWhat legitimate questions the data raise\r\n\r\n\r\n\r\nCritical thinking about visual information\r\n\r\nContact\r\nhttps://graphdr.github.io/data-stories/\r\nhttps://github.com/graphdr\r\ngraphdoctor@gmail.com\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-01-18T16:47:55-05:00"
     },
     {
       "path": "license.html",
@@ -22,7 +22,7 @@
       "description": "For text, images, code, and data.",
       "author": [],
       "contents": "\r\nThe following licenses apply to the text, images, code, and data in this website. My goal is to minimize legal encumbrances to the dissemination, sharing, use, and re-use of this work. However, the existing rights of authors whose work is cited are reserved to those authors.\r\nCC-BY 4.0 for my text and images\r\nGPL-3 for my code\r\nCC0 for data\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-01-18T16:27:12-05:00"
+      "last_modified": "2022-01-18T16:47:56-05:00"
     },
     {
       "path": "session1.html",
@@ -30,7 +30,7 @@
       "description": "Limitations of common graph types. Demonstrating how to avoid the  \nlimitations to improve perception, reasoning, and credibility. ",
       "author": [],
       "contents": "\r\nslides\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-01-18T16:27:12-05:00"
+      "last_modified": "2022-01-18T16:47:57-05:00"
     },
     {
       "path": "session2.html",
@@ -38,7 +38,7 @@
       "description": "Expanding your graphical repertoire. Illustrating a repertoire of \ngraph types and how they are suited to specific data structures.",
       "author": [],
       "contents": "\r\n[slides] in progress\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-01-18T16:27:13-05:00"
+      "last_modified": "2022-01-18T16:47:57-05:00"
     },
     {
       "path": "session3.html",
@@ -46,7 +46,7 @@
       "description": "Critical thinking about visual information&mdash;a case study. Thinking \ncritically about visual information to detect and correct deliberate \nvisual lies that attempt to restrict reproductive rights. ",
       "author": [],
       "contents": "\r\n[slides] in progress\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-01-18T16:27:13-05:00"
+      "last_modified": "2022-01-18T16:47:58-05:00"
     },
     {
       "path": "slides-day1-01.html",
@@ -54,7 +54,7 @@
       "author": [],
       "date": "`r Sys.Date()`",
       "contents": "\r\n    \r\n\r\n\r\nData stories workshop\r\nSession 1\r\nSession 2\r\nSession 3\r\n\r\n\r\nLicense\r\nAbout\r\n\r\n\r\n\r\n☰\r\n\r\n\r\n\r\n\r\n\r\n---\r\n\r\nclass: middle right\r\n\r\n.left-column[\r\n![](images/stacked-bar-01.png)\r\n![](images/stacked-bar-02.png)\r\n![](images/pie01.png)\r\n]\r\n\r\n# Limitations of common graphical elements\r\n## Why graphicacy matters\r\n\r\nRichard Layton\r\n\r\n2022-02-14\r\n\r\n![](images/logo.png)\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n---\r\n# List the slices A thru E, large to small\r\n\r\n\r\n.pull-left[\r\n![](images/pie01.png)\r\n]\r\n.pull-right[\r\n`_______________` largest    \r\n \r\n`_______________`    \r\n    \r\n`_______________`    \r\n \r\n`_______________`    \r\n\r\n`_______________` smallest    \r\n]\r\n\r\n\r\n---\r\n\r\nclass: center, middle\r\n\r\n# xaringan\r\n\r\n### /ʃaː.'riŋ.ɡan/\r\n\r\n---\r\nclass: inverse, center, middle\r\n\r\n# Get Started\r\n\r\n\r\n\r\n    \r\n© Copyright 2022 Richard Layton\r\n\r\n\r\n\r\n@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}var slideshow = remark.create({\r\n\"highlightStyle\": \"github\",\r\n\"highlightLines\": true,\r\n\"countIncrementalSlides\": false,\r\n\"slideNumberFormat\": \"%current%\",\r\n\"ratio\": \"16:9\"\r\n});\r\nif (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {\r\n  window.dispatchEvent(new Event('resize'));\r\n});\r\n(function(d) {\r\n  var s = d.createElement(\"style\"), r = d.querySelector(\".remark-slide-scaler\");\r\n  if (!r) return;\r\n  s.type = \"text/css\"; s.innerHTML = \"@page {size: \" + r.style.width + \" \" + r.style.height +\"; }\";\r\n  d.head.appendChild(s);\r\n})(document);\r\n\r\n(function(d) {\r\n  var el = d.getElementsByClassName(\"remark-slides-area\");\r\n  if (!el) return;\r\n  var slide, slides = slideshow.getSlides(), els = el[0].children;\r\n  for (var i = 1; i < slides.length; i++) {\r\n    slide = slides[i];\r\n    if (slide.properties.continued === \"true\" || slide.properties.count === \"false\") {\r\n      els[i - 1].className += ' has-continuation';\r\n    }\r\n  }\r\n  var s = d.createElement(\"style\");\r\n  s.type = \"text/css\"; s.innerHTML = \"@media print { .has-continuation { display: none; } }\";\r\n  d.head.appendChild(s);\r\n})(document);\r\n// delete the temporary CSS (for displaying all slides initially) when the user\r\n// starts to view slides\r\n(function() {\r\n  var deleted = false;\r\n  slideshow.on('beforeShowSlide', function(slide) {\r\n    if (deleted) return;\r\n    var sheets = document.styleSheets, node;\r\n    for (var i = 0; i < sheets.length; i++) {\r\n      node = sheets[i].ownerNode;\r\n      if (node.dataset[\"target\"] !== \"print-only\") continue;\r\n      node.parentNode.removeChild(node);\r\n    }\r\n    deleted = true;\r\n  });\r\n})();\r\n(function() {\r\n  \"use strict\"\r\n  // Replace <script> tags in slides area to make them executable\r\n  var scripts = document.querySelectorAll(\r\n    '.remark-slides-area .remark-slide-container script'\r\n  );\r\n  if (!scripts.length) return;\r\n  for (var i = 0; i < scripts.length; i++) {\r\n    var s = document.createElement('script');\r\n    var code = document.createTextNode(scripts[i].textContent);\r\n    s.appendChild(code);\r\n    var scriptAttrs = scripts[i].attributes;\r\n    for (var j = 0; j < scriptAttrs.length; j++) {\r\n      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);\r\n    }\r\n    scripts[i].parentElement.replaceChild(s, scripts[i]);\r\n  }\r\n})();\r\n(function() {\r\n  var links = document.getElementsByTagName('a');\r\n  for (var i = 0; i < links.length; i++) {\r\n    if (/^(https?:)?\\/\\//.test(links[i].getAttribute('href'))) {\r\n      links[i].target = '_blank';\r\n    }\r\n  }\r\n})();\r\n// adds .remark-code-has-line-highlighted class to <pre> parent elements\r\n// of code chunks containing highlighted lines with class .remark-code-line-highlighted\r\n(function(d) {\r\n  const hlines = d.querySelectorAll('.remark-code-line-highlighted');\r\n  const preParents = [];\r\n  const findPreParent = function(line, p = 0) {\r\n    if (p > 1) return null; // traverse up no further than grandparent\r\n    const el = line.parentElement;\r\n    return el.tagName === \"PRE\" ? el : findPreParent(el, ++p);\r\n  };\r\n\r\n  for (let line of hlines) {\r\n    let pre = findPreParent(line);\r\n    if (pre && !preParents.includes(pre)) preParents.push(pre);\r\n  }\r\n  preParents.forEach(p => p.classList.add(\"remark-code-has-line-highlighted\"));\r\n})(document);\r\nslideshow._releaseMath = function(el) {\r\n  var i, text, code, codes = el.getElementsByTagName('code');\r\n  for (i = 0; i < codes.length;) {\r\n    code = codes[i];\r\n    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {\r\n      text = code.textContent;\r\n      if (/^\\\\\\((.|\\s)+\\\\\\)$/.test(text) || /^\\\\\\[(.|\\s)+\\\\\\]$/.test(text) ||\r\n          /^\\$\\$(.|\\s)+\\$\\$$/.test(text) ||\r\n          /^\\\\begin\\{([^}]+)\\}(.|\\s)+\\\\end\\{[^}]+\\}$/.test(text)) {\r\n        code.outerHTML = code.innerHTML;  // remove <code><\/code>\r\n        continue;\r\n      }\r\n    }\r\n    i++;\r\n  }\r\n};\r\nslideshow._releaseMath(document);\r\n\r\n(function () {\r\n  var script = document.createElement('script');\r\n  script.type = 'text/javascript';\r\n  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';\r\n  if (location.protocol !== 'file:' && /^https?:/.test(script.src))\r\n    script.src  = script.src.replace(/^https?:/, '');\r\n  document.getElementsByTagName('head')[0].appendChild(script);\r\n})();\r\n",
-      "last_modified": "2022-01-18T16:27:14-05:00"
+      "last_modified": "2022-01-18T16:47:58-05:00"
     }
   ],
   "collections": []
