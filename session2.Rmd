@@ -1,11 +1,13 @@
 ---
 title: "Session 2"
 description: |
-  Expanding your graphical repertoire: matching graph types to  
-  data structures. 
+   Expanding your graphical repertoire. Illustrating a repertoire of 
+   graph types and how they are suited to specific data structures.
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+[slides] in progress
+ 

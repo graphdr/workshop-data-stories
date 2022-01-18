@@ -1,6 +1,5 @@
 ---
-title: "Limitations of graphical elements"
-subtitle: Why graphicacy matters
+title: "Perception, reasoning, and credibility"
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -25,22 +24,22 @@ library(kableExtra)
 library(graphclassmate)
 ```
 
-
-
-
-
-
 class: right
 
 .left-column[
-![](img/pie-preview.png)
-![](img/stacked-bar-03.png)
+<img src="img/pie-preview.png" alt="pie chart" style="height:200px;">
+
+<img src="img/dot-chart-preview.png" alt="pie chart" style="width:200px;">
+
+<img src="img/stacked-bar-03.png" alt="pie chart" style="width:200px;">
+
+<img src="img/scatterplot-preview.png" alt="pie chart" style="width:200px;">
 ]
 
 .right-column[
 # Perception, reasoning, and credibility
 
-## Limitations of common visual elements
+## Limitations of common graph types
 
 Richard Layton   
 
@@ -54,7 +53,7 @@ Richard Layton
 ---
 class:inverse, center, middle
 
-# Perception and reasoning
+# Pie charts
 
 
 
@@ -298,6 +297,50 @@ y %>%
 ---
 class: left
 
+# Graph design should align with one's rhetorical goals
+
+.pull-left[
+In going from this design...
+
+<img src="img/3d-pie-preview.png" alt="pie chart preview" style="height:180px;">
+]
+
+.pull-right[
+...to this design... 
+
+<img src="img/dot-chart-preview.png" alt="stacked bar preview" style="height:180px;">
+]
+
+<br>
+
+- we improve the accuracy of the audience's **perception** of the data 
+
+- we make it easier to **reason** quantitatively about the data 
+
+- which should enhance our **credibility** with the audience 
+
+
+
+
+
+
+
+
+
+---
+class:inverse, center, middle
+
+# Bar charts
+
+
+
+
+
+
+
+---
+class: left
+
 # 3D effects always distort our judgment
 
 Make visual estimates of each country's 2021 population. 
@@ -502,7 +545,7 @@ f
 ---
 class: left
 
-# What conclusions do you draw from this chart?
+# Stacked bars: what conclusions would you report?
 
 .left[The survey question was “What was your primary reason for taking this postdoc?”]
 
@@ -516,7 +559,7 @@ dt[reason %chin% "Additional training in PhD field",
 
 
 
-```{r echo=FALSE, fig.asp=0.4, fig.width=15}
+```{r echo=FALSE, fig.asp=0.35, fig.width=14}
 ggplot(dt, aes(x = year, y = pct, color = reason, fill = reason)) +
   geom_bar(stat = "identity") + 
   scale_color_brewer(palette="BrBG") + 
@@ -528,7 +571,7 @@ ggplot(dt, aes(x = year, y = pct, color = reason, fill = reason)) +
         axis.title.x = element_text(size = 24), 
         legend.text  = element_text(size = 20), 
         legend.title = element_blank(), 
-        legend.key.height = unit(16, "mm"))
+        legend.key.height = unit(15, "mm"))
 ```
 
 .footnote[Data source: Main, Joyce B., Yanbing Wang, and Li Tan. 2021. “The career outlook of engineering PhDs” *J of Engng Educ* 110 (4): 977–1002.]
@@ -543,8 +586,9 @@ class: left
 
 # Stacked-bar charts are a poor choice for multivariate data
 
-We have three variables: year, reason, and percent response. 
+<img src="img/stacked-bar-04.png" alt="stacked bar chart" height="300">
 
+We have three variables: year, reason, and percent response. 
 
 - Each reason varies over time    
 
@@ -557,14 +601,14 @@ We have three variables: year, reason, and percent response.
 
 
 
+
+
 ---
 class: left
 
-# A matrix of scatterplots allows us to compare evolutions
+# Scatterplots show the evolution of each variable over time
 
-What conclusions do you draw from this chart?
-
-```{r echo=FALSE, fig.asp=0.5, fig.width=13}
+```{r echo=FALSE, fig.asp=0.45, fig.width=13}
 ggplot(dt, aes(x = year, y = pct)) +
   geom_line(linetype = 2) +
   geom_point(size = 4) +
@@ -574,6 +618,7 @@ ggplot(dt, aes(x = year, y = pct)) +
 
 ```
 
+But are we any closer to seeing a story? What stories (if any) do you see? 
 
 
 
@@ -584,24 +629,61 @@ class: left
 
 # Emphasizing the trivial can obscure a story
 
-Time is trivial in this case. Suppose we ignore it? 
+Time is trivial in this case.   
 
-- We end up with two variables: reasons and a distribution of percent response.     
+<br>
+
+Suppose we ignore the year data.     
+
+- We end up with two variables: reasons and a distribution of percent selecting a reason.      
 
 - The appropriate graph design for distributions is a box-and-whisker plot 
 
 
+<br>
 
+.center[
 
+```{r echo=FALSE, fig.asp=0.25, fig.width=10}
+z <- copy(dt)
+z <- z[reason == "Work with a specific person or place"]
+ggplot(z, aes(x = pct, y = reason)) +
+  geom_boxplot(width = 0.5, 
+               outlier.size = 3, 
+               size = 1, 
+               fill = "white", 
+               color = rcb("dark_BG")) +
+  scale_x_continuous(limits = c(0, 40)) +
+  theme_void() +
+  annotate("text", 
+           size = 6, 
+           x = c(7.5, 17.5, 27.5, 32.5), 
+           y = c(1.03, 1.4, 1.03, 1.03), 
+           label = c("min", "median", "max", "outlier")
+           ) +
+    annotate("text", 
+           size = 6, 
+           x = c(11, 24, 15.5, 19), 
+           y = c(0.9, 0.9, 0.65, 0.65), 
+           label = "25%"
+           ) +
+  theme(text = element_text(size = 20))
+```
+
+Conventions of the box and whisker plot
+
+]
 
 
 
 ---
 class: left
 
-# You might be able to draw new conclusions...  
+# What stories do you see? 
 
-... if the conventions of the box and whisker chart are familiar. 
+- We see the distributions, median values, and spread across all years (1995&ndash;2011). 
+
+- Rows are ordered by the median values. 
 
 <br>
 
@@ -612,7 +694,7 @@ ggplot(dt, aes(x = pct, y = reorder(reason, pct, median))) +
                size = 1, 
                fill = rcb("light_BG"), 
                color = rcb("dark_BG")) +
-  labs(y = "", x = "Distribution of annual percent responses") +
+  labs(y = "", x = "Percent selecting a reason (1995-2011)") +
   theme_graphclass(font_size = 22)
 
 ```
@@ -620,10 +702,41 @@ ggplot(dt, aes(x = pct, y = reorder(reason, pct, median))) +
 
 
 
+
+
+---
+class: left
+
+# Graph design should align with one's rhetorical goals
+
+.pull-left[
+In going from this design...
+
+<img src="img/stacked-bar-03.png" alt="stacked bar preview" style="height:250px;">
+]
+
+.pull-right[
+...to this design... 
+
+<img src="img/boxplot-preview.png" alt="stacked bar preview" style="height:250px;">
+]
+
+- we improve the audience's **perception** of the stories in the data 
+
+- we make it easier to **reason** quantitatively about the data 
+
+- which should enhance our **credibility** with the audience 
+
+
+
+
+
+
+
 ---
 class:inverse, center, middle
 
-# Principles of visual rhetoric
+# Advice from experts
 
 
 
@@ -633,14 +746,70 @@ class:inverse, center, middle
 ---
 class: left
 
-# Jean-Luc Doumont: variables and message
+# Jean-Luc Doumont
+
+.left-column[
+<img src="img/doumont-face.png" alt="Jean-luc Doumont" style="width:250px;">
+]
+.right-column[
+The optimal graph design depends on two factors, primarily, 
+
+1. The message to be conveyed
+
+2. The variables to be shown
+]
+
+
+.footnote[
+Jean-luc Doumont. *Trees, Maps and Theorems*. Principiae, 2009
+]
+
+
 
 
 
 ---
 class: left
 
-# Edward Tufte: reveal the complex
+# Edward Tufte
+
+.left-column[
+<img src="img/tufte-face.png" alt="Edward Tufte" style="width:250px;">
+]
+.right-column[
+... the task of the designer is to give 
+
+visual access to the subtle and the difficult&mdash;
+
+that is, the revelation of the complex.
+]
+
+.footnote[
+Edward Tufte. *The Visual Display of Quantitative Information*. Graphics Press, 1983
+]
+
+
+
+---
+class: left
+
+# Stephanie Evergreen
+
+.left-column[
+<img src="img/evergreen-face.png" alt=" Stephanie Evergreen" style="width:250px;">
+]
+.right-column[
+What’s your point? 
+
+Seriously, that’s the most important question. 
+]
+
+.footnote[
+Stephanie D. H. Evergreen. *Effective Data Visualization: The Right Chart for the Right Data.* Sage, 2017
+]
+
+
+
 
 
 
@@ -648,25 +817,46 @@ class: left
 ---
 class: left
 
-# Stephanie Evergreen: what's your point?
+# Alberto Cairo
+
+.left-column[
+<img src="img/cairo-face.png" alt="Alberto Cairo" style="width:250px;">
+]
+.right-column[
+Charts can lie to to us because 
+
+we read too much into them or 
+
+see in them what we want to believe. 
+
+<br>
+
+Don't lie to yourself (or others) with charts. 
+]
+
+.footnote[
+Alberto Cairo. *How Charts Lie.* W.W. Norton, 2019
+]
+
+
 
 
 
 ---
 class: left
 
-# Summary
+# Ideas to take away and consider
 
 
-- Understand the data  
+- **Understand** the data structure and content 
 
-- Visually explore the stories in the data   
+- **Explore** a story's context, causality, and complexity
 
-- Explore context and causality; reveal complexity    
+- **Align** visual and verbal logic by revising iteratively 
 
--  to align the logic of the display and your thinking    
+- **Edit** to suit the rhetorical goals for each audience  
 
-- Edit to suit my rhetorical goals for the audience  
+- **Control** every pixel&mdash;avoid thoughtless conformity
 
-- Control every pixel    
+- **Question** are you seeing only what you want to believe?
 

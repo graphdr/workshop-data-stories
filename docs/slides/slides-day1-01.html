@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Limitations of graphical elements</title>
+    <title>Perception, reasoning, and credibility</title>
     <meta charset="utf-8" />
-    <meta name="date" content="2022-01-17" />
+    <meta name="date" content="2022-01-18" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/middlebury.css" rel="stylesheet" />
@@ -17,27 +17,36 @@
 
 
 
-
-
-
-
-
 class: right
 
 .left-column[
-![](img/pie-preview.png)
-![](img/stacked-bar-02.png)
+&lt;img src="img/pie-preview.png" alt="pie chart" style="height:200px;"&gt;
+
+&lt;img src="img/dot-chart-preview.png" alt="pie chart" style="width:200px;"&gt;
+
+&lt;img src="img/stacked-bar-03.png" alt="pie chart" style="width:200px;"&gt;
+
+&lt;img src="img/scatterplot-preview.png" alt="pie chart" style="width:200px;"&gt;
 ]
 
 .right-column[
 # Perception, reasoning, and credibility
 
-## Limitations of common visual elements
+## Limitations of common graph types
 
 Richard Layton   
 
 2022-02-14
 ]
+
+
+
+
+
+---
+class:inverse, center, middle
+
+# Pie charts
 
 
 
@@ -87,6 +96,7 @@ Estimate the percentage of each pie slice
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
 The total should be 100&amp;.
 ]
 
@@ -103,6 +113,8 @@ class: left
 # Judging values along a common axis is a high-accuracy task
 
 The same data is displayed along a common axis.  Make new visual estimates.
+
+&lt;br&gt;
 
 .right-column[
 ![](slides-day1-01_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
@@ -152,6 +164,8 @@ class: left
 # Judging values along a common axis is a high-accuracy task
 
 Compare your visual estimates to the data values.
+
+&lt;br&gt;
 
 .right-column[
 ![](slides-day1-01_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
@@ -237,6 +251,7 @@ Estimate the percentage of each pie slice
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+
 The total should be 100%. 
 ]
 
@@ -251,6 +266,8 @@ class: left
 # Again, a common scale improves our visual judgments
 
 The same data is displayed along a common axis.  Make new visual estimates.
+
+&lt;br&gt;
 
 .right-column[
 
@@ -303,6 +320,8 @@ class: left
 
 Compare your visual estimates to the data values.
 
+&lt;br&gt;
+
 .right-column[
 ![](slides-day1-01_files/figure-html/unnamed-chunk-11-1.png)&lt;!-- --&gt;
 ]
@@ -348,9 +367,55 @@ Compare your visual estimates to the data values.
 ---
 class: left
 
+# Graph design should align with one's rhetorical goals
+
+.pull-left[
+In going from this design...
+
+&lt;img src="img/3d-pie-preview.png" alt="pie chart preview" style="height:180px;"&gt;
+]
+
+.pull-right[
+...to this design... 
+
+&lt;img src="img/dot-chart-preview.png" alt="stacked bar preview" style="height:180px;"&gt;
+]
+
+&lt;br&gt;
+
+- we improve the accuracy of the audience's **perception** of the data 
+
+- we make it easier to **reason** quantitatively about the data 
+
+- which should enhance our **credibility** with the audience 
+
+
+
+
+
+
+
+
+
+---
+class:inverse, center, middle
+
+# Bar charts
+
+
+
+
+
+
+
+---
+class: left
+
 # 3D effects always distort our judgment
 
 Make visual estimates of each country's 2021 population. 
+
+&lt;br&gt;
 
 .left-column[
 &lt;table class=" lightable-paper" style='font-size: 24px; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'&gt;
@@ -398,7 +463,9 @@ class: left
 
 # Same data&amp;mdash;without 3D effects&amp;mdash;along a common scale
 
-Make new visual estimates.  
+Make new visual estimates. 
+
+&lt;br&gt;
 
 .left-column[
 &lt;table class=" lightable-paper" style='font-size: 24px; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'&gt;
@@ -449,6 +516,8 @@ class: left
 
 Compare your visual estimates to the data values.
 
+&lt;br&gt;
+
 .left-column[
 &lt;table class=" lightable-paper" style='font-size: 24px; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'&gt;
  &lt;thead&gt;
@@ -494,9 +563,11 @@ Compare your visual estimates to the data values.
 ---
 class: left
 
-# You can use bar charts
+# With a zero baseline and no 3D effects, bars are OK
 
 Bar charts must have a zero baseline to avoid deceiving your audience. 
+
+&lt;br&gt;
 
 ![](slides-day1-01_files/figure-html/unnamed-chunk-18-1.png)&lt;!-- --&gt;
 
@@ -508,9 +579,11 @@ Bar charts must have a zero baseline to avoid deceiving your audience.
 ---
 class: left
 
-# Order your rows to facilitate comparisons
+# Row order affects the audience's ability to make comparisons
 
-Ordering rows by the data values is usually superior to alphabetical order for visual comparisons.   
+Ordering rows by the data values is usually superior to alphabetical order for visual comparisons.  
+
+&lt;br&gt;
 
 ![](slides-day1-01_files/figure-html/unnamed-chunk-19-1.png)&lt;!-- --&gt;
 
@@ -522,23 +595,27 @@ Ordering rows by the data values is usually superior to alphabetical order for v
 ---
 class: left
 
-# However, the only data value is the endpoint
+# Area is perceived differently than position
 
-The filled area of he bar conveys no information.  
+Area encodes no information. The only information in the bar is the position of its end point.
+
+&lt;br&gt;
 
 ![](slides-day1-01_files/figure-html/unnamed-chunk-20-1.png)&lt;!-- --&gt;
 
 
 
 
-
+ 
 
 ---
 class: left
 
-# Omit the bar, show the endpoint, and you have a  "dot chart" 
+# Dot charts allow direct visual comparison of quantities 
 
 Dot charts are effective replacements for pie charts and bar charts. 
+
+&lt;br&gt;
 
 ![](slides-day1-01_files/figure-html/unnamed-chunk-21-1.png)&lt;!-- --&gt;
 
@@ -549,7 +626,7 @@ Dot charts are effective replacements for pie charts and bar charts.
 ---
 class: left
 
-# What conclusions do you draw from this chart?
+# Stacked bars: what conclusions would you report?
 
 .left[The survey question was “What was your primary reason for taking this postdoc?”]
 
@@ -562,6 +639,246 @@ class: left
 .footnote[Data source: Main, Joyce B., Yanbing Wang, and Li Tan. 2021. “The career outlook of engineering PhDs” *J of Engng Educ* 110 (4): 977–1002.]
 
 
+
+
+
+
+---
+class: left
+
+# Stacked-bar charts are a poor choice for multivariate data
+
+&lt;img src="img/stacked-bar-04.png" alt="stacked bar chart" height="300"&gt;
+
+We have three variables: year, reason, and percent response. 
+
+- Each reason varies over time    
+
+- None of the interior segments have a common baseline, so their trends cannot be easily observed    
+
+- The appropriate graph design for time-varying data is a scatterplot 
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Scatterplots show the evolution of each variable over time
+
+![](slides-day1-01_files/figure-html/unnamed-chunk-24-1.png)&lt;!-- --&gt;
+
+But are we any closer to seeing a story? What stories (if any) do you see? 
+
+
+
+
+
+---
+class: left
+
+# Emphasizing the trivial can obscure a story
+
+Time is trivial in this case.   
+
+&lt;br&gt;
+
+Suppose we ignore the year data.     
+
+- We end up with two variables: reasons and a distribution of percent selecting a reason.      
+
+- The appropriate graph design for distributions is a box-and-whisker plot 
+
+
+&lt;br&gt;
+
+.center[
+
+![](slides-day1-01_files/figure-html/unnamed-chunk-25-1.png)&lt;!-- --&gt;
+
+Conventions of the box and whisker plot
+
+]
+
+
+
+---
+class: left
+
+# What stories do you see? 
+
+- We see the distributions, median values, and spread across all years (1995&amp;ndash;2011). 
+
+- Rows are ordered by the median values. 
+
+&lt;br&gt;
+
+![](slides-day1-01_files/figure-html/unnamed-chunk-26-1.png)&lt;!-- --&gt;
+
+
+
+
+
+
+---
+class: left
+
+# Graph design should align with one's rhetorical goals
+
+.pull-left[
+In going from this design...
+
+&lt;img src="img/stacked-bar-03.png" alt="stacked bar preview" style="height:250px;"&gt;
+]
+
+.pull-right[
+...to this design... 
+
+&lt;img src="img/boxplot-preview.png" alt="stacked bar preview" style="height:250px;"&gt;
+]
+
+- we improve the audience's **perception** of the stories in the data 
+
+- we make it easier to **reason** quantitatively about the data 
+
+- which should enhance our **credibility** with the audience 
+
+
+
+
+
+
+
+---
+class:inverse, center, middle
+
+# Advice from experts
+
+
+
+
+
+
+---
+class: left
+
+# Jean-Luc Doumont
+
+.left-column[
+&lt;img src="img/doumont-face.png" alt="Jean-luc Doumont" style="width:250px;"&gt;
+]
+.right-column[
+The optimal graph design depends on two factors, primarily, 
+
+1. The message to be conveyed
+
+2. The variables to be shown
+]
+
+
+.footnote[
+Jean-luc Doumont. *Trees, Maps and Theorems*. Principiae, 2009
+]
+
+
+
+
+
+---
+class: left
+
+# Edward Tufte
+
+.left-column[
+&lt;img src="img/tufte-face.png" alt="Edward Tufte" style="width:250px;"&gt;
+]
+.right-column[
+... the task of the designer is to give 
+
+visual access to the subtle and the difficult&amp;mdash;
+
+that is, the revelation of the complex.
+]
+
+.footnote[
+Edward Tufte. *The Visual Display of Quantitative Information*. Graphics Press, 1983
+]
+
+
+
+---
+class: left
+
+# Stephanie Evergreen
+
+.left-column[
+&lt;img src="img/evergreen-face.png" alt=" Stephanie Evergreen" style="width:250px;"&gt;
+]
+.right-column[
+What’s your point? 
+
+Seriously, that’s the most important question. 
+]
+
+.footnote[
+Stephanie D. H. Evergreen. *Effective Data Visualization: The Right Chart for the Right Data.* Sage, 2017
+]
+
+
+
+
+
+
+
+---
+class: left
+
+# Alberto Cairo
+
+.left-column[
+&lt;img src="img/cairo-face.png" alt="Alberto Cairo" style="width:250px;"&gt;
+]
+.right-column[
+Charts can lie to to us because 
+
+we read too much into them or 
+
+see in them what we want to believe. 
+
+&lt;br&gt;
+
+Don't lie to yourself (or others) with charts. 
+]
+
+.footnote[
+Alberto Cairo. *How Charts Lie.* W.W. Norton, 2019
+]
+
+
+
+
+
+---
+class: left
+
+# Ideas to take away and consider
+
+
+- **Understand** the data structure and content 
+
+- **Explore** a story's context, causality, and complexity
+
+- **Align** visual and verbal logic by revising iteratively 
+
+- **Edit** to suit the rhetorical goals for each audience  
+
+- **Control** every pixel&amp;mdash;avoid thoughtless conformity
+
+- **Question** are you seeing only what you want to believe?
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

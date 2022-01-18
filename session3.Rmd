@@ -1,11 +1,13 @@
 ---
 title: "Session 3"
 description: |
-  Thinking critically about visual information: a case study in 
-  detecting and correcting abuses of visual rhetoric. 
+  Critical thinking about visual information&mdash;a case study. Thinking 
+  critically about visual information to detect and correct deliberate 
+  visual lies that attempt to restrict reproductive rights. 
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+[slides] in progress
