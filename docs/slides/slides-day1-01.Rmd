@@ -190,7 +190,7 @@ dt2[, pct := round(100 * pop / tot, 0)]
 ```
 
 .pull-left[
-![](img/3d-effect-pie.png)
+![](img/three-d-pie.png)
 ]
 
 .pull-right[
@@ -302,7 +302,7 @@ class: left
 .pull-left[
 In going from this design...
 
-<img src="img/3D-pie-preview.png" alt="pie chart preview" style="height:180px;">
+<img src="img/three-d-pie-preview.png" alt="pie chart preview" style="height:180px;">
 ]
 
 .pull-right[
@@ -360,7 +360,7 @@ top5 %>%
 ]
 
 .right-column[
-![](img/3d-effect-bar.png)
+![](img/three-d-bar.png)
 .center[2021 population (in millions)]
 ]
 
