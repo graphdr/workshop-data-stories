@@ -1,5 +1,5 @@
 ---
-title: "Day 3"
+title: "Session 3"
 description: |
   Thinking critically about visual information: a case study in 
   detecting and correcting abuses of visual rhetoric. 

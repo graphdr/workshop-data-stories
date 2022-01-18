@@ -1,0 +1,81 @@
+---
+title: "Limitations of graphical elements"
+subtitle: Why graphicacy matters
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [default, default-fonts]
+    seal: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: "%current%"
+      ratio: 16:9
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+---
+
+class: middle right
+
+.left-column[
+![](images/stacked-bar-01.png)
+![](images/stacked-bar-02.png)
+![](images/pie01.png)
+]
+
+# Limitations of common graphical elements
+## Why graphicacy matters
+
+Richard Layton
+
+2022-02-14
+
+![](images/logo.png)
+
+
+
+
+
+
+
+---
+# List the slices A thru E, large to small
+
+
+.pull-left[
+![](images/pie01.png)
+]
+.pull-right[
+`_______________` largest    
+ 
+`_______________`    
+    
+`_______________`    
+ 
+`_______________`    
+
+`_______________` smallest    
+]
+
+
+---
+
+class: center, middle
+
+# xaringan
+
+### /ʃaː.'riŋ.ɡan/
+
+---
+class: inverse, center, middle
+
+# Get Started
+
+
+

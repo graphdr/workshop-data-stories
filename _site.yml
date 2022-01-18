@@ -11,12 +11,12 @@ navbar:
   search: true
   source_url: true
   left:
-    - text: "Day 1"
-      href: day1.html
-    - text: "Day 2"
-      href: day2.html
-    - text: "Day 3"
-      href: day3.html
+    - text: "Session 1"
+      href: session1.html
+    - text: "Session 2"
+      href: session2.html
+    - text: "Session 3"
+      href: session3.html
   right:
     - text: "License"
       href: license.html 

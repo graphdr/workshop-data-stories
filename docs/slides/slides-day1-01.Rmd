@@ -4,15 +4,25 @@ subtitle: Why graphicacy matters
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
+    css: [default, middlebury, middlebury-fonts]
     lib_dir: libs
+    seal: false
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+      slideNumberFormat: "%current%"
+      ratio: 16:9
 ---
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+
+library(data.table)
+library(ggplot2)
+library(knitr)
+library(kableExtra)
+library(graphclassmate)
 ```
 
 
@@ -20,23 +30,475 @@ options(htmltools.dir.version = FALSE)
 
 
 
-# Why graphicacy matters
+class: right
+
+.left-column[
+![](img/pie-preview.png)
+![](img/stacked-bar-02.png)
+]
+
+.right-column[
+# Perception, reasoning, and credibility
+
+## Limitations of common visual elements
+
+Richard Layton   
+
+2022-02-14
+]
+
+
 
 
 
 
 ---
+class: left
 
-class: center, middle
+# Judging angles is a low-accuracy task
 
-# xaringan
+```{r echo = FALSE}
+country <- c("China", "India", "United States", "Indonesia", "Pakistan")
+pop <- c(1439323776, 1380004385, 331002651, 273523615, 220892340)
+dt1 <- data.table(country, pop)
+dt1[, tot := sum(pop)]
+dt1[, pct := round(100 * pop / tot, 0)]
+```
 
-### /ʃaː.'riŋ.ɡan/
+.pull-left[
+![](img/top-5-pop.png)
+]
+
+.pull-right[
+Estimate the percentage of each pie slice
+```{r echo = FALSE}
+top5 <- copy(dt1)
+top5 <- top5[, .(country, pct)]
+top5 %>%
+  kbl(col.names = c("Country", "Percentage"), align = "lr") %>%
+  kable_paper(lightable_options = "basic", 
+              full_width = TRUE, 
+              font_size = 24) %>%
+  column_spec(2, color = "white", background = "white") %>%
+  column_spec(1, color = "black", background = "white")
+```
+The total should be 100&.
+]
+
+.footnote[2021 population data source: [2021 World population review](https://worldpopulationreview.com/)]
+
+
+
+
+
 
 ---
-class: inverse, center, middle
+class: left
 
-# Get Started
+# Judging values along a common axis is a high-accuracy task
+
+The same data is displayed along a common axis.  Make new visual estimates.
+
+.right-column[
+```{r echo=FALSE, fig.asp=0.4, fig.width = 10}
+ggplot(dt1, aes(x = pct, y = reorder(country, pct))) +
+  geom_point(size = 6) + 
+  labs(x = "Percent of 3.6B total", 
+       y = "", 
+       title = "The 5 most populous countries in 2021") + 
+  theme_graphclass(font_size = 24) +
+  scale_x_continuous(limits = c(0, 40))
+```
+]
+
+.left-column[
+```{r echo=FALSE}
+top5 %>%
+  kbl(col.names = c("Country", "Percentage"), align = "lr") %>%
+  kable_paper(lightable_options = "basic", 
+              full_width = TRUE, 
+              font_size = 24) %>%
+  column_spec(2, color = "white", background = "white") %>%
+  column_spec(1, color = "black", background = "white")
+```
+]
+
+
+
+
+
+
+---
+class: left
+
+# Judging values along a common axis is a high-accuracy task
+
+Compare your visual estimates to the data values.
+
+.right-column[
+```{r echo=FALSE, fig.asp=0.4, fig.width = 10}
+ggplot(dt1, aes(x = pct, y = reorder(country, pct))) +
+  geom_point(size = 6) + 
+  labs(x = "Percent of 3.6B total", 
+       y = "", 
+       title = "The 5 most populous countries in 2021") + 
+  theme_graphclass(font_size = 24) +
+  scale_x_continuous(limits = c(0, 40))
+```
+]
+
+.left-column[
+```{r echo=FALSE}
+top5 %>%
+  kbl(col.names = c("Country", "Percentage"), align = "lr") %>%
+  kable_paper(lightable_options = "basic", 
+              full_width = TRUE, 
+              font_size = 24) %>%
+  column_spec(2, color = "black", background = "white") %>%
+  column_spec(1, color = "black", background = "white")
+```
+]
+
+
+
+
+
+---
+class: left
+
+# 3D effects distort our judgment even further
+
+```{r echo = FALSE}
+country <- c("Japan", "Germany", "UK", "France", "Italy")
+pop <- c(125.8, 84, 68.4, 65.5, 60.3)
+dt2 <- data.table(country, pop)
+dt2[, tot := sum(pop)]
+dt2[, pct := round(100 * pop / tot, 0)]
+```
+
+.pull-left[
+![](img/3d-effect-pie.png)
+]
+
+.pull-right[
+Estimate the percentage of each pie slice
+```{r echo = FALSE}
+y <- copy(dt2)
+y <- y[, .(country, pct)]
+
+y %>%
+  kbl(col.names = c("Country", "Percentage"), align = "lr") %>%
+  kable_paper(lightable_options = "basic", 
+              full_width = TRUE, 
+              font_size = 24) %>%
+  column_spec(2, color = "white", background = "white") %>%
+  column_spec(1, color = "black", background = "white")
+```
+The total should be 100%. 
+]
+
+
+
+
+
+
+---
+class: left
+
+# Again, a common scale improves our visual judgments
+
+The same data is displayed along a common axis.  Make new visual estimates.
+
+.right-column[
+
+```{r echo=FALSE, fig.asp=0.4, fig.width = 10}
+ggplot(dt2, aes(x = pct, y = reorder(country, pct))) +
+  geom_point(size = 6) + 
+  labs(x = "Percent of 404M total", 
+       y = "", 
+       title = "Population of selected countries in 2021") + 
+  theme_graphclass(font_size = 24) +
+  scale_x_continuous(limits = c(10, 35), breaks = seq(0, 100, 5))
+```
+
+]
+
+.left-column[
+```{r echo=FALSE}
+y %>%
+  kbl(col.names = c("Country", "Percentage"), align = "lr") %>%
+  kable_paper(lightable_options = "basic", 
+              full_width = TRUE, 
+              font_size = 24) %>%
+  column_spec(2, color = "white", background = "white") %>%
+  column_spec(1, color = "black", background = "white")
+```
+]
+
+
+
+
+
+
+---
+class: left
+
+# Again, a common scale improves our visual judgments
+
+Compare your visual estimates to the data values.
+
+.right-column[
+```{r echo=FALSE, fig.asp=0.4, fig.width = 10}
+ggplot(dt2, aes(x = pct, y = reorder(country, pct))) +
+  geom_point(size = 6) + 
+  labs(x = "Percent of 404M total", 
+       y = "", 
+       title = "Population of selected countries in 2021") + 
+  theme_graphclass(font_size = 24) +
+  scale_x_continuous(limits = c(10, 35), breaks = seq(0, 100, 5))
+```
+]
+
+.left-column[
+```{r echo=FALSE}
+y %>%
+  kbl(col.names = c("Country", "Percentage"), align = "lr") %>%
+  kable_paper(lightable_options = "basic", 
+              full_width = TRUE, 
+              font_size = 24) %>%
+  column_spec(2, color = "black", background = "white") %>%
+  column_spec(1, color = "black", background = "white")
+```
+]
+
+
+
+
+
+
+---
+class: left
+
+# 3D effects always distort our judgment
+
+Make visual estimates of each country's 2021 population. 
+
+.left-column[
+```{r echo = FALSE}
+top5 %>%
+  kbl(col.names = c("Country", "Millions"), align = "lr") %>%
+  kable_paper(lightable_options = "basic", 
+              full_width = TRUE, 
+              font_size = 24) %>%
+  column_spec(2, color = "white", background = "white") %>%
+  column_spec(1, color = "black", background = "white")
+```
+]
+
+.right-column[
+![](img/3d-effect-bar.png)
+.center[2021 population (in millions)]
+]
+
+
+
+
+---
+class: left
+
+# Same data&mdash;without 3D effects&mdash;along a common scale
+
+Make new visual estimates.  
+
+.left-column[
+```{r echo = FALSE}
+x <- copy(dt1)
+x <- x[, .(country, pop)]
+x$pop <- round(x$pop / 1e6, 0)
+
+x %>%
+  kbl(col.names = c("Country", "Millions"), align = "lr") %>%
+  kable_paper(lightable_options = "basic", 
+              full_width = TRUE, 
+              font_size = 24) %>%
+  column_spec(2, color = "white", background = "white") %>%
+  column_spec(1, color = "black", background = "white")
+```
+]
+
+.right-column[
+```{r echo=FALSE, fig.asp=0.4, fig.width = 10}
+f <- ggplot(dt1, aes(x = pop/1e6, y = reorder(country, pop))) +
+  geom_point(size = 6) + 
+  labs(x = "Population (millions)", 
+       y = "", 
+       title = "The 5 most populous countries in 2021") + 
+  theme_graphclass(font_size = 24) +
+  scale_x_continuous(limits = c(200, 1500), breaks = seq(0, 1600, 200))
+f
+```
+]
+
+
+
+
+
+
+---
+class: left
+
+# Same data&mdash;without 3D effects&mdash;along a common scale
+
+Compare your visual estimates to the data values.
+
+.left-column[
+```{r echo = FALSE}
+x %>%
+  kbl(col.names = c("Country", "Millions"), align = "lr") %>%
+  kable_paper(lightable_options = "basic", 
+              full_width = TRUE, 
+              font_size = 24) %>%
+  column_spec(2, color = "black", background = "white") %>%
+  column_spec(1, color = "black", background = "white")
+```
+]
+
+.right-column[
+```{r echo=FALSE, fig.asp=0.4, fig.width = 10}
+f
+```
+]
+
+
+
+
+
+
+---
+class: left
+
+# You can use bar charts
+
+Bar charts must have a zero baseline to avoid deceiving your audience. 
+
+```{r echo=FALSE, fig.asp=0.4, fig.width = 10}
+f <- ggplot(x, aes(x = pop, y = country)) +
+  geom_bar(stat = "identity", 
+           width = 0.5, 
+           color = rcb("mid_BG"), 
+           fill = rcb("mid_BG")) +
+  labs(x = "Population (millions)", 
+       y = "") +
+  theme_graphclass(font_size = 24) +
+  scale_x_continuous(breaks = seq(0, 1600, 200), limits = c(0, 1600))
+f
+```
+
+
+
+
+
+
+---
+class: left
+
+# Order your rows to facilitate comparisons
+
+Ordering rows by the data values is usually superior to alphabetical order for visual comparisons.   
+
+```{r echo=FALSE, fig.asp=0.4, fig.width = 10}
+f <- f +
+  aes(x = pop, y = reorder(country, pop)) +
+  labs(x = "Population (millions)", 
+       y = "") 
+f
+```
+
+
+
+
+
+
+---
+class: left
+
+# However, the only data value is the endpoint
+
+The filled area of he bar conveys no information.  
+
+```{r echo=FALSE, fig.asp=0.4, fig.width = 10}
+f <- ggplot(x, aes(x = pop, y = reorder(country, pop))) +
+  geom_bar(stat = "identity", 
+           width = 0.5, 
+           color = rcb("mid_BG"), 
+           fill = "transparent") +
+  geom_point(size = 8, color = rcb("dark_BG")) +
+  labs(x = "Population (millions)", 
+       y = "") +
+  theme_graphclass(font_size = 24) +
+  scale_x_continuous(breaks = seq(0, 1600, 200), limits = c(0, 1600))
+f
+```
+
+
+
+
+
+
+---
+class: left
+
+# Omit the bar, show the endpoint, and you have a  "dot chart" 
+
+Dot charts are effective replacements for pie charts and bar charts. 
+
+```{r echo=FALSE, fig.asp=0.4, fig.width=10}
+f <- ggplot(x, aes(x = pop, y = reorder(country, pop))) +
+  geom_point(size = 8, color = rcb("dark_BG")) +
+  labs(x = "Population (millions)", 
+       y = "") +
+  theme_graphclass(font_size = 24) +
+  scale_x_continuous(breaks = seq(0, 1600, 200), limits = c(0, 1600))
+f
+```
+
+
+
+
+
+---
+class: left
+
+# What conclusions do you draw from this chart?
+
+.left[The survey question was “What was your primary reason for taking this postdoc?”]
+
+```{r echo = FALSE}
+dt <- fread("data/fig2.csv")
+dt[reason %chin% "Postdoc generally expected for career in this field", 
+   reason := "Postdoc generally expected"]
+dt[reason %chin% "Additional training in PhD field", 
+   reason := "Additional training in field"]
+```
+
+
+
+```{r echo=FALSE, fig.asp=0.35, fig.width=15}
+ggplot(dt, aes(x = year, y = pct, color = reason, fill = reason)) +
+  geom_bar(stat = "identity") + 
+  scale_color_brewer(palette="BrBG") + 
+  scale_fill_brewer(palette="BrBG") +
+  scale_x_continuous(breaks = seq(1996, 2010, 2), expand = c(0, 0)) +
+  theme_minimal() +
+  labs(y = "", x = "PhD completion year") +
+  theme(axis.text    = element_text(size = 24), 
+        axis.title.x = element_text(size = 24), 
+        legend.text  = element_text(size = 20), 
+        legend.title = element_blank(), 
+        legend.key.height = unit(16, "mm"))
+```
+
+.footnote[Data source: Main, Joyce B., Yanbing Wang, and Li Tan. 2021. “The career outlook of engineering PhDs” *J of Engng Educ* 110 (4): 977–1002.]
 
 
 

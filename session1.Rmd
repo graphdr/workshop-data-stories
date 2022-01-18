@@ -1,0 +1,29 @@
+---
+title: "Session 1"
+description: |
+  Perception, reasoning, and credibility: Limitations of common visual elements.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+# The rhetorical situation 
+
+*logos*
+: Displaying evidence and reasoning   
+
+*ethos*
+: Conveying credibility    
+
+*pathos*
+: Accommodating audience needs, values, and priorities    
+
+
+
+[slides](slides/slides-day1-01.html)
+
+
+
+

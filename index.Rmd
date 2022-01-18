@@ -12,15 +12,15 @@ The workshop has three sessions focusing on different aspects of storytelling wi
 
 <table>
   <tr>
-    <td><img src="images/intro-1.png" alt="stacked-bar chart" style="width:300px;height:188px"></td>
-    <td>[Day 1](day1.html) Limitations of common visual elements</td>
+    <td><img src="images/stacked-bar-preview.png" alt="stacked-bar chart" style="width:300px;height:165px"></td>
+    <td>[Session 1](session1.html) Limitations of common visual elements</td>
   </tr>
   <tr>
-    <td><img src="images/intro-2.png" alt="stacked-bar chart" style="width:300px;height:188px"></td>
-    <td>[Day 2](day2.html) Expanding your graphical reprtoire</td>
+    <td><img src="images/diverging-stacked-bar-preview.png" alt="diverging stacked bar chart preview" style="width:300px;height:165px"></td>
+    <td>[Session 2](session2.html) Expanding your graphical reprtoire</td>
   </tr>
   <tr>
-    <td><img src="images/intro-3.png" alt="stacked-bar chart" style="width:300px;height:188px"></td>
-    <td>[Day 3](day3.html) Thinking critically about visual information, a case study</td>
+    <td><img src="images/intro-3.png" alt="stacked-bar chart" style="width:300px;height:165px"></td>
+    <td>[Session 3](session3.html) Thinking critically about visual information, a case study</td>
   </tr>
 </table>
