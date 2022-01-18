@@ -3,48 +3,715 @@
   <head>
     <title>Limitations of graphical elements</title>
     <meta charset="utf-8" />
-    <meta name="date" content="2022-01-16" />
+    <meta name="date" content="2022-01-17" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css/middlebury.css" rel="stylesheet" />
+    <link href="libs/remark-css/middlebury-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
 
-# Limitations of graphical elements
-## Why graphicacy matters
-### 2022-01-16
+
+
+
+
+
+
+
+
+class: right
+
+.left-column[
+![](img/pie-preview.png)
+![](img/stacked-bar-03.png)
+]
+
+.right-column[
+# Perception, reasoning, and credibility
+
+## Limitations of common visual elements
+
+Richard Layton   
+
+2022-02-14
+]
+
+
+
+
 
 ---
+class:inverse, center, middle
+
+# Perception and reasoning
 
 
-
-
-
-
-
-
-
-# Why graphicacy matters
 
 
 
 
 ---
+class: left
 
-class: center, middle
+# Judging angles is a low-accuracy task
 
-# xaringan
 
-### /ʃaː.'riŋ.ɡan/
+
+.pull-left[
+![](img/top-5-pop.png)
+]
+
+.pull-right[
+Estimate the percentage of each pie slice
+&lt;table class=" lightable-paper" style='font-size: 24px; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Country &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Percentage &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; China &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 39 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; India &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 38 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; United States &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 9 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Indonesia &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Pakistan &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+The total should be 100&amp;.
+]
+
+.footnote[2021 population data source: [2021 World population review](https://worldpopulationreview.com/)]
+
+
+
+
+
 
 ---
-class: inverse, center, middle
+class: left
 
-# Get Started
+# Judging values along a common axis is a high-accuracy task
+
+The same data is displayed along a common axis.  Make new visual estimates.
+
+&lt;br&gt;
+
+.right-column[
+![](slides-day1-01_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+]
+
+.left-column[
+&lt;table class=" lightable-paper" style='font-size: 24px; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Country &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Percentage &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; China &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 39 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; India &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 38 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; United States &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 9 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Indonesia &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Pakistan &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
 
 
+
+
+
+
+---
+class: left
+
+# Judging values along a common axis is a high-accuracy task
+
+Compare your visual estimates to the data values.
+
+&lt;br&gt;
+
+.right-column[
+![](slides-day1-01_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+]
+
+.left-column[
+&lt;table class=" lightable-paper" style='font-size: 24px; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Country &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Percentage &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; China &lt;/td&gt;
+   &lt;td style="text-align:right;color: black !important;background-color: white !important;"&gt; 39 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; India &lt;/td&gt;
+   &lt;td style="text-align:right;color: black !important;background-color: white !important;"&gt; 38 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; United States &lt;/td&gt;
+   &lt;td style="text-align:right;color: black !important;background-color: white !important;"&gt; 9 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Indonesia &lt;/td&gt;
+   &lt;td style="text-align:right;color: black !important;background-color: white !important;"&gt; 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Pakistan &lt;/td&gt;
+   &lt;td style="text-align:right;color: black !important;background-color: white !important;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+
+
+
+
+---
+class: left
+
+# 3D effects distort our judgment even further
+
+
+
+.pull-left[
+![](img/3d-effect-pie.png)
+]
+
+.pull-right[
+Estimate the percentage of each pie slice
+&lt;table class=" lightable-paper" style='font-size: 24px; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Country &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Percentage &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Japan &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 31 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Germany &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 21 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; UK &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 17 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; France &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 16 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Italy &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+The total should be 100%. 
+]
+
+
+
+
+
+
+---
+class: left
+
+# Again, a common scale improves our visual judgments
+
+The same data is displayed along a common axis.  Make new visual estimates.
+
+&lt;br&gt;
+
+.right-column[
+
+![](slides-day1-01_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+
+]
+
+.left-column[
+&lt;table class=" lightable-paper" style='font-size: 24px; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Country &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Percentage &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Japan &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 31 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Germany &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 21 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; UK &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 17 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; France &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 16 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Italy &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+
+
+
+
+
+---
+class: left
+
+# Again, a common scale improves our visual judgments
+
+Compare your visual estimates to the data values.
+
+&lt;br&gt;
+
+.right-column[
+![](slides-day1-01_files/figure-html/unnamed-chunk-11-1.png)&lt;!-- --&gt;
+]
+
+.left-column[
+&lt;table class=" lightable-paper" style='font-size: 24px; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Country &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Percentage &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Japan &lt;/td&gt;
+   &lt;td style="text-align:right;color: black !important;background-color: white !important;"&gt; 31 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Germany &lt;/td&gt;
+   &lt;td style="text-align:right;color: black !important;background-color: white !important;"&gt; 21 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; UK &lt;/td&gt;
+   &lt;td style="text-align:right;color: black !important;background-color: white !important;"&gt; 17 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; France &lt;/td&gt;
+   &lt;td style="text-align:right;color: black !important;background-color: white !important;"&gt; 16 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Italy &lt;/td&gt;
+   &lt;td style="text-align:right;color: black !important;background-color: white !important;"&gt; 15 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+
+
+
+
+
+---
+class: left
+
+# 3D effects always distort our judgment
+
+Make visual estimates of each country's 2021 population. 
+
+&lt;br&gt;
+
+.left-column[
+&lt;table class=" lightable-paper" style='font-size: 24px; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Country &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Millions &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; China &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 39 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; India &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 38 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; United States &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 9 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Indonesia &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Pakistan &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.right-column[
+![](img/3d-effect-bar.png)
+.center[2021 population (in millions)]
+]
+
+
+
+
+---
+class: left
+
+# Same data&amp;mdash;without 3D effects&amp;mdash;along a common scale
+
+Make new visual estimates. 
+
+&lt;br&gt;
+
+.left-column[
+&lt;table class=" lightable-paper" style='font-size: 24px; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Country &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Millions &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; China &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 1439 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; India &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 1380 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; United States &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 331 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Indonesia &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 274 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Pakistan &lt;/td&gt;
+   &lt;td style="text-align:right;color: white !important;background-color: white !important;"&gt; 221 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.right-column[
+![](slides-day1-01_files/figure-html/unnamed-chunk-15-1.png)&lt;!-- --&gt;
+]
+
+
+
+
+
+
+---
+class: left
+
+# Same data&amp;mdash;without 3D effects&amp;mdash;along a common scale
+
+Compare your visual estimates to the data values.
+
+&lt;br&gt;
+
+.left-column[
+&lt;table class=" lightable-paper" style='font-size: 24px; font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Country &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Millions &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; China &lt;/td&gt;
+   &lt;td style="text-align:right;color: black !important;background-color: white !important;"&gt; 1439 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; India &lt;/td&gt;
+   &lt;td style="text-align:right;color: black !important;background-color: white !important;"&gt; 1380 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; United States &lt;/td&gt;
+   &lt;td style="text-align:right;color: black !important;background-color: white !important;"&gt; 331 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Indonesia &lt;/td&gt;
+   &lt;td style="text-align:right;color: black !important;background-color: white !important;"&gt; 274 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: white !important;"&gt; Pakistan &lt;/td&gt;
+   &lt;td style="text-align:right;color: black !important;background-color: white !important;"&gt; 221 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.right-column[
+![](slides-day1-01_files/figure-html/unnamed-chunk-17-1.png)&lt;!-- --&gt;
+]
+
+
+
+
+
+
+---
+class: left
+
+# With a zero baseline and no 3D effects, bars are OK
+
+Bar charts must have a zero baseline to avoid deceiving your audience. 
+
+&lt;br&gt;
+
+![](slides-day1-01_files/figure-html/unnamed-chunk-18-1.png)&lt;!-- --&gt;
+
+
+
+
+
+
+---
+class: left
+
+# Row order affects the audience's ability to make comparisons
+
+Ordering rows by the data values is usually superior to alphabetical order for visual comparisons.  
+
+&lt;br&gt;
+
+![](slides-day1-01_files/figure-html/unnamed-chunk-19-1.png)&lt;!-- --&gt;
+
+
+
+
+
+
+---
+class: left
+
+# Area is perceived differently than position
+
+Area encodes no information. The only information in the bar is the position of its end point.
+
+&lt;br&gt;
+
+![](slides-day1-01_files/figure-html/unnamed-chunk-20-1.png)&lt;!-- --&gt;
+
+
+
+
+
+
+---
+class: left
+
+# Dot charts allow direct visual comparison of quantities 
+
+Dot charts are effective replacements for pie charts and bar charts. 
+
+&lt;br&gt;
+
+![](slides-day1-01_files/figure-html/unnamed-chunk-21-1.png)&lt;!-- --&gt;
+
+
+
+
+
+---
+class: left
+
+# What conclusions do you draw from this chart?
+
+.left[The survey question was “What was your primary reason for taking this postdoc?”]
+
+
+
+
+
+![](slides-day1-01_files/figure-html/unnamed-chunk-23-1.png)&lt;!-- --&gt;
+
+.footnote[Data source: Main, Joyce B., Yanbing Wang, and Li Tan. 2021. “The career outlook of engineering PhDs” *J of Engng Educ* 110 (4): 977–1002.]
+
+
+
+
+
+
+---
+class: left
+
+# Stacked-bar charts are a poor choice for multivariate data
+
+We have three variables: year, reason, and percent response. 
+
+
+- Each reason varies over time    
+
+- None of the interior segments have a common baseline, so their trends cannot be easily observed    
+
+- The appropriate graph design for time-varying data is a scatterplot 
+
+
+
+
+
+
+---
+class: left
+
+# A matrix of scatterplots allows us to compare evolutions
+
+What conclusions do you draw from this chart?
+
+![](slides-day1-01_files/figure-html/unnamed-chunk-24-1.png)&lt;!-- --&gt;
+
+
+
+
+
+
+---
+class: left
+
+# Emphasizing the trivial can obscure a story
+
+Time is trivial in this case. Suppose we ignore it? 
+
+- We end up with two variables: reasons and a distribution of percent response.     
+
+- The appropriate graph design for distributions is a box-and-whisker plot 
+
+
+
+
+
+
+
+---
+class: left
+
+# You might be able to draw new conclusions...  
+
+... if the conventions of the box and whisker chart are familiar. 
+
+&lt;br&gt;
+
+![](slides-day1-01_files/figure-html/unnamed-chunk-25-1.png)&lt;!-- --&gt;
+
+
+
+
+---
+class:inverse, center, middle
+
+# Principles of visual rhetoric
+
+
+
+
+
+
+---
+class: left
+
+# Jean-Luc Doumont: variables and message
+
+
+
+---
+class: left
+
+# Edward Tufte: reveal the complex
+
+
+
+
+---
+class: left
+
+# Stephanie Evergreen: what's your point?
+
+
+
+---
+class: left
+
+# Summary
+
+
+- Understand the data  
+
+- Visually explore the stories in the data   
+
+- Explore context and causality; reveal complexity    
+
+-  to align the logic of the display and your thinking    
+
+- Edit to suit my rhetorical goals for the audience  
+
+- Control every pixel    
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
@@ -52,7 +719,9 @@ class: inverse, center, middle
 <script>var slideshow = remark.create({
 "highlightStyle": "github",
 "highlightLines": true,
-"countIncrementalSlides": false
+"countIncrementalSlides": false,
+"slideNumberFormat": "%current%",
+"ratio": "16:9"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
