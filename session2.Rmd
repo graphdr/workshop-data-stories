@@ -9,5 +9,13 @@ description: |
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-[slides] in progress
+**Expanding your graphical repertoire**
+
+In the second session we illustrate a repertoire of graph types and how they are suited to specific data structures. The session should encourage you to: 
+
+- Understand the structure of one's data
+- Explore different graph types suited to the data. 
+- Keep reading and learning&mdash;an unfamiliar design may be just what you need.
+
+[**slides**] in progress
  

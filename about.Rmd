@@ -20,3 +20,10 @@ My dad was a guitar player and taught me my first chords. I've been songwriting 
 **Work life**
 
 I am a graduate of California State University, Northridge (1991), and the University of Washington (1993, 1995). I taught mechanical engineering courses at Rose-Hulman Institute of Technology from 2000-2020. I retired from teaching in 2020. I also spent some years in industry, primarily in consulting engineering in Anchorage, AK, and Simi Valley, CA, with shorter stints at aerospace firms in Redmond, WA and West Palm Beach, FL.
+
+
+**Links**
+
+blog <https://graphdr.github.io/data-stories/>    
+repo <https://github.com/graphdr>    
+mail <a href="mailto:graphdoctor@gmail.com">graphdoctor@gmail.com</a>   

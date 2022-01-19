@@ -1,15 +1,23 @@
 ---
 title: "Session 1"
 description: |
-  Limitations of common graph types. Demonstrating how to avoid the  
-  limitations to improve perception, reasoning, and credibility. 
+  Limitations of common graph types. Demonstrating how to avoid   
+  limitations and improve perception, reasoning, and credibility. 
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
- 
-[slides](slides/slides-day1-01.html)
+**Limitations of common graph types**
+
+In the first session we demonstrate avoiding the perceptual limitations of common graph types to    
+  
+- Improve perception of stories in the data
+- Make it easier to reason quantitatively about the data
+- Thereby enhancing our credibility with the audience
+
+
+[**slides**](slides/slides-day1-01.html)
 
 
