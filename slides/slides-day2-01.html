@@ -8,6 +8,9 @@
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/middlebury.css" rel="stylesheet" />
     <link href="libs/remark-css/middlebury-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -18,19 +21,22 @@
 class: right
 
 .left-column[
-&lt;!-- &lt;img src="img/pie-preview.png" alt="pie chart" style="height:200px;"&gt; --&gt;
+data
 
-&lt;!-- &lt;img src="img/dot-chart-preview.png" alt="pie chart" style="width:200px;"&gt; --&gt;
 
-&lt;!-- &lt;img src="img/stacked-bar-03.png" alt="pie chart" style="width:200px;"&gt; --&gt;
-
-&lt;!-- &lt;img src="img/scatterplot-preview.png" alt="pie chart" style="width:200px;"&gt; --&gt;
+design
 ]
 
 .right-column[
+
 # Expanding your graphical repertoire
 
 ## Matching chart type to data structure
+
+
+&lt;br&gt;
+
+&lt;br&gt;
 
 Richard Layton   
 
@@ -63,39 +69,76 @@ class: left
 
 # Our goal is to match chart type to data structure
 
-While incomplete, this list covers chart designs for a variety of commonly-encountered data structures. 
+A list of designs and their permutations for commonly-encountered data structures. 
 
 .pull-left[
-**dot chart** 
-
-**multiway dot chart** 
- 
-**scatterplot**  
-
-**line graph**  
-
-**facet or small multiple chart**
-
-**cycle chart**  
-
-**contour scatterplot**
-]
-
-.pull-right[
 **strip chart**
 
 **box and whisker chart** 
 
-**q-q chart** 
+**dot chart** &amp;mdash; *faceted, superposed*
+
+**scatterplot**  &amp;mdash; *faceted, superposed*
+
+**time series**  &amp;mdash; *faceted, superposed*
+
+**cyclic time series**  &amp;mdash; *superposed*
+]
+
+.pull-right[
+**diverging stacked-bar chart**
 
 **scatterplot matrix** 
 
 **conditioning chart** 
-
-**Sankey diagram**  
-
-**diverging stacked-bar chart**
 ]
+
+
+
+
+
+
+---
+class: left
+
+# Strip chart
+
+Designed to display the distribution of a single quantitative variable.
+
+&lt;div class="my-footer"&gt;
+&lt;span&gt;Data source: Source  
+&lt;a href="https://site"&gt;Link&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt; 
+
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Box and whisker chart
+
+Designed to display a 5-point statistical summary of the distribution of a single quantitative variable.
+
+&lt;div class="my-footer"&gt;
+&lt;span&gt;Data source: Source  
+&lt;a href="https://site"&gt;Link&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt; 
+
+
+
+
+
+
+
+
 
 
 
@@ -109,46 +152,592 @@ class: left
 
 
 
-.footnote[Data source: US Centers for Disease Control and Prevention (CDC) WONDER online database, https://wonder.cdc.gov/controller/datarequest/D69]
 
-.left-column[
-Data structure
 
-- Age group: an ordinal category, 6 levels
+One quantity that depends on one categorical variable. 
 
-- Mortality: a quantitative variable
+.pull-left[
+![](slides-day2-01_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+]
+.pull-right[
 
-- Race: a nominal category, 2 levels
+&lt;br&gt;
+
+&lt;table class="table" style="font-size: 18px; float: left; margin-right: 10px;"&gt;
+&lt;thead&gt;&lt;tr&gt;&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Data structure&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; infant mortality &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; quantitative variable &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; mother's age &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; categorical, ordinal, 6 levels &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+A good substitute for many pie charts and bar charts. 
 ]
 
-.right-column[
-![](slides-day2-01_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
-]
+&lt;div class="my-footer"&gt;
+&lt;span&gt;Data source: US Centers for Disease Control and Prevention  
+&lt;a href="https://wonder.cdc.gov/lbd-current.html"&gt;CDC WONDER Linked Birth / Infant Death Records&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt; 
 
 
 
-   
-   
+
+
+
+
+
+
+
 
 
 ---
 class: left
 
-# Multiway dot chart
+# Dot chart, faceted
 
-Same data structure plus "region", a nominal category with 4 levels. 
-
-Multiway data are characterized by single quantitative variable dependent on two independent categorical variables
+One quantity that depends on two independent categorical variables (also called a multiway chart). 
 
 
 
+![](slides-day2-01_files/figure-html/unnamed-chunk-6-1.png)&lt;!-- --&gt;
+.left-column[
+A good substitute for many pie charts and bar charts. 
+]
+.right-column[
+&lt;table class="table" style="font-size: 18px; float: left; margin-right: 10px;"&gt;
+&lt;thead&gt;&lt;tr&gt;&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Data structure&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; infant mortality &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; quantitative variable &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; mother's age &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; categorical variable, ordinal, 6 levels &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; US region &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; categorical variable, nominal, 4 levels &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+&lt;div class="my-footer"&gt;
+&lt;span&gt;Data source: US Centers for Disease Control and Prevention  
+&lt;a href="https://wonder.cdc.gov/lbd-current.html"&gt;CDC WONDER Linked Birth / Infant Death Records&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt; 
 
 
 
 
 
 
-![](slides-day2-01_files/figure-html/unnamed-chunk-4-1.png)&lt;!-- --&gt;
+
+
+
+
+---
+class: left
+
+# Dot chart, faceted, superposed
+
+Conditioning multiway data by another independent categorical variable.
+
+
+
+![](slides-day2-01_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+.left-column[
+A good substitute for many pie charts and bar charts. 
+]
+.right-column[
+&lt;table class="table" style="font-size: 18px; float: left; margin-right: 10px;"&gt;
+&lt;thead&gt;&lt;tr&gt;&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Data structure&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; infant mortality &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; quantitative variable &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; mother's age &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; categorical variable, ordinal, 6 levels &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; US region &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; categorical variable, nominal, 4 levels &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; mother's race &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; categorical variable, nominal, 2 levels &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+&lt;div class="my-footer"&gt;
+&lt;span&gt;Data source: US Centers for Disease Control and Prevention  
+&lt;a href="https://wonder.cdc.gov/lbd-current.html"&gt;CDC WONDER Linked Birth / Infant Death Records&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt; 
+
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Scatterplot
+
+Designed to reveal correlations between two quantitative variables.
+
+
+
+.pull-left[
+![](slides-day2-01_files/figure-html/unnamed-chunk-12-1.png)&lt;!-- --&gt;
+]
+.pull-right[
+
+&lt;br&gt;
+
+&lt;table class="table" style="font-size: 18px; float: left; margin-right: 10px;"&gt;
+&lt;thead&gt;&lt;tr&gt;&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Data structure&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; life expectancy &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; quantitative variable &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; GDP per capita &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; quantitative variable &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+"International dollar" is a hypothetical currency with the same *purchasing power parity* (PPP) as constant US dollars (here, the basis is 2011).
+]
+
+
+&lt;div class="my-footer"&gt;
+&lt;span&gt;Data source:  
+&lt;a href="https://www.gapminder.org/data/"&gt;Gapminder Foundation&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt; 
+
+
+
+
+
+---
+class: left
+
+#  Scatterplot, superposed
+
+Adding a categorical variable ("Global region") to compare data subsets.
+
+
+
+.pull-left[
+![](slides-day2-01_files/figure-html/unnamed-chunk-15-1.png)&lt;!-- --&gt;
+]
+.pull-right[
+
+&lt;br&gt;
+
+&lt;table class="table" style="font-size: 18px; float: left; margin-right: 10px;"&gt;
+&lt;thead&gt;&lt;tr&gt;&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Data structure&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; life expectancy &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; quantitative variable &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; GDP per capita &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; quantitative variable &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; global region &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; categorical variable, 4 levels &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+Design 
+
+- Works best when clusters of subsets are distinct.
+
+- Requires a legend if data cannot be directly labeled. 
+
+]
+
+
+
+
+
+
+
+---
+class: left
+
+#  Scatterplot, faceted
+
+Same data with subsets separated into separate facets (panels).    
+Facets are ordered by median life expectancy in "graph order."
+
+![](slides-day2-01_files/figure-html/unnamed-chunk-17-1.png)&lt;!-- --&gt;
+
+&lt;div class="my-footer"&gt;
+&lt;span&gt;Data source:  
+&lt;a href="https://www.gapminder.org/data/"&gt;Gapminder Foundation&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Time series
+
+Similar to a scatterplot with time as the independent variable.    
+Discrete time (e.g., months or years) is considered a categorical, not a quantitative, variable.   
+
+
+
+.pull-left[
+![](slides-day2-01_files/figure-html/unnamed-chunk-19-1.png)&lt;!-- --&gt;
+]
+
+.pull-right[
+&lt;table class="table" style="font-size: 18px; float: left; margin-right: 10px;"&gt;
+&lt;thead&gt;&lt;tr&gt;&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Data structure&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; life expectancy &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; quantitative variable &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; year &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; categorical variable, ordinal &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+Design 
+
+- Dots connected by a dashed line (preferred)  
+
+- If necessary, omit dots and use solid line
+]
+&lt;div class="my-footer"&gt;
+&lt;span&gt;Data source:  
+&lt;a href="https://www.gapminder.org/data/"&gt;Gapminder Foundation&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt; 
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Time series, superposed
+
+Time series conditioned by a categorical variable, with all lines in the same panel. 
+
+
+
+.pull-left[
+![](slides-day2-01_files/figure-html/unnamed-chunk-22-1.png)&lt;!-- --&gt;
+]
+
+.pull-right[
+&lt;table class="table" style="font-size: 18px; float: left; margin-right: 10px;"&gt;
+&lt;thead&gt;&lt;tr&gt;&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Data structure&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; life expectancy &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; quantitative variable &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; year &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; categorical variable, ordinal &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; country &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; categorical variable, 3 levels &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+Design 
+
+- Use of color helps distinguish between lines that cross.  
+
+- Labels eliminate the need for a legend. 
+
+- Works best when lines are easily differentiated.
+ 
+]
+
+&lt;div class="my-footer"&gt;
+&lt;span&gt;Data source:  
+&lt;a href="https://www.gapminder.org/data/"&gt;Gapminder Foundation&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt; 
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+#  Time series, faceted
+
+  
+Countries with the highest 2021 life expectancies in their region.    
+Same data structure as the superposed chart.  
+
+
+
+
+![](slides-day2-01_files/figure-html/unnamed-chunk-25-1.png)&lt;!-- --&gt;
+
+&lt;div class="my-footer"&gt;
+&lt;span&gt;Data source:  
+&lt;a href="https://www.gapminder.org/data/"&gt;Gapminder Foundation&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt; 
+
+
+
+
+
+
+
+
+
+
+---
+class:left
+
+# Time series, cyclic
+
+
+
+![](slides-day2-01_files/figure-html/unnamed-chunk-27-1.png)&lt;!-- --&gt;
+
+.left-column[
+A time series showing the behavior of cyclic sub-series.
+]
+.right-column[
+&lt;table class="table" style="font-size: 18px; float: left; margin-right: 10px;"&gt;
+&lt;thead&gt;&lt;tr&gt;&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Data structure&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; ice extent &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; quantitative variable &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; year &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; categorical variable, ordinal, 43 levels &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; month &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; categorical variable, ordinal, 12 levels &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+&lt;div class="my-footer"&gt;
+&lt;span&gt;Data source: NASA National Snow and Ice Data Center  
+&lt;a href="https://nsidc.org/arcticseaicenews/sea-ice-tools/"&gt;Sea ice extent and area organized by year&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt; 
+
+
+
+
+
+
+
+
+---
+class:left
+
+# Time series, cyclic, superposed
+
+
+
+![](slides-day2-01_files/figure-html/unnamed-chunk-30-1.png)&lt;!-- --&gt;
+.left-column[
+Adding *hemisphere* as a categorical variable. 
+]
+.right-column[
+&lt;table class="table" style="font-size: 18px; float: left; margin-right: 10px;"&gt;
+&lt;thead&gt;&lt;tr&gt;&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Data structure&lt;/div&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; ice extent &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; quantitative variable &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; year &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; categorical variable, ordinal, 43 levels &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; month &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; categorical variable, ordinal, 12 levels &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; hemisphere &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; categorical variable, nominal, 2 levels &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+&lt;div class="my-footer"&gt;
+&lt;span&gt;Data source: NASA National Snow and Ice Data Center  
+&lt;a href="https://nsidc.org/arcticseaicenews/sea-ice-tools/"&gt;Sea ice extent and area organized by year&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt; 
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Diverging stacked bar chart
+
+Designed for reporting survey data.    
+The quantitative variable is the percent choosing a particular response. 
+
+
+&lt;div class="my-footer"&gt;
+&lt;span&gt;Data source: Source  
+&lt;a href="https://site"&gt;Link&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt; 
+
+
+
+
+
+
+---
+class: left
+
+# Scatterplot matrix
+
+Designed to display the pair-wise dependence of three or more quantitative variables.
+
+&lt;div class="my-footer"&gt;
+&lt;span&gt;Data source: Source  
+&lt;a href="https://site"&gt;Link&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Conditioning chart
+
+Designed to display the mutual dependence of three or four quantitative variables.
+
+&lt;div class="my-footer"&gt;
+&lt;span&gt;Data source: Source  
+&lt;a href="https://site"&gt;Link&lt;/a&gt;&lt;/span&gt;
+&lt;/div&gt; 
+
+
+
+
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

@@ -3,7 +3,7 @@ title: "Perception, reasoning, and credibility"
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
-    css: [default, middlebury, middlebury-fonts]
+    css: ["default", "middlebury", "middlebury-fonts", "custom.css"]
     lib_dir: libs
     seal: false
     nature:
@@ -73,7 +73,7 @@ class:inverse, center, middle
 ---
 class: left
 
-# Judging angles is a low-accuracy task
+# Judging pie slices is a low-accuracy task
 
 ```{r echo = FALSE}
 country <- c("China", "India", "United States", "Indonesia", "Pakistan")
@@ -105,10 +105,13 @@ top5 %>%
 The total should be 100&.
 ]
 
-.footnote[2021 population data source: [2021 World population review](https://worldpopulationreview.com/)]
-
-
-
+<div class="my-footer">
+<span>
+Data source:  
+<a href="https://worldpopulationreview.com/">
+2021 World population review</a>
+</span>
+</div> 
 
 
 
@@ -145,6 +148,16 @@ top5 %>%
   column_spec(1, color = "black", background = "white")
 ```
 ]
+
+<div class="my-footer">
+<span>
+Data source:  
+<a href="https://worldpopulationreview.com/">
+2021 World population review</a>
+</span>
+</div> 
+
+
 
 
 
@@ -186,6 +199,18 @@ top5 %>%
 ```
 ]
 
+<div class="my-footer">
+<span>
+Data source:  
+<a href="https://worldpopulationreview.com/">
+2021 World population review</a>
+</span>
+</div>
+
+
+
+
+
 
 
 
@@ -224,6 +249,16 @@ y %>%
 
 The total should be 100%. 
 ]
+
+<div class="my-footer">
+<span>
+Data source:  
+<a href="https://worldpopulationreview.com/">
+2021 World population review</a>
+</span>
+</div>
+
+
 
 
 
@@ -266,7 +301,13 @@ y %>%
 ```
 ]
 
-
+<div class="my-footer">
+<span>
+Data source:  
+<a href="https://worldpopulationreview.com/">
+2021 World population review</a>
+</span>
+</div>
 
 
 
@@ -304,6 +345,15 @@ y %>%
   column_spec(1, color = "black", background = "white")
 ```
 ]
+
+<div class="my-footer">
+<span>
+Data source:  
+<a href="https://worldpopulationreview.com/">
+2021 World population review</a>
+</span>
+</div>
+
 
 
 
@@ -380,6 +430,17 @@ top5 %>%
 .center[2021 population (in millions)]
 ]
 
+<div class="my-footer">
+<span>
+Data source:  
+<a href="https://worldpopulationreview.com/">
+2021 World population review</a>
+</span>
+</div>
+
+
+
+
 
 
 
@@ -423,7 +484,13 @@ f
 ```
 ]
 
-
+<div class="my-footer">
+<span>
+Data source:  
+<a href="https://worldpopulationreview.com/">
+2021 World population review</a>
+</span>
+</div>
 
 
 
@@ -456,6 +523,13 @@ f
 ```
 ]
 
+<div class="my-footer">
+<span>
+Data source:  
+<a href="https://worldpopulationreview.com/">
+2021 World population review</a>
+</span>
+</div>
 
 
 
@@ -484,7 +558,13 @@ f <- ggplot(x, aes(x = pop, y = country)) +
 f
 ```
 
-
+<div class="my-footer">
+<span>
+Data source:  
+<a href="https://worldpopulationreview.com/">
+2021 World population review</a>
+</span>
+</div>
 
 
 
@@ -507,6 +587,14 @@ f <- f +
        y = "") 
 f
 ```
+
+<div class="my-footer">
+<span>
+Data source:  
+<a href="https://worldpopulationreview.com/">
+2021 World population review</a>
+</span>
+</div>
 
 
 
@@ -538,9 +626,17 @@ f <- ggplot(x, aes(x = pop, y = reorder(country, pop))) +
 f
 ```
 
+<div class="my-footer">
+<span>
+Data source:  
+<a href="https://worldpopulationreview.com/">
+2021 World population review</a>
+</span>
+</div>
 
 
-
+ 
+ 
  
 
 ---
@@ -562,7 +658,13 @@ f <- ggplot(x, aes(x = pop, y = reorder(country, pop))) +
 f
 ```
 
-
+<div class="my-footer">
+<span>
+Data source:  
+<a href="https://worldpopulationreview.com/">
+2021 World population review</a>
+</span>
+</div>
 
 
 
@@ -600,7 +702,11 @@ ggplot(dt, aes(x = year, y = pct, color = reason, fill = reason)) +
         legend.key.height = unit(15, "mm"))
 ```
 
-.footnote[Data source: Main, Joyce B., Yanbing Wang, and Li Tan. 2021. “The career outlook of engineering PhDs” *J of Engng Educ* 110 (4): 977–1002.]
+<div class="my-footer">
+<span>
+Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlook of engineering PhDs” <em>J of Engineering Education</em> 110 (4): 977–1002.  
+</span>
+</div> 
 
 
 
@@ -612,7 +718,7 @@ class: left
 
 # Stacked-bar charts are a poor choice for multivariate data
 
-<img src="img/stacked-bar-04.png" alt="stacked bar chart" height="300">
+<img src="img/stacked-bar-04.png" alt="stacked bar chart" height="275">
 
 We have three variables: year, reason, and percent response. 
 
@@ -622,8 +728,11 @@ We have three variables: year, reason, and percent response.
 
 - The appropriate graph design for time-varying data is a scatterplot 
 
-
-
+<div class="my-footer">
+<span>
+Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlook of engineering PhDs” <em>J of Engineering Education</em> 110 (4): 977–1002.  
+</span>
+</div> 
 
 
 
@@ -646,7 +755,11 @@ ggplot(dt, aes(x = year, y = pct)) +
 
 But are we any closer to seeing a story? What stories (if any) do you see? 
 
-
+<div class="my-footer">
+<span>
+Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlook of engineering PhDs” <em>J of Engineering Education</em> 110 (4): 977–1002.  
+</span>
+</div> 
 
 
 
@@ -702,6 +815,11 @@ Conventions of the box and whisker plot
 
 
 
+
+
+
+
+
 ---
 class: left
 
@@ -724,6 +842,12 @@ ggplot(dt, aes(x = pct, y = reorder(reason, pct, median))) +
   theme_graphclass(font_size = 22)
 
 ```
+
+<div class="my-footer">
+<span>
+Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlook of engineering PhDs” <em>J of Engineering Education</em> 110 (4): 977–1002.  
+</span>
+</div> 
 
 
 
@@ -769,6 +893,8 @@ class:inverse, center, middle
 
 
 
+
+
 ---
 class: left
 
@@ -785,10 +911,11 @@ The optimal graph design depends on two factors, primarily,
 2. The variables to be shown
 ]
 
-
-.footnote[
-Jean-luc Doumont. *Trees, Maps and Theorems*. Principiae, 2009
-]
+<div class="my-footer">
+<span>
+Jean-luc Doumont (2009) <em>Trees, Maps and Theorems</em>, Principiae. 
+</span>
+</div> 
 
 
 
@@ -810,9 +937,16 @@ visual access to the subtle and the difficult&mdash;
 that is, the revelation of the complex.
 ]
 
-.footnote[
-Edward Tufte. *The Visual Display of Quantitative Information*. Graphics Press, 1983
-]
+<div class="my-footer">
+<span>
+Edward Tufte (1983) <em>The Visual Display of Quantitative Information</em>, Graphics Press. 
+</span>
+</div> 
+
+
+
+
+
 
 
 
@@ -830,9 +964,11 @@ What’s your point?
 Seriously, that’s the most important question. 
 ]
 
-.footnote[
-Stephanie D. H. Evergreen. *Effective Data Visualization: The Right Chart for the Right Data.* Sage, 2017
-]
+<div class="my-footer">
+<span>
+Stephanie D. H. Evergreen (2017) <em>Effective Data Visualization</em>, Sage. 
+</span>
+</div> 
 
 
 
@@ -860,9 +996,15 @@ see in them what we want to believe.
 Don't lie to yourself (or others) with charts. 
 ]
 
-.footnote[
-Alberto Cairo. *How Charts Lie.* W.W. Norton, 2019
-]
+
+<div class="my-footer">
+<span>
+Alberto Cairo (2019) <em>How Charts Lie</em>, W.W. Norton 
+</span>
+</div>
+
+
+
 
 
 
