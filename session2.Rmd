@@ -17,5 +17,5 @@ In the second session we illustrate a repertoire of graph types and how they are
 - Explore different graph types suited to the data. 
 - Keep reading and learning&mdash;an unfamiliar design may be just what you need.
 
-[**slides**] in progress
+[**slides**](slides/slides-day2-01.html)
  

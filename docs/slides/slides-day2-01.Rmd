@@ -17,6 +17,7 @@ output:
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+knitr::opts_knit$set(root.dir = "../")
 
 library("data.table")
 library("ggplot2")
@@ -38,19 +39,15 @@ my_table <- function(x){
 
 class: right
 
-.left-column[
-data
 
-
-design
+.pull-left[
+<img src="img/comparison-preview.png" alt="multiway chart" style="width:800px;height:165px">    
+<img src="img/correlation-preview.png" alt="faceted scatterplot" style="width:800px;height:230px">    
+<img src="img/evolution-preview.png" alt="cycle chart" style="width:800px;height:205px">    
 ]
 
-.right-column[
-
+.pull-right[
 # Expanding your graphical repertoire
-
-## Matching chart type to data structure
-
 
 <br>
 
@@ -85,47 +82,54 @@ Richard Layton
 ---
 class: left
 
-# Our goal is to match chart type to data structure
-
-A list of designs and their permutations for commonly-encountered data structures. 
+# Design depends on data structure and visual purpose
 
 .pull-left[
-**strip chart**
+Comparing data
 
-**box and whisker chart** 
+$\quad$ **dot chart** &mdash; *superposed*
 
-**dot chart** &mdash; *faceted, superposed*
+$\quad$ **multiway** &mdash; *superposed, faceted*
 
-**scatterplot**  &mdash; *faceted, superposed*
+$\quad$ 
 
-**time series**  &mdash; *faceted, superposed*
+Revealing correlations
 
-**cyclic time series**  &mdash; *superposed*
+$\quad$ **scatterplot**  &mdash; *superposed, faceted*
+
+$\quad$ 
+
+Showing evolution
+
+$\quad$ **time series**  &mdash; *superposed, faceted*
+
+$\quad$ **cyclic time series**  &mdash; *superposed*
 ]
 
 .pull-right[
-**diverging stacked-bar chart**
+Displaying distributions 
 
-**scatterplot matrix** 
+$\quad$ **strip chart** &mdash; *comparative, superposed*
 
-**conditioning chart** 
+$\quad$ **box and whisker chart** &mdash; *comparative*
+
+$\quad$ 
+
+Multivariate designs to investigate on your own 
+
+- conditioning (co-plot) chart
+- diverging stacked bar chart
+- parallel coordinate chart 
+- financial (OHLC) chart
+- scatterplot matrix 
+- dot density map 
+
 ]
 
-
-
-
-
-
----
-class: left
-
-# Strip chart
-
-Designed to display the distribution of a single quantitative variable.
-
 <div class="my-footer">
-<span>Data source: Source  
-<a href="https://site">Link</a></span>
+<span>
+Optimal design categories from: Jean-luc Doumont (2009) <em>Trees, Maps and Theorems</em>, Principiae, p. 133.
+</span>
 </div> 
 
 
@@ -138,21 +142,11 @@ Designed to display the distribution of a single quantitative variable.
 
 
 
+
 ---
-class: left
+class:inverse, center, middle
 
-# Box and whisker chart
-
-Designed to display a 5-point statistical summary of the distribution of a single quantitative variable.
-
-<div class="my-footer">
-<span>Data source: Source  
-<a href="https://site">Link</a></span>
-</div> 
-
-
-
-
+# Comparing data
 
 
 
@@ -168,34 +162,12 @@ class: left
 
 # Dot chart
 
-```{r echo=FALSE}
-# initial data carpentry
-data(infant_mortality, package = "graphclassmate")
-dt <- data.table(infant_mortality)
-
-# recoding
-dt[region == "CENS-R1", region := "Northeast"]
-dt[region == "CENS-R2", region := "Midwest"]
-dt[region == "CENS-R3", region := "South"]
-dt[region == "CENS-R4", region := "West"]
-dt[race != "Black", race := "Non-Black"]
-dt[, county_id := NULL]
-dt[age == "15", age := NA]
-dt[age == "45-49", age := NA]
-dt <- na.omit(dt)
-```
-
-```{r echo=FALSE}
-# first plot, aggregate by age group
-fig1 <- dt[, .(deaths = sum(deaths), births  = sum(births)), by = age]
-fig1[, per_thou := 1000 * deaths / births]
-```
-
-One quantity that depends on one categorical variable. 
+The dot chart and its superposed and faceted derivatives are good substitutes  for pie and bar charts.
 
 .pull-left[
 ```{r echo=FALSE, fig.width=7, fig.asp=1/1.7}
-ggplot(fig1, aes(x = per_thou, y = age)) +
+dt <- readRDS("data/dot-chart.rds")
+ggplot(dt, aes(x = per_thou, y = age)) +
   geom_point(size = 5, shape = 16, color = rcb("dark_BG")) + 
   theme_graphclass(font_size = 18) +
   labs(x = "US infant deaths per 1000 births, 2007-2016", 
@@ -212,7 +184,7 @@ ggplot(fig1, aes(x = per_thou, y = age)) +
 ```{r echo=FALSE}
 x <- build_frame(
    "variable"         , "structure" |
-   "infant mortality" , "quantitative variable" |
+   "infant mortality" , "quantitative" |
    "mother's age"     , "categorical, ordinal, 6 levels")
 my_table(x)
 ```
@@ -223,7 +195,82 @@ my_table(x)
 
 <br>
 
-A good substitute for many pie charts and bar charts. 
+- 1 category: levels on rows    
+
+- 1 quantity: common horizontal scale
+]
+
+<div class="my-footer">
+<span>Data source: US Centers for Disease Control and Prevention  
+<a href="https://wonder.cdc.gov/lbd-current.html">CDC WONDER Linked Birth / Infant Death Records</a></span>
+</div> 
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Dot chart, superposed
+
+Subset by a second category.  
+
+.pull-left[
+```{r echo=FALSE, fig.width=7, fig.asp=1/1.7}
+dt <- readRDS("data/multiway-2-panel.rds")
+
+# label data
+age      <- c("15-19")
+race     <- c("Non-Black", "Black")
+per_thou <- c(5.5, 13)
+my_text  <- data.table(age, race, per_thou)
+
+ggplot(dt, aes(x = per_thou, y = age, color = race, fill = race)) +
+  geom_point(size = 5, shape = 21) + 
+  theme_graphclass(font_size = 18) +
+  labs(x = "US infant deaths per 1000 births, 2007-2016", 
+       y = "Age", 
+       title = "All US regions") + 
+  scale_x_continuous(limits = c(3, 18), breaks = seq(0, 50, 5)) +
+  theme(axis.title.y = element_text(angle = 0, hjust = 1, vjust = 1), 
+        legend.position = "none") +
+  scale_color_manual(values = c(rcb("dark_BG"), rcb("dark_BG"))) +
+  scale_fill_manual(values = c(rcb("dark_BG"), "white")) +   
+  geom_text(data = my_text, 
+            mapping = aes(x = per_thou, y = 5.55, label = race),
+            hjust = c(0, 0), 
+            size = 6, 
+            color = "black")
+```
+]
+.pull-right[
+
+<br>
+
+```{r echo=FALSE}
+x <- build_frame(
+   "variable"         , "structure" |
+   "infant mortality" , "quantitative" |
+   "mother's age"     , "categorical, ordinal, 6 levels" |
+   "mother's race"    , "categorical, nominal, 2 levels")
+my_table(x)
+```
+
+<br>
+
+<br>
+
+<br>
+
+- 2 categories: levels by row and by color
+
+- 1 quantity: common horizontal scale
 ]
 
 <div class="my-footer">
@@ -242,44 +289,51 @@ A good substitute for many pie charts and bar charts.
 
 
 
+
+
+
 ---
 class: left
 
-# Dot chart, faceted
+# Multiway dot chart
 
-One quantity that depends on two independent categorical variables (also called a multiway chart). 
+Same data but changing the superposed design to a faceted design. 
 
-```{r echo=FALSE}
-# second plot, age, region
-# manually assign factor levels to match the third graph
-fig2 <- dt[, .(deaths = sum(deaths), births  = sum(births)), 
-           by = c("age", "region")]
-fig2[, per_thou := 1000 * deaths / births]
-fig2[, region := factor(region, levels = c("West", "Northeast", "South", "Midwest"))]
-```
-
-```{r echo=FALSE, fig.asp=0.27, fig.width=16}
-ggplot(fig2, aes(x = per_thou, y = age)) +
-  facet_wrap(vars(region), ncol = 4) +
-  geom_point(size = 5, shape = 16, color = rcb("dark_BG")) + 
-  theme_graphclass(font_size = 20) +
-  labs(x = "US infant deaths per 1000 births, 2007-2016 (Source: CDC)", 
+.pull-left[
+```{r echo=FALSE, fig.width=7, fig.asp=1/1.7}
+dt <- readRDS("data/multiway-2-panel.rds")
+ggplot(dt, aes(x = per_thou, y = age)) +
+  geom_point(size = 5, shape = 16) + 
+  facet_wrap(vars(reorder(race, per_thou, median)), as.table = FALSE) + 
+  theme_graphclass(font_size = 18) +
+  labs(x = "US infant deaths per 1000 births, 2007-2016", 
        y = "Age") + 
   scale_x_continuous(limits = c(3, 18), breaks = seq(0, 50, 5)) +
   theme(axis.title.y = element_text(angle = 0, hjust = 1, vjust = 1))
 ```
-.left-column[
-A good substitute for many pie charts and bar charts. 
 ]
-.right-column[
+.pull-right[
+
+<br>
+
 ```{r echo=FALSE}
 x <- build_frame(
    "variable"         , "structure" |
-   "infant mortality" , "quantitative variable" |
-   "mother's age"     , "categorical variable, ordinal, 6 levels" |
-   "US region"        , "categorical variable, nominal, 4 levels" )
+   "infant mortality" , "quantitative" |
+   "mother's age"     , "categorical, ordinal, 6 levels" |
+   "mother's race"    , "categorical, nominal, 2 levels")
 my_table(x)
 ```
+
+<br>
+
+<br>
+
+<br>
+
+- 2 categories: levels by row and by facet
+
+- 1 quantity: common horizontal scale
 ]
 
 <div class="my-footer">
@@ -296,18 +350,129 @@ my_table(x)
 
 
 
+
+
+
+
+
+
+
+
 ---
 class: left
 
-# Dot chart, faceted, superposed
+# Multiway dot chart
 
-Conditioning multiway data by another independent categorical variable.
+New category changes the number of facets. 
 
+```{r echo=FALSE, fig.asp=0.27, fig.width=16}
+dt <- readRDS("data/multiway-4-panel.rds")
+ggplot(dt, aes(x = per_thou, y = age)) +
+  facet_wrap(vars(reorder(region, per_thou, median)), ncol = 4) +
+  geom_point(size = 5, shape = 16) + 
+  theme_graphclass(font_size = 20) +
+  labs(x = "US infant deaths per 1000 births, 2007-2016", 
+       y = "Age") + 
+  scale_x_continuous(limits = c(3, 18), breaks = seq(0, 50, 5)) +
+  theme(axis.title.y = element_text(angle = 0, hjust = 1, vjust = 1))
+```
+.left[
 ```{r echo=FALSE}
-# third plot, age, region, race
-fig3 <- dt[, .(deaths = sum(deaths), births  = sum(births)), 
-           by = c("age", "region", "race")]
-fig3[, per_thou := 1000 * deaths / births]
+x <- build_frame(
+   "variable"         , "structure" |
+   "infant mortality" , "quantitative" |
+   "mother's age"     , "categorical, ordinal, 6 levels" |
+   "US region"        , "categorical, nominal, 4 levels" )
+my_table(x)
+```
+].pull-right[
+- Rows ordered by age. 
+
+- Facets ordered by median value. 
+]
+
+<div class="my-footer">
+<span>Data source: US Centers for Disease Control and Prevention  
+<a href="https://wonder.cdc.gov/lbd-current.html">CDC WONDER Linked Birth / Infant Death Records</a></span>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Multiway dot chart
+
+Switching facet and row categories to change the visual comparison. 
+
+```{r echo=FALSE, fig.asp=0.2, fig.width=16}
+dt <- readRDS("data/multiway-4-panel.rds")
+ggplot(dt, aes(x = per_thou, y = reorder(region, per_thou, median))) +
+  facet_wrap(vars(age), ncol = 6, as.table = FALSE) +
+  geom_point(size = 5, shape = 16) + 
+  theme_graphclass(font_size = 20) +
+  labs(x = "US infant deaths per 1000 births, 2007-2016", 
+       y = "") + 
+  scale_x_continuous(limits = c(3, 18), breaks = seq(0, 50, 5)) +
+  theme(axis.title.y = element_text(angle = 0, hjust = 1, vjust = 1))
+```
+.left[
+```{r echo=FALSE}
+x <- build_frame(
+   "variable"         , "structure" |
+   "infant mortality" , "quantitative" |
+   "mother's age"     , "categorical, ordinal, 6 levels" |
+   "US region"        , "categorical, nominal, 4 levels" )
+my_table(x)
+```
+]
+.pull-right[
+- Rows ordered by the median value.    
+
+- Facets ordered by age. 
+]
+
+<div class="my-footer">
+<span>Data source: US Centers for Disease Control and Prevention  
+<a href="https://wonder.cdc.gov/lbd-current.html">CDC WONDER Linked Birth / Infant Death Records</a></span>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Multiway dot chart, superposed
+
+Switch back and subset further by superposing a new category&mdash;for a total of 4 variables.   
+
+```{r echo=FALSE, fig.asp=0.27, fig.width=16}
+dt <- readRDS("data/multiway-superpose.rds")
 
 # label data in one panel only
 age      <- c("15-19")
@@ -315,14 +480,12 @@ region   <- c("West", "West")
 race     <- c("Non-Black", "Black")
 per_thou <- c(8, 10.5)
 my_text  <- data.table(age, region, race, per_thou)
-```
 
-```{r echo=FALSE, fig.asp=0.27, fig.width=16}
-ggplot(fig3, aes(x = per_thou, y = age, color = race, fill = race)) +
-  facet_wrap(vars(reorder(region, per_thou, median)), ncol = 4) +
+ggplot(dt, aes(x = per_thou, y = age, color = race, fill = race)) +
+  facet_wrap(vars(reorder(region, region)), ncol = 4, as.table = FALSE) +
   geom_point(size = 5, shape = 21) + 
   theme_graphclass(font_size = 20) +
-  labs(x = "US infant deaths per 1000 births, 2007-2016 (Source: CDC)", 
+  labs(x = "US infant deaths per 1000 births, 2007-2016", 
        y = "Age") + 
   scale_x_continuous(limits = c(3, 18), breaks = seq(0, 50, 5)) +
   theme(axis.title.y = element_text(angle = 0, hjust = 1, vjust = 1), 
@@ -335,19 +498,23 @@ ggplot(fig3, aes(x = per_thou, y = age, color = race, fill = race)) +
             size = 6, 
             color = "black")
 ```
-.left-column[
-A good substitute for many pie charts and bar charts. 
-]
-.right-column[
+
+.left[
 ```{r echo=FALSE}
 x <- build_frame(
    "variable"         , "structure" |
-   "infant mortality" , "quantitative variable" |
-   "mother's age"     , "categorical variable, ordinal, 6 levels" |
-   "US region"        , "categorical variable, nominal, 4 levels"  |
-   "mother's race"    , "categorical variable, nominal, 2 levels")
+   "infant mortality" , "quantitative" |
+   "mother's age"     , "categorical, ordinal, 6 levels" |
+   "US region"        , "categorical, nominal, 4 levels"  |
+   "mother's race"    , "categorical, nominal, 2 levels")
 my_table(x)
 ```
+]
+
+.pull-right[
+- Direct labeling eliminates the legend. 
+
+- Data marker contrast safe for color-vision-deficient viewers.
 ]
 
 <div class="my-footer">
@@ -355,6 +522,27 @@ my_table(x)
 <a href="https://wonder.cdc.gov/lbd-current.html">CDC WONDER Linked Birth / Infant Death Records</a></span>
 </div> 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class:inverse, center, middle
+
+# Revealing correlations
 
 
 
@@ -372,69 +560,11 @@ class: left
 
 Designed to reveal correlations between two quantitative variables.
 
-```{r echo=FALSE}
-# gapminder: world regions
-regions <- fread("data/world-regions.csv", header =  TRUE)
-regions <- regions[, 
-           .(name, four_regions, six_regions, eight_regions)]
-setnames(regions, "name", "country")
-
-# gapminder: life expectancy data
-life_exp <- fread("data/life_expectancy_years.csv", header =  TRUE)
-life_exp <- life_exp[, c("country", "1971":"2021")] 
-life_exp <- melt(life_exp,
-            id.vars       = "country",
-            variable.name = "year",
-            value.name    = "lifeExp")
-life_exp[, year := as.character(year)]
-life_exp[, year := as.integer(year)]
-
-# gapminder: GDP in constant 2011 PPP dollars
-gdp <- fread("data/gdp_percapita_ppp.csv", header =  TRUE)
-gdp <- gdp[, c("country", "1971":"2021")] 
-gdp <- melt(gdp,
-            id.vars       = "country",
-            variable.name = "year",
-            value.name    = "per_capita_gdp")
-
-# convert factors to integers
-gdp[, year := as.character(year)]
-gdp[, year := as.integer(year)]
-
-# isolate GDPs with a "k", delete "k", multiply by 1000
-gdp_sub1 <- gdp[grep("k", per_capita_gdp)]
-gdp_sub1[, per_capita_gdp := unlist(strsplit(per_capita_gdp, "k"))]
-gdp_sub1[, per_capita_gdp := 1000 * as.double(per_capita_gdp)]
-
-# GDPs no "k"
-gdp_sub2 <- gdp[!grep("k", per_capita_gdp)]
-gdp_sub2[, per_capita_gdp := as.double(per_capita_gdp)]
-
-# recombine subsets
-gdp <- rbindlist(list(gdp_sub1, gdp_sub2))
-gdp <- gdp[order(country)]
-
-# merge three data sets
-dt <- merge(life_exp, gdp, by = c("country", "year"), all.x = FALSE)
-dt <- merge(dt, regions, by = c("country"), all.x = FALSE)
-
-# recoding
-dt[eight_regions == "america_south", eight_regions := "South America"]
-dt[eight_regions == "america_north", eight_regions := "North/Central America"]
-dt[eight_regions == "east_asia_pacific", eight_regions := "Pacific/East Asia"]
-dt[eight_regions == "europe_west", eight_regions := "Western Europe"]
-dt[eight_regions == "europe_east", eight_regions := "Eastern Europe"]
-dt[eight_regions == "africa_sub_saharan", eight_regions := "Sub-saharan Africa"]
-dt[eight_regions == "asia_west", eight_regions := "Western Asia"]
-dt[eight_regions == "africa_north", eight_regions := "Northern Africa"]
-```
-
 .pull-left[
 ```{r echo=FALSE, fig.width=7, fig.asp=1/1.3}
-dt1 <- copy(dt)
-dt1 <- dt1[year == max(year)]
-
-ggplot(dt1, aes(x = per_capita_gdp/1000, y = lifeExp)) +
+dt <- readRDS(file = "data/scatterplot.rds")
+dt <- dt[year == max(year)]
+ggplot(dt, aes(x = per_capita_gdp/1000, y = lifeExp)) +
   geom_point(size = 3, alpha = 0.5) + 
   labs(x = "2021 GDP per capita (thousands Intl dollars)", 
        y = "Life expectancy in 2021 (years)", 
@@ -451,8 +581,8 @@ ggplot(dt1, aes(x = per_capita_gdp/1000, y = lifeExp)) +
 ```{r echo=FALSE}
 x <- build_frame(
    "variable"        , "structure" |
-   "life expectancy" ,"quantitative variable" |
-   "GDP per capita"  , "quantitative variable" )
+   "life expectancy" , "quantitative" |
+   "GDP per capita"  , "quantitative" )
 my_table(x)
 ```
 
@@ -465,11 +595,14 @@ my_table(x)
 "International dollar" is a hypothetical currency with the same *purchasing power parity* (PPP) as constant US dollars (here, the basis is 2011).
 ]
 
-
 <div class="my-footer">
 <span>Data source:  
 <a href="https://www.gapminder.org/data/">Gapminder Foundation</a></span>
 </div> 
+
+
+
+
 
 
 
@@ -482,16 +615,11 @@ class: left
 
 Adding a categorical variable ("Global region") to compare data subsets.
 
-```{r}
-dt1[four_regions == "europe"   , four_regions := "Europe"]
-dt1[four_regions == "asia"     , four_regions := "Asia"]
-dt1[four_regions == "americas" , four_regions := "Americas"]
-dt1[four_regions == "africa"   , four_regions := "Africa"]
-```
-
 .pull-left[
 ```{r echo=FALSE, fig.width=7, fig.asp=1/1.3}
-ggplot(dt1, 
+dt <- readRDS(file = "data/scatterplot.rds")
+dt <- dt[year == max(year)]
+ggplot(dt, 
        aes(x = per_capita_gdp/1000, 
            y = lifeExp, 
            color = four_regions)) +
@@ -520,9 +648,9 @@ ggplot(dt1,
 ```{r echo=FALSE}
 x <- build_frame(
    "variable"        , "structure" |
-   "life expectancy" ,"quantitative variable" |
-   "GDP per capita"  , "quantitative variable" |
-   "global region"   , "categorical variable, 4 levels")
+   "life expectancy" , "quantitative" |
+   "GDP per capita"  , "quantitative" |
+   "global region"   , "categorical, nominal, 4 levels")
 my_table(x)
 ```
 
@@ -532,13 +660,21 @@ my_table(x)
 
 <br>
 
-Design 
-
 - Works best when clusters of subsets are distinct.
 
 - Requires a legend if data cannot be directly labeled. 
 
 ]
+
+<div class="my-footer">
+<span>Data source:  
+<a href="https://www.gapminder.org/data/">Gapminder Foundation</a></span>
+</div> 
+
+
+
+
+
 
 
 
@@ -551,11 +687,62 @@ class: left
 
 #  Scatterplot, faceted
 
-Same data with subsets separated into separate facets (panels).    
-Facets are ordered by median life expectancy in "graph order."
+Same three variables with "Global region" levels in 4 facets. 
+
+```{r echo=FALSE, fig.asp=0.32, fig.width=16}
+dt <- readRDS(file = "data/scatterplot.rds")
+dt <- dt[year == max(year)]
+ggplot(dt, 
+       aes(x = per_capita_gdp/1000, 
+           y = lifeExp)) +
+  facet_wrap(vars(four_regions), ncol = 4) + 
+  geom_point(size = 3, alpha = 0.5) + 
+  labs(x = "2021 GDP per capita (thousands Intl dollars)", 
+       y = "Life expectancy in 2021 (years)") + 
+  scale_x_continuous(limits = c(0, 150)) +
+  scale_y_continuous(breaks = seq(60, 80, 10)) +
+  theme_graphclass(font_size = 20) +
+  theme(legend.position = "none")
+```
+
+- A legend and color are no longer needed. 
+
+- Facets are ordered by median life expectancy in "graph order."
+
+<div class="my-footer">
+<span>Data source:  
+<a href="https://www.gapminder.org/data/">Gapminder Foundation</a></span>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+#  Scatterplot, faceted
+
+Same three variables with "Global region" levels in 8 facets.
 
 ```{r echo=FALSE, fig.width=14, fig.asp=0.4}
-ggplot(dt1, aes(x = per_capita_gdp/1000, y = lifeExp)) +
+dt <- readRDS(file = "data/scatterplot.rds")
+ggplot(dt, aes(x = per_capita_gdp/1000, y = lifeExp)) +
   geom_point(size = 3, alpha = 0.5) + 
   labs(x = "2021 GDP per capita (thousands Intl dollars)", 
        y = "Life expectancy in 2021 (years)") + 
@@ -580,6 +767,16 @@ ggplot(dt1, aes(x = per_capita_gdp/1000, y = lifeExp)) +
 
 
 
+---
+class:inverse, center, middle
+
+# Showing evolution
+
+
+
+
+
+
 
 
 
@@ -590,22 +787,11 @@ class: left
 # Time series
 
 Similar to a scatterplot with time as the independent variable.    
-Discrete time (e.g., months or years) is considered a categorical, not a quantitative, variable.   
-
-```{r}
-dt2 <- copy(dt)
-dt2 <- dt2[, .(year, lifeExp)]
-dt2[, med_lifeExp := median(lifeExp, na.rm = TRUE), by = c("year")]
-dt2[, lifeExp := NULL]
-dt2 <- unique(dt2)
-
-dt2 <- copy(dt)
-dt2 <- dt2[country == "United States"]
-```
 
 .pull-left[
 ```{r echo=FALSE, fig.width=7, fig.asp=1/1.3}
-ggplot(dt2, aes(x = year, y = lifeExp)) +
+dt <- readRDS("data/time-series.rds")
+ggplot(dt, aes(x = year, y = lifeExp)) +
   geom_line(linetype = 2) + 
   geom_point(size = 2) +
   labs(x = "Year", 
@@ -623,11 +809,14 @@ ggplot(dt2, aes(x = year, y = lifeExp)) +
 ]
 
 .pull-right[
+
+<br>
+
 ```{r echo=FALSE}
 x <- build_frame(
    "variable"        , "structure" |
-   "life expectancy" , "quantitative variable" |
-   "year"            , "categorical variable, ordinal" )
+   "life expectancy" , "quantitative" |
+   "year"            , "categorical, ordinal" )
 my_table(x)
 ```
 
@@ -635,16 +824,19 @@ my_table(x)
 
 <br>
 
-Design 
+<br>
+
+- Discrete time (e.g., months or years) is a categorical, not quantitative, variable.
 
 - Dots connected by a dashed line (preferred)  
-
-- If necessary, omit dots and use solid line
 ]
+
 <div class="my-footer">
 <span>Data source:  
 <a href="https://www.gapminder.org/data/">Gapminder Foundation</a></span>
 </div> 
+
+
 
 
 
@@ -660,23 +852,14 @@ class: left
 
 # Time series, superposed
 
-Time series conditioned by a categorical variable, with all lines in the same panel. 
-
-```{r}
-dt2 <- copy(dt)
-dt2 <- dt2[, .(year, lifeExp)]
-dt2[, med_lifeExp := median(lifeExp, na.rm = TRUE), by = c("year")]
-dt2[, lifeExp := NULL]
-dt2 <- unique(dt2)
-
-dt2 <- copy(dt)
-dt2 <- dt2[country %chin% c("United States", "Canada", "Peru")]
-```
+Time series conditioned by a categorical variable, with all lines in the same facet. 
 
 .pull-left[
 ```{r echo=FALSE, fig.width=7, fig.asp=1/1.3}
-ggplot(dt2, aes(x = year, y = lifeExp, color = country)) +
-  geom_line(linetype = 1, size = 1.5) + 
+dt <- readRDS("data/time-series-superpose.rds")
+ggplot(dt, aes(x = year, y = lifeExp, color = country)) +
+  geom_line(linetype = 2) + 
+  geom_point(size = 2) +
   labs(x = "Year", 
        y = "Life expectancy (years)") +
   theme_graphclass(font_size = 20) +
@@ -694,12 +877,15 @@ ggplot(dt2, aes(x = year, y = lifeExp, color = country)) +
 ]
 
 .pull-right[
+
+<br>
+
 ```{r echo=FALSE}
 x <- build_frame(
   "variable"          , "structure" |
-    "life expectancy" , "quantitative variable" |
-    "year"            , "categorical variable, ordinal" |
-    "country"         , "categorical variable, 3 levels")
+    "life expectancy" , "quantitative" |
+    "year"            , "categorical, ordinal" |
+    "country"         , "categorical, nominal, 3 levels")
 my_table(x)
 ```
 
@@ -709,14 +895,9 @@ my_table(x)
 
 <br>
 
-Design 
-
-- Use of color helps distinguish between lines that cross.  
+- Color is often used to distinguish superposed category levels.   
 
 - Labels eliminate the need for a legend. 
-
-- Works best when lines are easily differentiated.
- 
 ]
 
 <div class="my-footer">
@@ -735,34 +916,85 @@ Design
 
 
 
+
+---
+class: left
+
+# Time series, superposed
+
+Time series conditioned by a categorical variable, with all lines in the same facet.
+
+.pull-left[
+```{r echo=FALSE, fig.width=7, fig.asp=1/1.3}
+dt <- readRDS("data/time-series-superpose.rds")
+ggplot(dt, aes(x = year, y = lifeExp, color = country)) +
+  geom_line(linetype = 1, size = 1.5) + 
+  labs(x = "Year", 
+       y = "Life expectancy (years)") +
+  theme_graphclass(font_size = 20) +
+  scale_y_continuous(breaks = seq(50, 90, 10), limits = c(47, 83)) +
+  annotate("text", 
+           x = 1983, 
+           y = c(64, 73, 80), 
+           label = c("Peru", "US", "Canada"), 
+           size = 6, 
+           hjust = 0
+  ) +
+  theme(legend.position = "none") +
+  scale_color_manual(values = c(rcb("dark_BG"), rcb("light_BG"), rcb("mid_BG")))
+```
+]
+.pull-right[
+
+<br>
+
+```{r echo=FALSE}
+x <- build_frame(
+  "variable"          , "structure" |
+    "life expectancy" , "quantitative" |
+    "year"            , "categorical, ordinal" |
+    "country"         , "categorical, nominal, 3 levels")
+my_table(x)
+```
+
+<br>
+
+<br>
+
+<br>
+
+- Time series are often displayed as line charts to make the differences easier to see.
+]
+
+<div class="my-footer">
+<span>Data source:  
+<a href="https://www.gapminder.org/data/">Gapminder Foundation</a></span>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---
 class: left
 
 #  Time series, faceted
 
-  
-Countries with the highest 2021 life expectancies in their region.    
-Same data structure as the superposed chart.  
-
-
-```{r}
-dt3 <- copy(dt)
-dt3 <- na.omit(dt3)
-dt3 <- dt3[year == max(year)]
-dt3 <- dt3[, max_lifeExp := max(lifeExp), by = "eight_regions"]
-dt3 <- dt3[, .(country, lifeExp, max_lifeExp, eight_regions)]
-dt3 <- dt3[lifeExp == max_lifeExp]
-dt3 <- unique(dt3)
-select_country <- dt3$country
-
-dt4 <- copy(dt)
-dt4 <- dt4[, .(country, year, lifeExp, eight_regions)]
-dt4 <- dt4[country %chin% select_country] 
-dt4[, country := factor(country, levels = c("Mauritius", "Israel", "Tunisia", "Finland", "Peru", "Canada", "Singapore", "Iceland"))]
-```
+Same three variables with more levels of the "Country" category. 
 
 ```{r echo=FALSE, fig.width=14, fig.asp=0.4}
-ggplot(dt4, aes(x = year, y = lifeExp)) +
+dt <- readRDS("data/time-series-facet.rds") 
+ggplot(dt, aes(x = year, y = lifeExp)) +
   geom_line(size = 1.5) + 
   labs(x = "Year", 
        y = "Life expectancy (years)") + 
@@ -797,33 +1029,10 @@ class:left
 
 # Time series, cyclic
 
-```{r}
-dt <- fread("data/ice_extent_NH.csv", header = TRUE)
-dt <- dt[, 1:13]
-setnames(dt, "V1", "year")
-dt <- melt(dt, 
-           id.vars = "year", 
-           variable.name = "month", 
-           value.name = "extent")
-dt <- dt[year != 1978]
-dt[, hemis := "Arctic"]
-dt <- unique(dt)
-dt <- dt[, month := factor(month, levels = c("September", 
-                                             "October", 
-                                             "November", 
-                                             "December", 
-                                             "January", 
-                                             "February", 
-                                             "March", 
-                                             "April", 
-                                             "May", 
-                                             "June", 
-                                             "July", 
-                                             "August"))]
-dt <- dt[order(month, year)]
-```
 
 ```{r echo=FALSE, fig.width=14, fig.asp=0.32}
+dt <- readRDS("data/time-series-cyclic.rds") 
+dt <- dt[hemis == "Arctic"]
 ggplot(dt, aes(x = year, y = extent)) +
   geom_line(size = 1, na.rm = TRUE, color = rcb("dark_BG")) +
   facet_wrap(vars(month), ncol = 12, strip.position = "bottom") +
@@ -848,9 +1057,9 @@ A time series showing the behavior of cyclic sub-series.
 ```{r echo=FALSE}
 x <- build_frame(
    "variable"   , "structure" |
-   "ice extent" , "quantitative variable" | 
-   "year"       , "categorical variable, ordinal, 43 levels" |
-   "month"      , "categorical variable, ordinal, 12 levels" )
+   "ice extent" , "quantitative" | 
+   "year"       , "categorical, ordinal, 43 levels" |
+   "month"      , "categorical, ordinal, 12 levels" )
 my_table(x)
 ```
 ]
@@ -872,39 +1081,9 @@ class:left
 
 # Time series, cyclic, superposed
 
-```{r}
-SH <- fread("data/ice_extent_SH.csv", header = TRUE)
-SH <- SH[, 1:13]
-setnames(SH, "V1", "year")
-SH <- melt(SH, 
-           id.vars = "year", 
-           variable.name = "month", 
-           value.name = "extent")
-SH <- SH[year != 1978]
-SH[, hemis := "Antarctic"]
-SH <- unique(SH)
-SH <- SH[, month := factor(month, levels = c("September", 
-                                             "October", 
-                                             "November", 
-                                             "December", 
-                                             "January", 
-                                             "February", 
-                                             "March", 
-                                             "April", 
-                                             "May", 
-                                             "June", 
-                                             "July", 
-                                             "August"))]
-SH <- SH[order(month, year)]
-
-dt <- rbindlist(list(dt, SH))
-
-# label data in one panel only
-my_text <- dt[month == "September" & year == "1979"]
-
-```
-
 ```{r echo=FALSE, fig.width=14, fig.asp=0.32}
+dt <- readRDS("data/time-series-cyclic.rds") 
+my_text <- dt[month == "September" & year == "1979"]
 ggplot(dt, aes(x = year, y = extent, color = hemis)) +
   geom_line(size = 1, na.rm = TRUE) +
   facet_wrap(vars(month), ncol = 12, strip.position = "bottom") +
@@ -937,10 +1116,10 @@ Adding *hemisphere* as a categorical variable.
 ```{r echo=FALSE}
 x <- build_frame(
    "variable"   , "structure" |
-   "ice extent" , "quantitative variable" | 
-   "year"       , "categorical variable, ordinal, 43 levels" |
-   "month"      , "categorical variable, ordinal, 12 levels" |
-   "hemisphere" , "categorical variable, nominal, 2 levels")
+   "ice extent" , "quantitative" | 
+   "year"       , "categorical, ordinal, 43 levels" |
+   "month"      , "categorical, ordinal, 12 levels" |
+   "hemisphere" , "categorical, nominal, 2 levels")
 my_table(x)
 ```
 ]
@@ -961,46 +1140,11 @@ my_table(x)
 
 
 
----
-class: left
-
-# Diverging stacked bar chart
-
-Designed for reporting survey data.    
-The quantitative variable is the percent choosing a particular response. 
-
-
-<div class="my-footer">
-<span>Data source: Source  
-<a href="https://site">Link</a></span>
-</div> 
-
-
-
-
-
 
 ---
-class: left
+class:inverse, center, middle
 
-# Scatterplot matrix
-
-Designed to display the pair-wise dependence of three or more quantitative variables.
-
-<div class="my-footer">
-<span>Data source: Source  
-<a href="https://site">Link</a></span>
-</div> 
-
-
-
-
-
-
-
-
-
-
+# Displaying distributions
 
 
 
@@ -1016,16 +1160,459 @@ Designed to display the pair-wise dependence of three or more quantitative varia
 ---
 class: left
 
-# Conditioning chart
+# Strip chart
 
-Designed to display the mutual dependence of three or four quantitative variables.
+Designed to display the distribution of a single quantitative variable.
+
+<br>
+
+```{r, fig.asp = 0.15, fig.width = 16}
+# full distribution, jittered
+library("GDAdata")
+set.seed(20181216)
+ggplot(SpeedSki, aes(x = Speed, y = 0)) +
+  geom_jitter(size = 5, width = 0, height = 0.2, alpha = 0.5) +
+  scale_y_continuous(limits = 1.5 * c(-1, 1)) +
+  theme_graphclass(font_size = 20) +
+  labs(x = "Speed (km/hr)", 
+       y = "", 
+       title = "Each marker is one skier in one event") +
+  theme(axis.text.y = element_blank(), 
+        panel.grid.major.y = element_blank(), 
+        panel.grid.minor.y = element_blank())
+```
+
+<br>
+
+.pull-left[
+```{r echo=FALSE}
+x <- build_frame(
+   "variable" , "structure" |
+   "speed"    , "quantitative")
+my_table(x)
+```
+]
+.pull-right[
+- Designed to show all data values
+
+- Data markers "jittered" to mitigate overprinting
+]
 
 <div class="my-footer">
-<span>Data source: Source  
-<a href="https://site">Link</a></span>
+<span>Data source: 2011 World speed skiing competition, in the
+<a href="https://CRAN.R-project.org/package=GDAdata">GDAdata</a> R package</span>
 </div> 
 
 
 
 
+
+
+
+
+
+
+
+---
+class: left
+
+# Strip chart, comparative
+
+Subset by a category and distinguish levels by row.  
+
+<br>
+
+```{r, fig.asp = 0.2, fig.width = 16}
+# full distribution, jittered
+ggplot(SpeedSki, aes(x = Speed, y = reorder(Event, Speed, median))) +
+  geom_jitter(size = 5, width = 0, height = 0.15, alpha = 0.4) +
+  theme_graphclass(font_size = 20) +
+  labs(x = "Speed (km/hr)", 
+       y = "", 
+       title = "Each marker is one skier") +
+  theme(panel.grid.minor.y = element_blank())
+```
+
+.pull-left[
+```{r echo=FALSE}
+x <- build_frame(
+   "variable"   , "structure" |
+   "speed"      , "quantitative" |
+   "event"      , "categorical, nominal, 3 levels")
+my_table(x)
+```
+]
+.pull-right[
+- Rows ordered by median value
+
+- Common horizontal scale 
+]
+
+<div class="my-footer">
+<span>Data source: 2011 World speed skiing competition, in the
+<a href="https://CRAN.R-project.org/package=GDAdata">GDAdata</a> R package</span>
+</div> 
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Strip chart, comparative, superposed
+
+Subset by another category and distinguish levels by color. 
+
+<br>
+
+```{r, fig.asp = 0.2, fig.width = 16}
+# full distribution, jittered
+ggplot(SpeedSki, aes(x = Speed, 
+                     y = reorder(Event, Speed, median), 
+                     color = Sex, 
+                     fill = Sex)) +
+  geom_jitter(size = 5, shape = 21, width = 0, height = 0.15) +
+  theme_graphclass(font_size = 20) +
+  labs(x = "Speed (km/hr)", 
+       y = "", 
+       title = "Each marker is one skier") +
+  theme(panel.grid.minor.y = element_blank(), 
+        legend.position = "none") +
+  scale_color_manual(values = c(rcb("dark_BG"), rcb("dark_Br"))) +
+  scale_fill_manual(values = c(rcb("mid_BG"), rcb("light_Br"))) + 
+  geom_text(aes(x = 200, 
+                y = 2.6, 
+                label = "women"), 
+            color = rcb("dark_BG"), 
+            size = 7) +
+  geom_text(aes(x = 210, 
+                y = 2.6, 
+                label = "men"), 
+            color = rcb("dark_Br"), 
+            size = 7)
+```
+
+.pull-left[
+```{r echo=FALSE}
+x <- build_frame(
+   "variable"   , "structure" |
+   "speed"      , "quantitative" |
+   "event"      , "categorical, nominal, 3 levels", 
+   "sex"        , "categorical, nominal, 2 levels")
+my_table(x)
+```
+]
+.pull-right[
+- Direct labeling eliminates the legend
+
+- Colors safe for color-vision-deficient viewers 
+]
+
+<div class="my-footer">
+<span>Data source: 2011 World speed skiing competition, in the
+<a href="https://CRAN.R-project.org/package=GDAdata">GDAdata</a> R package</span>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Box and whisker chart
+
+Designed to summarize the distribution of a single quantitative variable.
+
+<br>
+
+```{r, fig.asp = 0.15, fig.width = 16}
+dt <- readRDS("data/boxplot.rds")
+ggplot(dt, aes(x = enrolled)) +
+  geom_boxplot(size = 1, width = 0.5) +
+  labs(x = "Time to graduate (years)", 
+       y = "", 
+       title = "Graduates of 4-year US universities (N = 269,057)") +
+  theme_graphclass(font_size = 20) +
+  theme(axis.text.y        = element_blank(), 
+        panel.grid.major.y = element_blank(), 
+        panel.grid.minor.y  = element_blank(), 
+        axis.ticks.y       = element_blank()) +
+  scale_y_continuous(limits = c(-1, 1))
+```
+
+<br>
+
+.pull-left[
+```{r echo=FALSE}
+x <- build_frame(
+   "variable"   , "structure" |
+   "years"      , "quantitative")
+my_table(x)
+```
+]
+.pull-right[
+- Shows a 5-point summary of distributions 
+
+- Useful when too much data for a strip chart 
+]
+
+<div class="my-footer">
+<span>Data source: MIDFIELD subset from the 
+<a href="https://github.com/graphdr/graphclassmate">graphclassmate</a> R package</span>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Box and whisker chart, comparative
+
+Subset by a category and distinguish levels by row.
+
+<br>
+
+```{r, fig.asp = 0.16, fig.width = 16}
+dt <- readRDS("data/boxplot-compare.rds")
+ggplot(dt, aes(x = enrolled, y = reorder(path, -enrolled, median))) +
+  geom_boxplot(size = 1, width = 0.45, outlier.shape = NA) +
+  labs(x = "Time to graduate (years)", 
+       y = "", 
+       title = "Graduates of 4-year US universities (N = 269,057)") +
+  theme_graphclass(font_size = 20) +
+  theme(panel.grid.major.y = element_blank(), 
+        panel.grid.minor.y  = element_blank(), 
+        axis.ticks.y       = element_blank())
+```
+
+<br>
+
+.pull-left[
+```{r echo=FALSE}
+x <- build_frame(
+   "variable" , "structure" |
+   "years"    , "quantitative" |
+   "group"    , "categorical, nominal, 2 levels" )
+my_table(x)
+```
+]
+.pull-right[
+- Convention "up" is "better", so row medians decrease from bottom to top
+
+- Outliers omitted 
+]
+
+<div class="my-footer">
+<span>Data source: MIDFIELD subset from the 
+<a href="https://github.com/graphdr/graphclassmate">graphclassmate</a> R package</span>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Box and whisker chart, comparative
+
+Merge two categories (path and sex) into a new "Group" category
+
+<br>
+
+```{r, fig.asp = 0.23, fig.width = 16}
+dt <- readRDS("data/boxplot-merge-category.rds")
+ggplot(dt, aes(x = enrolled, 
+               y = reorder(sex_path, -enrolled, median), 
+               fill = path, 
+               color = path
+               )) +
+  geom_boxplot(size = 1, width = 0.45, outlier.shape = NA) +
+  labs(x = "Time to graduate (years)", 
+       y = "", 
+       title = "Graduates of 4-year US universities (N = 269,057)") +
+  theme_graphclass(font_size = 20) +
+  theme(panel.grid.major.y = element_blank(), 
+        panel.grid.minor.y  = element_blank(), 
+        axis.ticks.y       = element_blank())+ 
+  scale_color_manual(values = c(rcb("dark_BG"), rcb("dark_Br"))) +
+  scale_fill_manual(values = c(rcb("light_BG"), rcb("light_Br"))) + 
+  guides(fill = guide_legend(title = NULL, reverse = TRUE),
+         color = "none")
+```
+
+  
+<br>
+
+.pull-left[
+```{r echo=FALSE}
+x <- build_frame(
+   "variable" , "structure" |
+   "years"    , "quantitative" |
+   "group"    , "categorical, nominal, 4 levels" )
+my_table(x)
+```
+]
+.pull-right[
+- Direct comparison easier without facets
+
+- Colors and legend added for clarity 
+]
+
+<div class="my-footer">
+<span>Data source: MIDFIELD subset from the 
+<a href="https://github.com/graphdr/graphclassmate">graphclassmate</a> R package</span>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class:inverse, center, middle
+
+# Summary
+
+## Chart design and rhetorical considerations
+
+
+
+
+
+
+---
+class: left
+
+# Chart design
+
+.pull-left[
+**Chart selection** 
+
+- What are your variables, by name?
+
+- Is a variable quantitative or categorical?
+
+- Is a categorical variable naturally ordered (ordinal) or not (nominal)?
+
+- Starting with a small number of variables, what chart types match the data structure? 
+
+- How does the chart type change as you add new variables?
+]
+.pull-right[
+**Chart aesthetics**
+
+- Superposed designs work best with small numbers of subsets or when the subsets visually cluster. 
+
+- Faceted designs permit a greater number of subsets to be compared. 
+
+- Use color  deliberately. Choose colors that are safe for color-vision-deficient viewers. 
+
+- Deliberately assign the size, shape, and color of every graphical element: data points, lines, bars, grids, scale text, titles, labels, etc.&mdash;every pixel.  
+]
+
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Rhetorical considerations
+
+.pull-left[
+**Audience and message** 
+
+- What is your story?
+
+- Does the visual evidence directly support your verbal argument? 
+
+- Have you placed the story in context visually? 
+
+- Who is your audience?
+
+- Does the chart violate conventions expected by the audience?
+
+- If so, is the violation worth the trouble of overcoming audience resistance? 
+]
+.pull-right[
+**Ethics of visual rhetoric** 
+
+- Have you lied to yourself by seeing what you want to see?
+
+- Have you lied by catering to what the audience wants to see? 
+
+- All there alternative explanations for what the chart shows? 
+
+- Are your data dubious? 
+
+- Are your data insufficient?
+
+- Have you concealed information or concealed a large uncertainty? 
+
+- Does your chart suggest misleading patterns? 
+
+
+]
+
+
+
+
+---
+class:inverse, center, middle
 
