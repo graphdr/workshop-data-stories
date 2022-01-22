@@ -11,11 +11,15 @@ knitr::opts_chunk$set(echo = FALSE)
 
 **Limitations of common graph types**
 
-In the first session we demonstrate avoiding the perceptual limitations of common graph types to    
+In the first session we demonstrate the perceptual limitations of common graph types and suggest more effective alternatives. 
+
+<img src="images/stacked-bar-preview.png" alt="stacked-bar chart" style="width:300px">
+
+The rationale behind alternative designs is illustrated with the goals of 
   
-- Improve perception of stories in the data
-- Make it easier to reason quantitatively about the data
-- Thereby enhancing our credibility with the audience
+- Improving perception of stories in the data
+- Making it easier to reason quantitatively about the data
+- Enhancing our credibility with the audience
 
 
 [**slides**](slides/slides-day1-01.html)
