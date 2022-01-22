@@ -26,20 +26,15 @@ library(graphclassmate)
 
 class: right
 
-.left-column[
-<img src="img/pie-preview.png" alt="pie chart" style="height:200px;">
-
-<img src="img/dot-chart-preview.png" alt="pie chart" style="width:200px;">
-
-<img src="img/stacked-bar-03.png" alt="pie chart" style="width:200px;">
-
-<img src="img/scatterplot-preview.png" alt="pie chart" style="width:200px;">
-]
 
 .right-column[
 # Perception, reasoning, and credibility
 
 ## Limitations of common graph types
+
+<br>
+
+<br>
 
 Richard Layton   
 
@@ -60,11 +55,56 @@ Richard Layton
 
 
 
+
+
+
+
+
+
+---
+class: left
+
+# We cover four main topics
+
+.left-column[
+<img src="img/pie-preview.png" alt="stacked-bar chart" style="height:97px"><img src="img/three-d-pie-preview.png" alt="stacked-bar chart" style="height:80px;width:95px">
+
+<img src="img/three-d-bar-preview.png" alt="stacked-bar chart" style="height:97px;width:190px">
+
+<img src="img/stacked-bar-03.png" alt="stacked-bar chart" style="height:97px;width:190px">
+
+<img src="img/cairo-face.png" alt="stacked-bar chart" style="height:97px"><img src="img/evergreen-face.png" alt="stacked-bar chart" style="height:97px">
+]
+
+.right-column[
+### Pie charts and more effective alternatives
+
+<br>
+
+### Bar charts and more effective alternatives
+
+<br>
+
+### Aligning the design to the story
+
+<br>
+
+### Advice from experts
+]
+ 
+
+
+
+
+
+
+
+
+
 ---
 class:inverse, center, middle
 
 # Pie charts
-
 
 
 
@@ -670,6 +710,25 @@ Data source:
 
 
 
+
+
+
+
+
+---
+class:inverse, center, middle
+
+# Aligning the graph design to the story
+
+
+
+
+
+
+
+
+
+
 ---
 class: left
 
@@ -713,6 +772,11 @@ Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlo
 
 
 
+
+
+
+
+
 ---
 class: left
 
@@ -724,9 +788,8 @@ We have three variables: year, reason, and percent response.
 
 - Each reason varies over time    
 
-- None of the interior segments have a common baseline, so their trends cannot be easily observed    
+- None of the interior segments have a common baseline, so their trends cannot be easily observed
 
-- The appropriate graph design for time-varying data is a scatterplot 
 
 <div class="my-footer">
 <span>
@@ -738,10 +801,43 @@ Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlo
 
 
 
+
+
 ---
 class: left
 
-# Scatterplots show the evolution of each variable over time
+# The appropriate design for a time series is a line graph
+
+Too much variation and overlap to see any trend clearly
+
+```{r echo=FALSE, fig.asp=0.4, fig.width=16} 
+ggplot(dt, aes(x = year, y = pct, color = reason)) +
+  geom_line(linetype = 2) +
+  geom_point(size = 4) +
+  labs(y = "", x = "PhD completion year") +
+  theme_graphclass(font_size = 20) +
+  scale_color_brewer(palette = "Dark2")
+```
+
+<div class="my-footer">
+<span>
+Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlook of engineering PhDs” <em>J of Engineering Education</em> 110 (4): 977–1002.  
+</span>
+</div> 
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Separating reasons into individual panels clarifies the data
 
 ```{r echo=FALSE, fig.asp=0.45, fig.width=13}
 ggplot(dt, aes(x = year, y = pct)) +
