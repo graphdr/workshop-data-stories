@@ -22,6 +22,6 @@ The rationale behind alternative designs is illustrated with the goals of
 - Enhancing our credibility with the audience
 
 
-[**slides**](slides/slides-day1-01.html)
+[[**slides**]](slides/slides-day1-01.html)
 
 

@@ -24,5 +24,5 @@ The session should encourage you to:
 - Explore different graph types suited to the data and the question 
 - Keep reading and learning&mdash;an unfamiliar design may be just what you need
 
-[**slides**](slides/slides-day2-01.html)
+[[**slides**]](slides/slides-day2-01.html)
  

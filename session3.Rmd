@@ -18,4 +18,4 @@ In the third session we study the visual rhetoric of a deliberate visual lie in 
 - What legitimate stories these data tell
 - What legitimate questions the data raise 
 
-[**slides**] in progress
+[[**slides**]]() in progress
