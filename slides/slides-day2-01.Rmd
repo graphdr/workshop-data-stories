@@ -33,21 +33,65 @@ my_table <- function(x){
   kable_styling(position = "float_left", font_size = 18) %>%
   column_spec(1, background = "white") %>%
   column_spec(2, background = "white")  %>%
-  add_header_above(c("Data structure" = ncol(x)))
+  add_header_above(c("Variables" = ncol(x)))
 }
+uniform_point <- geom_point(size = 5, 
+                            shape = 21, 
+                            color = "black", 
+                            fill = rcb("dark_Gray"))
+
+uniform_point_2 <- geom_point(size = 3, 
+                              shape = 21, 
+                              alpha = 0.75, 
+                              color = "black", 
+                              fill = rcb("dark_Gray"))
+
+uniform_color <- scale_color_manual(values = "black")
+uniform_fill  <- scale_fill_manual(values = rcb("dark_Gray")) 
+
+uniform_jitter <- geom_jitter(size = 5, 
+                              shape = 21, 
+                              alpha = 0.75, 
+                              width = 0, 
+                              height = 0.2)
+
+superpose_point <- geom_point(size = 5, shape = 21)
+
+superpose_color <- scale_color_manual(values = c(rcb("dark_Gn"),                                                              rcb("dark_PR")))
+superpose_fill_mid <- scale_fill_manual(values = c(rcb("mid_Gn"), 
+                                               rcb("mid_PR"))) 
+superpose_fill_pale <- scale_fill_manual(values = c(rcb("pale_Gn"), 
+                                               rcb("pale_PR"))) 
+
+
+
 ```
 
 class: right
 
+```{r}
+library(magick)
+a <- image_read("slides/img/dot-superpose-preview.png")
+b <- image_read("slides/img/scatterplot-superpose-preview.png")
+c <- image_read("slides/img/time-series-cyclic-preview.png")
+d <- image_read("slides/img/boxplot-preview.png")
 
-.pull-left[
-<img src="img/comparison-preview.png" alt="multiway chart" style="width:800px;height:165px">    
-<img src="img/correlation-preview.png" alt="faceted scatterplot" style="width:800px;height:230px">    
-<img src="img/evolution-preview.png" alt="cycle chart" style="width:800px;height:205px">    
+z <- image_append(c(a, b), stack = TRUE)
+z <- image_append(c(z, c), stack = TRUE)
+z <- image_append(c(z, d), stack = TRUE)
+image_write(z, 
+        path = "slides/img/test-composite.png", 
+        format = "png")
+```
+
+
+.left-column[
+<img src="img/test-composite.png">
 ]
 
-.pull-right[
 # Expanding your graphical repertoire
+
+###  Variables + Argument &#x2192; Design
 
 <br>
 
@@ -66,8 +110,6 @@ Richard Layton
 <https://github.com/graphdr>
 
 <a href="mailto:graphdoctor@gmail.com">graphdoctor@gmail.com</a>
-]
-
 
 
 
@@ -82,55 +124,49 @@ Richard Layton
 ---
 class: left
 
-# Design depends on data structure and visual purpose
-
-.pull-left[
-Comparing data
-
-$\quad$ **dot chart** &mdash; *superposed*
-
-$\quad$ **multiway** &mdash; *superposed, faceted*
-
-$\quad$ 
-
-Revealing correlations
-
-$\quad$ **scatterplot**  &mdash; *superposed, faceted*
-
-$\quad$ 
-
-Showing evolution
-
-$\quad$ **time series**  &mdash; *superposed, faceted*
-
-$\quad$ **cyclic time series**  &mdash; *superposed*
+.left-column[
+<img src="img/test-composite.png">
 ]
 
-.pull-right[
-Displaying distributions 
+#### $\quad$
 
-$\quad$ **strip chart** &mdash; *comparative, superposed*
+#### $\quad$ Comparing data
 
-$\quad$ **box and whisker chart** &mdash; *comparative*
+#### $\quad$
 
-$\quad$ 
+<br>
 
-Multivariate designs to investigate on your own 
+#### $\quad$ Revealing correlations
 
-- conditioning (co-plot) chart
-- diverging stacked bar chart
-- parallel coordinate chart 
-- financial (OHLC) chart
-- scatterplot matrix 
-- dot density map 
+#### $\quad$
 
-]
+<br>
+
+#### $\quad$ Showing evolution
+
+#### $\quad$
+
+<br>
+
+#### $\quad$ Displaying distributions
+
 
 <div class="my-footer">
 <span>
 Optimal design categories from: Jean-luc Doumont (2009) <em>Trees, Maps and Theorems</em>, Principiae, p. 133.
 </span>
 </div> 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -168,7 +204,9 @@ The dot chart and its superposed and faceted derivatives are good substitutes  f
 ```{r echo=FALSE, fig.width=7, fig.asp=1/1.7}
 dt <- readRDS("data/dot-chart.rds")
 ggplot(dt, aes(x = per_thou, y = age)) +
-  geom_point(size = 5, shape = 16, color = rcb("dark_BG")) + 
+  uniform_point + 
+  uniform_color +
+  uniform_fill +
   theme_graphclass(font_size = 18) +
   labs(x = "US infant deaths per 1000 births, 2007-2016", 
        y = "Age", 
@@ -195,9 +233,9 @@ my_table(x)
 
 <br>
 
-- 1 category: levels on rows    
+- category levels on rows    
 
-- 1 quantity: common horizontal scale
+- common horizontal scale for quantity
 ]
 
 <div class="my-footer">
@@ -228,11 +266,13 @@ dt <- readRDS("data/multiway-2-panel.rds")
 # label data
 age      <- c("15-19")
 race     <- c("Non-Black", "Black")
-per_thou <- c(5.5, 13)
+per_thou <- c(5.2, 13)
 my_text  <- data.table(age, race, per_thou)
 
 ggplot(dt, aes(x = per_thou, y = age, color = race, fill = race)) +
-  geom_point(size = 5, shape = 21) + 
+  superpose_point + 
+  superpose_color +
+  superpose_fill_mid +
   theme_graphclass(font_size = 18) +
   labs(x = "US infant deaths per 1000 births, 2007-2016", 
        y = "Age", 
@@ -240,10 +280,8 @@ ggplot(dt, aes(x = per_thou, y = age, color = race, fill = race)) +
   scale_x_continuous(limits = c(3, 18), breaks = seq(0, 50, 5)) +
   theme(axis.title.y = element_text(angle = 0, hjust = 1, vjust = 1), 
         legend.position = "none") +
-  scale_color_manual(values = c(rcb("dark_BG"), rcb("dark_BG"))) +
-  scale_fill_manual(values = c(rcb("dark_BG"), "white")) +   
   geom_text(data = my_text, 
-            mapping = aes(x = per_thou, y = 5.55, label = race),
+            mapping = aes(x = per_thou, y = 5.54, label = race),
             hjust = c(0, 0), 
             size = 6, 
             color = "black")
@@ -268,10 +306,30 @@ my_table(x)
 
 <br>
 
-- 2 categories: levels by row and by color
+- category 1, levels on rows
 
-- 1 quantity: common horizontal scale
+- category 2, levels by color
+
+- common horizontal scale for quantity
 ]
+
+```{r}
+# -------------------- COVER PAGE -------------------- 
+p <- ggplot(dt, aes(x = per_thou, y = age, color = race, fill = race)) +
+  geom_point(shape = 21) + 
+  labs(x = "", y = "") + 
+  scale_color_manual(values = c(rcb("dark_Gn"), rcb("dark_PR"))) +
+  scale_fill_manual(values = c(rcb("mid_Gn"), rcb("mid_PR"))) +
+  theme(legend.position = "none", 
+        axis.text  = element_blank(), 
+        axis.ticks = element_blank(), 
+        plot.margin = unit(c(0, 0, 0, 0), "lines"))
+
+ggsave(filename = "slides/img/dot-superpose-preview.png", 
+       width = 3,
+       height = 1.8,
+       units = "in")
+```
 
 <div class="my-footer">
 <span>Data source: US Centers for Disease Control and Prevention  
@@ -303,7 +361,7 @@ Same data but changing the superposed design to a faceted design.
 ```{r echo=FALSE, fig.width=7, fig.asp=1/1.7}
 dt <- readRDS("data/multiway-2-panel.rds")
 ggplot(dt, aes(x = per_thou, y = age)) +
-  geom_point(size = 5, shape = 16) + 
+  uniform_point + 
   facet_wrap(vars(reorder(race, per_thou, median)), as.table = FALSE) + 
   theme_graphclass(font_size = 18) +
   labs(x = "US infant deaths per 1000 births, 2007-2016", 
@@ -369,7 +427,7 @@ New category changes the number of facets.
 dt <- readRDS("data/multiway-4-panel.rds")
 ggplot(dt, aes(x = per_thou, y = age)) +
   facet_wrap(vars(reorder(region, per_thou, median)), ncol = 4) +
-  geom_point(size = 5, shape = 16) + 
+  uniform_point + 
   theme_graphclass(font_size = 20) +
   labs(x = "US infant deaths per 1000 births, 2007-2016", 
        y = "Age") + 
@@ -421,7 +479,7 @@ Switching facet and row categories to change the visual comparison.
 dt <- readRDS("data/multiway-4-panel.rds")
 ggplot(dt, aes(x = per_thou, y = reorder(region, per_thou, median))) +
   facet_wrap(vars(age), ncol = 6, as.table = FALSE) +
-  geom_point(size = 5, shape = 16) + 
+  uniform_point + 
   theme_graphclass(font_size = 20) +
   labs(x = "US infant deaths per 1000 births, 2007-2016", 
        y = "") + 
@@ -483,15 +541,15 @@ my_text  <- data.table(age, region, race, per_thou)
 
 ggplot(dt, aes(x = per_thou, y = age, color = race, fill = race)) +
   facet_wrap(vars(reorder(region, region)), ncol = 4, as.table = FALSE) +
-  geom_point(size = 5, shape = 21) + 
+  superpose_point + 
+  superpose_color +
+  superpose_fill_mid +
   theme_graphclass(font_size = 20) +
   labs(x = "US infant deaths per 1000 births, 2007-2016", 
        y = "Age") + 
   scale_x_continuous(limits = c(3, 18), breaks = seq(0, 50, 5)) +
   theme(axis.title.y = element_text(angle = 0, hjust = 1, vjust = 1), 
         legend.position = "none") +
-  scale_color_manual(values = c(rcb("dark_BG"), rcb("dark_BG"))) +
-  scale_fill_manual(values = c(rcb("dark_BG"), "white")) +   
   geom_text(data = my_text, 
             mapping = aes(x = per_thou, y = 5.55, label = race),
             hjust = c(1, 0), 
@@ -565,7 +623,7 @@ Designed to reveal correlations between two quantitative variables.
 dt <- readRDS(file = "data/scatterplot.rds")
 dt <- dt[year == max(year)]
 ggplot(dt, aes(x = per_capita_gdp/1000, y = lifeExp)) +
-  geom_point(size = 3, alpha = 0.5) + 
+  uniform_point_2 +  
   labs(x = "2021 GDP per capita (thousands Intl dollars)", 
        y = "Life expectancy in 2021 (years)", 
        title = "Each point is a country") + 
@@ -625,7 +683,7 @@ ggplot(dt,
            color = four_regions)) +
   geom_point(size = 3, 
              shape = 16, 
-             alpha = 0.9) + 
+             alpha = 0.8) + 
   labs(x = "2021 GDP per capita (thousands Intl dollars)", 
        y = "Life expectancy in 2021 (years)", 
        title = "Each point is a country") + 
@@ -663,8 +721,27 @@ my_table(x)
 - Works best when clusters of subsets are distinct.
 
 - Requires a legend if data cannot be directly labeled. 
-
 ]
+
+```{r}
+# -------------------- COVER PAGE -------------------- 
+p <- ggplot(dt, 
+       aes(x = per_capita_gdp/1000, 
+           y = lifeExp, 
+           color = four_regions)) +
+  geom_point() + 
+  labs(x = "", y = "") + 
+  scale_color_brewer(palette = "PRGn",direction = 1) +
+  theme(legend.position = "none", 
+        axis.text  = element_blank(), 
+        axis.ticks = element_blank(), 
+        plot.margin = unit(c(0, 0, 0, 0), "lines"))
+
+ggsave(filename = "slides/img/scatterplot-superpose-preview.png", 
+       width = 3,
+       height = 1.8,
+       units = "in")
+```
 
 <div class="my-footer">
 <span>Data source:  
@@ -696,7 +773,7 @@ ggplot(dt,
        aes(x = per_capita_gdp/1000, 
            y = lifeExp)) +
   facet_wrap(vars(four_regions), ncol = 4) + 
-  geom_point(size = 3, alpha = 0.5) + 
+  uniform_point_2 +  
   labs(x = "2021 GDP per capita (thousands Intl dollars)", 
        y = "Life expectancy in 2021 (years)") + 
   scale_x_continuous(limits = c(0, 150)) +
@@ -743,7 +820,7 @@ Same three variables with "Global region" levels in 8 facets.
 ```{r echo=FALSE, fig.width=14, fig.asp=0.4}
 dt <- readRDS(file = "data/scatterplot.rds")
 ggplot(dt, aes(x = per_capita_gdp/1000, y = lifeExp)) +
-  geom_point(size = 3, alpha = 0.5) + 
+  uniform_point_2 +   
   labs(x = "2021 GDP per capita (thousands Intl dollars)", 
        y = "Life expectancy in 2021 (years)") + 
   facet_wrap(vars(reorder(eight_regions, lifeExp, median)), 
@@ -793,7 +870,7 @@ Similar to a scatterplot with time as the independent variable.
 dt <- readRDS("data/time-series.rds")
 ggplot(dt, aes(x = year, y = lifeExp)) +
   geom_line(linetype = 2) + 
-  geom_point(size = 2) +
+  geom_point(size = 2, color = "#7570b3") +
   labs(x = "Year", 
        y = "Life expectancy (years)") +
     theme_graphclass(font_size = 20) +
@@ -803,8 +880,8 @@ ggplot(dt, aes(x = year, y = lifeExp)) +
            y = c(73), 
            label = c("US"), 
            size = 6, 
-           hjust = 0
-  )
+           hjust = 0)
+
 ```
 ]
 
@@ -857,7 +934,7 @@ Time series conditioned by a categorical variable, with all lines in the same fa
 .pull-left[
 ```{r echo=FALSE, fig.width=7, fig.asp=1/1.3}
 dt <- readRDS("data/time-series-superpose.rds")
-ggplot(dt, aes(x = year, y = lifeExp, color = country)) +
+ggplot(dt, aes(x = year, y = lifeExp, color = country, fill = country)) +
   geom_line(linetype = 2) + 
   geom_point(size = 2) +
   labs(x = "Year", 
@@ -872,7 +949,7 @@ ggplot(dt, aes(x = year, y = lifeExp, color = country)) +
            hjust = 0
   ) +
   theme(legend.position = "none") +
-  scale_color_manual(values = c(rcb("dark_BG"), rcb("light_BG"), rcb("mid_BG")))
+  scale_color_manual(values = c("#1b9e77", "#d95f02", "#7570b3"))
 ```
 ]
 
@@ -896,6 +973,8 @@ my_table(x)
 <br>
 
 - Color is often used to distinguish superposed category levels.   
+
+- Use colors safe for viewers with color-vision-deficiency
 
 - Labels eliminate the need for a legend. 
 ]
@@ -941,7 +1020,7 @@ ggplot(dt, aes(x = year, y = lifeExp, color = country)) +
            hjust = 0
   ) +
   theme(legend.position = "none") +
-  scale_color_manual(values = c(rcb("dark_BG"), rcb("light_BG"), rcb("mid_BG")))
+  scale_color_manual(values = c("#1b9e77", "#d95f02", "#7570b3"))
 ```
 ]
 .pull-right[
@@ -964,6 +1043,8 @@ my_table(x)
 <br>
 
 - Time series are often displayed as line charts to make the differences easier to see.
+
+
 ]
 
 <div class="my-footer">
@@ -1034,7 +1115,7 @@ class:left
 dt <- readRDS("data/time-series-cyclic.rds") 
 dt <- dt[hemis == "Arctic"]
 ggplot(dt, aes(x = year, y = extent)) +
-  geom_line(size = 1, na.rm = TRUE, color = rcb("dark_BG")) +
+  geom_line(size = 1, na.rm = TRUE, color = rcb("dark_Gn")) +
   facet_wrap(vars(month), ncol = 12, strip.position = "bottom") +
   theme_minimal() +
   labs(x = "", 
@@ -1084,6 +1165,7 @@ class:left
 ```{r echo=FALSE, fig.width=14, fig.asp=0.32}
 dt <- readRDS("data/time-series-cyclic.rds") 
 my_text <- dt[month == "September" & year == "1979"]
+
 ggplot(dt, aes(x = year, y = extent, color = hemis)) +
   geom_line(size = 1, na.rm = TRUE) +
   facet_wrap(vars(month), ncol = 12, strip.position = "bottom") +
@@ -1099,7 +1181,7 @@ ggplot(dt, aes(x = year, y = extent, color = hemis)) +
         plot.title = element_text(size = 18), 
         legend.position = "none"
         ) +
-  scale_color_manual(values = c(rcb("mid_Br"), rcb("dark_BG"))) +
+  scale_color_manual(values = c(rcb("dark_PR"), rcb("dark_Gn"))) +
   geom_text(data = my_text,
             mapping = aes(x = year, 
                           y = extent + c(2, -1.7), 
@@ -1123,6 +1205,30 @@ x <- build_frame(
 my_table(x)
 ```
 ]
+
+```{r}
+# -------------------- COVER PAGE -------------------- 
+ggplot(dt, aes(x = year, y = extent, color = hemis)) +
+  geom_line(size = 0.3, na.rm = TRUE) +
+  facet_wrap(vars(month), ncol = 12) +
+  labs(x = "", y = "") +
+  scale_color_manual(values = c(rcb("dark_PR"), rcb("dark_Gn"))) +
+  theme(legend.position = "none", 
+        axis.text  = element_blank(), 
+        axis.ticks = element_blank(), 
+        plot.margin = unit(c(0, 0, 0, 0), "null"),
+        panel.spacing = unit(0.04, "lines"),
+        panel.grid.major.x = element_blank(), 
+        panel.grid.minor.x = element_blank(), 
+        panel.grid.major.y = element_blank(), 
+        panel.grid.minor.y = element_blank(), 
+        strip.text = element_blank())
+
+ggsave(filename = "slides/img/time-series-cyclic-preview.png", 
+       width = 3,
+       height = 1.8,
+       units = "in")
+```
 
 <div class="my-footer">
 <span>Data source: NASA National Snow and Ice Data Center  
@@ -1169,9 +1275,14 @@ Designed to display the distribution of a single quantitative variable.
 ```{r, fig.asp = 0.15, fig.width = 16}
 # full distribution, jittered
 library("GDAdata")
+
+# for using uniform manual color and fill 
+SpeedSki$dummy <- "dummy"
 set.seed(20181216)
-ggplot(SpeedSki, aes(x = Speed, y = 0)) +
-  geom_jitter(size = 5, width = 0, height = 0.2, alpha = 0.5) +
+ggplot(SpeedSki, aes(x = Speed, y = 0, color = dummy, fill = dummy)) +
+  uniform_jitter +
+  uniform_color +
+  uniform_fill + 
   scale_y_continuous(limits = 1.5 * c(-1, 1)) +
   theme_graphclass(font_size = 20) +
   labs(x = "Speed (km/hr)", 
@@ -1179,7 +1290,8 @@ ggplot(SpeedSki, aes(x = Speed, y = 0)) +
        title = "Each marker is one skier in one event") +
   theme(axis.text.y = element_blank(), 
         panel.grid.major.y = element_blank(), 
-        panel.grid.minor.y = element_blank())
+        panel.grid.minor.y = element_blank(), 
+        legend.position = "none")
 ```
 
 <br>
@@ -1224,13 +1336,21 @@ Subset by a category and distinguish levels by row.
 
 ```{r, fig.asp = 0.2, fig.width = 16}
 # full distribution, jittered
-ggplot(SpeedSki, aes(x = Speed, y = reorder(Event, Speed, median))) +
-  geom_jitter(size = 5, width = 0, height = 0.15, alpha = 0.4) +
+set.seed(20181216)
+ggplot(SpeedSki, aes(x = Speed, 
+                     y = reorder(Event, Speed, median), 
+                     color = dummy,
+                     fill = dummy
+                     )) +
+  uniform_jitter +
+  uniform_color +
+  uniform_fill + 
   theme_graphclass(font_size = 20) +
   labs(x = "Speed (km/hr)", 
        y = "", 
        title = "Each marker is one skier") +
-  theme(panel.grid.minor.y = element_blank())
+  theme(panel.grid.minor.y = element_blank(), 
+        legend.position = "none")
 ```
 
 .pull-left[
@@ -1273,28 +1393,29 @@ Subset by another category and distinguish levels by color.
 
 ```{r, fig.asp = 0.2, fig.width = 16}
 # full distribution, jittered
+set.seed(20181216)
 ggplot(SpeedSki, aes(x = Speed, 
                      y = reorder(Event, Speed, median), 
                      color = Sex, 
                      fill = Sex)) +
-  geom_jitter(size = 5, shape = 21, width = 0, height = 0.15) +
+  uniform_jitter +
+  superpose_color + 
+  superpose_fill_mid +
   theme_graphclass(font_size = 20) +
   labs(x = "Speed (km/hr)", 
        y = "", 
        title = "Each marker is one skier") +
   theme(panel.grid.minor.y = element_blank(), 
         legend.position = "none") +
-  scale_color_manual(values = c(rcb("dark_BG"), rcb("dark_Br"))) +
-  scale_fill_manual(values = c(rcb("mid_BG"), rcb("light_Br"))) + 
   geom_text(aes(x = 200, 
                 y = 2.6, 
                 label = "women"), 
-            color = rcb("dark_BG"), 
+            color = rcb("dark_Gn"), 
             size = 7) +
   geom_text(aes(x = 210, 
                 y = 2.6, 
                 label = "men"), 
-            color = rcb("dark_Br"), 
+            color = rcb("dark_PR"), 
             size = 7)
 ```
 
@@ -1346,7 +1467,10 @@ Designed to summarize the distribution of a single quantitative variable.
 ```{r, fig.asp = 0.15, fig.width = 16}
 dt <- readRDS("data/boxplot.rds")
 ggplot(dt, aes(x = enrolled)) +
-  geom_boxplot(size = 1, width = 0.5) +
+  geom_boxplot(size = 1, 
+               width = 0.5, 
+               color = "black", 
+               fill = rcb("pale_Gray")) +
   labs(x = "Time to graduate (years)", 
        y = "", 
        title = "Graduates of 4-year US universities (N = 269,057)") +
@@ -1403,7 +1527,11 @@ Subset by a category and distinguish levels by row.
 ```{r, fig.asp = 0.16, fig.width = 16}
 dt <- readRDS("data/boxplot-compare.rds")
 ggplot(dt, aes(x = enrolled, y = reorder(path, -enrolled, median))) +
-  geom_boxplot(size = 1, width = 0.45, outlier.shape = NA) +
+  geom_boxplot(size = 1, 
+               width = 0.45, 
+               outlier.shape = NA, 
+               color = "black", 
+               fill = rcb("pale_Gray")) +
   labs(x = "Time to graduate (years)", 
        y = "", 
        title = "Graduates of 4-year US universities (N = 269,057)") +
@@ -1465,15 +1593,16 @@ ggplot(dt, aes(x = enrolled,
                color = path
                )) +
   geom_boxplot(size = 1, width = 0.45, outlier.shape = NA) +
+  superpose_color +
+  superpose_fill_pale +
   labs(x = "Time to graduate (years)", 
        y = "", 
        title = "Graduates of 4-year US universities (N = 269,057)") +
   theme_graphclass(font_size = 20) +
   theme(panel.grid.major.y = element_blank(), 
         panel.grid.minor.y  = element_blank(), 
-        axis.ticks.y       = element_blank())+ 
-  scale_color_manual(values = c(rcb("dark_BG"), rcb("dark_Br"))) +
-  scale_fill_manual(values = c(rcb("light_BG"), rcb("light_Br"))) + 
+        axis.ticks.y       = element_blank(), 
+        legend.key.height  = unit(15, "mm"))+ 
   guides(fill = guide_legend(title = NULL, reverse = TRUE),
          color = "none")
 ```
@@ -1495,6 +1624,36 @@ my_table(x)
 
 - Colors and legend added for clarity 
 ]
+
+
+```{r}
+# -------------------- COVER PAGE -------------------- 
+p <- ggplot(dt, aes(x = enrolled, 
+               y = reorder(sex_path, -enrolled, median), 
+               fill = path, 
+               color = path
+               )) +
+  geom_boxplot(size = 0.2, width = 0.45, outlier.shape = NA) +
+  superpose_color +
+  superpose_fill_pale +
+  labs(x = "", y = "") +
+  theme(legend.position = "none", 
+        axis.text  = element_blank(), 
+        axis.ticks = element_blank(), 
+        plot.margin = unit(c(0, 0, 0, 0), "null"),
+        panel.spacing = unit(0.02, "lines"),
+        # panel.grid.major.x = element_blank(), 
+        panel.grid.minor.x = element_blank(), 
+        panel.grid.major.y = element_blank(), 
+        panel.grid.minor.y = element_blank(), 
+        strip.text = element_blank())
+
+ggsave(filename = "slides/img/boxplot-preview.png", 
+       width = 3,
+       height = 1.8,
+       units = "in")
+```
+
 
 <div class="my-footer">
 <span>Data source: MIDFIELD subset from the 
@@ -1555,14 +1714,10 @@ class: left
 
 - Faceted designs permit a greater number of subsets to be compared. 
 
-- Use color  deliberately. Choose colors that are safe for color-vision-deficient viewers. 
+- Deliberately assign the size, shape, and color of every visual element.  
 
-- Deliberately assign the size, shape, and color of every graphical element: data points, lines, bars, grids, scale text, titles, labels, etc.&mdash;every pixel.  
+- Use color deliberately. Choose colors that are safe for color-vision-deficient viewers.
 ]
-
-
-
-
 
 
 
@@ -1584,30 +1739,26 @@ class: left
 
 - Have you placed the story in context visually? 
 
-- Who is your audience?
+- Who is your audience? 
 
-- Does the chart violate conventions expected by the audience?
+- Will the audience resist your conventions? 
 
-- If so, is the violation worth the trouble of overcoming audience resistance? 
+- If so, is overcoming audience resistance worth the effort? 
 ]
 .pull-right[
 **Ethics of visual rhetoric** 
 
-- Have you lied to yourself by seeing what you want to see?
+- Is your design equitable and inclusive? 
 
-- Have you lied by catering to what the audience wants to see? 
+- Are you seeing only what you want to see? What the audience wants to see? 
 
 - All there alternative explanations for what the chart shows? 
 
-- Are your data dubious? 
+- Are your data dubious? Insufficient?
 
-- Are your data insufficient?
-
-- Have you concealed information or concealed a large uncertainty? 
+- Have you concealed information? Concealed a large uncertainty? 
 
 - Does your chart suggest misleading patterns? 
-
-
 ]
 
 
@@ -1616,3 +1767,267 @@ class: left
 ---
 class:inverse, center, middle
 
+# Appendix
+
+## When you have more variables 
+
+
+
+
+
+
+---
+class: left
+
+
+# When you have more variables, look for appropriate designs 
+
+### Our examples have used a limited number of variables
+
+- 2 quantitative variables or less
+
+- 3 categorical variables or less
+
+
+### Expanding your multivariate graphical repertoire
+
+- scatterplot matrix
+
+- co-plot  
+
+- open-high-low-close (OHLC) chart
+
+- parallel coordinate chart
+
+- survey stacked-bar  chart
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Scatterplot matrix
+
+A grid of scatterplots showing the bivariate relationships between all pairs of variables.   
+
+.pull-left[
+Designed for datasets with a large number of quantitative variables. 
+
+Density plots (one per variable) on the diagonal. 
+
+Pearson correlation coefficients for each pair in the upper triangle.  
+
+Example: banknote dimensions, 100 each genuine and counterfeit 
+
+- 6 quantities    
+- 1 category
+
+]
+.pull-right[
+<img src="img/scatterplot-matrix-example.png" style="height:425px">
+]
+
+<div class="my-footer">
+<span>
+Data source: <em>bank</em> dataset included with the <a href="https://CRAN.R-project.org/package=gclus">gclus</a> R package
+</span>
+</div> 
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Conditioning plot (co-plot)
+
+A grid of scatterplots of two quantities that depend on ranges of one or two additional quantities. 
+
+  
+.pull-left[
+Designed for datasets with 3 or 4 quantitative variables. 
+
+The ranges of the conditioning variables are shown in panels adjacent to the main grid. 
+
+Example: air quality measurements
+
+- 4 quantities 
+
+
+]
+.pull-right[
+<img src="img/conditioning-plot-example.png" style="height:425px">
+]
+
+<div class="my-footer">
+<span>
+Data source: <em>airquality</em> dataset included in the <a href="https://cran.r-project.org/">base R</a> installation
+</span>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Open-high-low-close (OHLC) chart
+
+Time series of market prices.  
+  
+.left-column[
+Color can indicate levels of a category: 
+
+- close > open (green)
+- close < open (red)
+
+
+Example
+
+- 4 quantities
+- 2 categories
+
+]
+.right-column[
+<img src="img/financial-ohlc-example.png" style="height:425px">
+]
+
+<div class="my-footer">
+<span>
+Image from: <a href="https://datavizcatalogue.com/methods/OHLC_chart.html">
+The data visualization Decalogue</a >
+</span>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Parallel coordinate chart
+
+Each variable has its own vertical axis (usually scaled min to max). Each observation is a line. 
+
+
+
+  
+.left-column[
+
+Designed for datasets with a large number of quantitative variables.
+ 
+Example: banknote dimensions, 100 each genuine and counterfeit 
+
+- 6 quantities
+- 1 category
+
+]
+.right-column[
+<img src="img/parallel-coord-example.png">
+]
+
+<div class="my-footer">
+<span>
+Data source: <em>bank</em> dataset included with the <a href="https://CRAN.R-project.org/package=gclus">gclus</a> R package
+</span>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# Survey stacked-bar chart
+
+Compare responses to Likert-style survey questions. Each bar shows 100% of responses to a question.  
+
+.pull-left[
+Colored segments represent percentage shares for the category levels:  Strongly Disagree, Disagree, Neutral, Agree, Strongly Agree. 
+
+Three approaches, each with their own advantages. 
+
+- diverging 
+- diverging with separate neutral 
+- 100% stacked bars 
+
+Data
+
+- 2 categories (questions, responses)
+- 1 quantity (percent share)
+]
+.pull-right[
+<img src="img/likert-example-1.png" style="height:130px">
+<img src="img/likert-example-2.png" style="height:130px">
+<img src="img/likert-example-3.png" style="height:130px">
+]
+
+
+<div class="my-footer">
+<span>
+Images from: Lisa Charlotte Muth and Gregor Aisch (2018) 
+<a href="https://blog.datawrapper.de/divergingbars/">
+The case against diverging stacked bars</a> Data wrapper blog. 
+</span>
+</div> 
+
+
+
+
+---
+class:inverse, center, middle
