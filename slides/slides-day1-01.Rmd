@@ -16,18 +16,54 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+knitr::opts_knit$set(root.dir = "../")
 
 library(data.table)
 library(ggplot2)
 library(knitr)
 library(kableExtra)
 library(graphclassmate)
+library(magick)
 ```
 
 class: right
 
+```{r}
+a <- image_read("slides/img/pie-preview.png")
+b <- image_read("slides/img/three-d-bar-preview.png")
+c <- image_read("slides/img/stacked-bar-03.png")
+c <- image_colorize(c,  opacity = 25, color = "white")
+d <- image_read("slides/img/cairo-face.png")
+e <- image_read("slides/img/evergreen-face.png")
+
+std_width  <- "900"
+half_width <- "450"
+a <- image_scale(a, "700")
+b <- image_scale(b, std_width)
+c <- image_scale(c, std_width)
+d <- image_scale(d, half_width)
+e <- image_scale(e, half_width)
+f <- image_append(c(d,e), stack = FALSE)
+
+border_dim <- "15x15"
+a <- image_border(a, "white", border_dim)
+b <- image_border(b, "white", border_dim)
+c <- image_border(c, "white", border_dim)
+f <- image_border(f, "white", border_dim)
+
+z <- image_append(c(a, b), stack = TRUE)
+z <- image_append(c(z, c), stack = TRUE)
+z <- image_append(c(z, f), stack = TRUE)
+
+image_write(z, 
+        path = "slides/img/day1-cover-preview.png", 
+        format = "png")
+```
+
 .left-column[
-<img src="img/day1-cover-preview.png" alt="dot chart" style="height:600px;width:300px">
+<img src="img/day1-cover-preview.png" alt="dot chart">
 ]
 
 
@@ -63,38 +99,36 @@ Richard Layton
 
 
 
-
 ---
 class: left
 
-# We cover four main topics
-
 .left-column[
-<img src="img/pie-preview.png" alt="stacked-bar chart" style="height:97px"><img src="img/three-d-pie-preview.png" alt="stacked-bar chart" style="height:80px;width:95px">
-
-<img src="img/three-d-bar-preview.png" alt="stacked-bar chart" style="height:97px;width:190px">
-
-<img src="img/stacked-bar-03.png" alt="stacked-bar chart" style="height:97px;width:190px">
-
-<img src="img/cairo-face.png" alt="stacked-bar chart" style="height:97px"><img src="img/evergreen-face.png" alt="stacked-bar chart" style="height:97px">
+<img src="img/day1-cover-preview.png" alt="dot chart">
 ]
 
-.right-column[
-### Pie charts and more effective alternatives
+#### $\quad$
+
+#### $\quad$ Effective alternatives to pie charts
+
+#### $\quad$
 
 <br>
 
-### Bar charts and more effective alternatives
+#### $\quad$ Effective alternatives to bar charts
+
+#### $\quad$
 
 <br>
 
-### Aligning the design to the story
+#### $\quad$ Aligning the design to the story
+
+#### $\quad$
 
 <br>
 
-### Advice from experts
-]
- 
+#### $\quad$ Advice from experts
+
+
 
 
 
@@ -107,7 +141,11 @@ class: left
 ---
 class:inverse, center, middle
 
-# Pie charts
+# Effective alternatives to pie charts
+
+
+
+
 
 
 
@@ -355,6 +393,13 @@ Data source:
 
 
 
+
+
+
+
+
+
+
 ---
 class: left
 
@@ -403,6 +448,11 @@ Data source:
 
 
 
+
+
+
+
+
 ---
 class: left
 
@@ -436,10 +486,15 @@ In going from this design...
 
 
 
+
+
+
 ---
 class:inverse, center, middle
 
-# Bar charts
+# Effective alternatives to bar charts
+
+
 
 
 
@@ -539,6 +594,11 @@ Data source:
 
 
 
+
+
+
+
+
 ---
 class: left
 
@@ -573,6 +633,11 @@ Data source:
 2021 World population review</a>
 </span>
 </div>
+
+
+
+
+
 
 
 
@@ -614,6 +679,11 @@ Data source:
 
 
 
+
+
+
+
+
 ---
 class: left
 
@@ -638,6 +708,9 @@ Data source:
 2021 World population review</a>
 </span>
 </div>
+
+
+
 
 
 
@@ -681,6 +754,10 @@ Data source:
  
  
  
+ 
+ 
+ 
+ 
 
 ---
 class: left
@@ -718,10 +795,13 @@ Data source:
 
 
 
+
+
+
 ---
 class:inverse, center, middle
 
-# Aligning the graph design to the story
+# Aligning the design to the story
 
 
 
@@ -806,6 +886,11 @@ Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlo
 
 
 
+
+
+
+
+
 ---
 class: left
 
@@ -827,6 +912,7 @@ ggplot(dt, aes(x = year, y = pct, color = reason)) +
 Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlook of engineering PhDs” <em>J of Engineering Education</em> 110 (4): 977–1002.  
 </span>
 </div> 
+
 
 
 
@@ -859,6 +945,15 @@ But are we any closer to seeing a story? What stories (if any) do you see?
 Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlook of engineering PhDs” <em>J of Engineering Education</em> 110 (4): 977–1002.  
 </span>
 </div> 
+
+
+
+
+
+
+
+
+
 
 
 
@@ -919,6 +1014,9 @@ Conventions of the box and whisker plot
 
 
 
+
+
+
 ---
 class: left
 
@@ -947,6 +1045,11 @@ ggplot(dt, aes(x = pct, y = reorder(reason, pct, median))) +
 Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlook of engineering PhDs” <em>J of Engineering Education</em> 110 (4): 977–1002.  
 </span>
 </div> 
+
+
+
+
+
 
 
 
@@ -982,10 +1085,18 @@ In going from this design...
 
 
 
+
+
+
+
+
 ---
 class:inverse, center, middle
 
 # Advice from experts
+
+
+
 
 
 

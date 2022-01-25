@@ -62,9 +62,6 @@ superpose_fill_mid <- scale_fill_manual(values = c(rcb("mid_Gn"),
                                                rcb("mid_PR"))) 
 superpose_fill_pale <- scale_fill_manual(values = c(rcb("pale_Gn"), 
                                                rcb("pale_PR"))) 
-
-
-
 ```
 
 class: right
