@@ -85,6 +85,27 @@ code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
+<style>
+  div.csl-bib-body { }
+  div.csl-entry {
+    clear: both;
+    }
+  .hanging div.csl-entry {
+    margin-left:2em;
+    text-indent:-2em;
+  }
+  div.csl-left-margin {
+    min-width:2em;
+    float:left;
+  }
+  div.csl-right-inline {
+    margin-left:2em;
+    padding-left:1em;
+  }
+  div.csl-indent {
+    margin-left: 2em;
+  }
+</style>
 
   <!--radix_placeholder_meta_tags-->
   <title>Data stories workshop</title>
@@ -106,10 +127,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <meta property="twitter:description" content="Extend your graphical repertoire and &#10;enhance your ability to tell stories with data."/>
 
   <!--/radix_placeholder_meta_tags-->
+  
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["Data stories workshop"]},{"type":"character","attributes":{},"value":["Extend your graphical repertoire and \nenhance your ability to tell stories with data. \n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site","bibliography","nocite"]}},"value":[{"type":"character","attributes":{},"value":["Data stories workshop"]},{"type":"character","attributes":{},"value":["Extend your graphical repertoire and \nenhance your ability to tell stories with data. \n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["references.bib"]},{"type":"character","attributes":{},"value":["@Doumont:2009, @Kostelnick+Hassett:2003, @Tufte:1983, @Tufte:1997, @Wainer:1997, @Cairo:2019, @Cleveland:1993, @Robbins:2013, @Wainer:2014"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2125,7 +2147,45 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </td>
 </tr>
 </table>
+<h2 id="resources">Resources</h2>
+<p>Blogs</p>
+<ul>
+<li><a href="http://www.thefunctionalart.com/">The Functional Art</a>, Alberto Cairo</li>
+<li><a href="https://stephanieevergreen.com/blog/">Evergreen Data</a>, Stephanie Evergreen</li>
+<li><a href="https://www.perceptualedge.com/blog/">Visual Business Intelligence</a>, Stephen Few</li>
+<li><a href="https://www.storytellingwithdata.com/blog">Storytelling with Data</a>, Cole Nussbaumer Knaflic and team</li>
+</ul>
+<p>Books (below)</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Cairo:2019" class="csl-entry" role="doc-biblioentry">
+Cairo, Alberto. 2019. <em><span>How Charts Lie</span></em>. New York: <span>W.W. Norton</span>.
+</div>
+<div id="ref-Cleveland:1993" class="csl-entry" role="doc-biblioentry">
+Cleveland, William S. 1993. <em><span>Visualizing Data</span></em>. Summit, NJ: <span>Hobart Press</span>.
+</div>
+<div id="ref-Doumont:2009" class="csl-entry" role="doc-biblioentry">
+Doumont, Jean-luc. 2009. <em><span class="nocase">Trees, Maps, and Theorems</span></em>. Belgium: <span>Principiae</span>.
+</div>
+<div id="ref-Kostelnick+Hassett:2003" class="csl-entry" role="doc-biblioentry">
+Kostelnick, Charles, and Michael Hassett. 2003. <em><span>Shaping Information</span></em>. Carbondale, IL: <span>Southern Illinois university Press</span>.
+</div>
+<div id="ref-Robbins:2013" class="csl-entry" role="doc-biblioentry">
+Robbins, Naomi. 2013. <em><span>Creating More Effective Graphs</span></em>. Wayne, NJ: <span>Chart House</span>.
+</div>
+<div id="ref-Tufte:1983" class="csl-entry" role="doc-biblioentry">
+Tufte, Edward. 1983. <em><span class="nocase">The Visual Display of Quantitative Information</span></em>. Cheshire, CT: <span>Graphics Press</span>.
+</div>
+<div id="ref-Tufte:1997" class="csl-entry" role="doc-biblioentry">
+———. 1997. <em><span>Visual Explanations</span></em>. Cheshire, CT: <span>Graphics Press</span>.
+</div>
+<div id="ref-Wainer:1997" class="csl-entry" role="doc-biblioentry">
+Wainer, Howard. 1997. <em><span>Visual Revelations</span></em>. Mahwah, NJ: <span>Lawrence Erlbaum Assoc.</span>
+</div>
+<div id="ref-Wainer:2014" class="csl-entry" role="doc-biblioentry">
+———. 2014. <em><span>Medical Illuminations</span></em>. UK: <span>Oxford Univ. Press</span>.
+</div>
+</div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2138,6 +2198,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
 <div class="appendix-bottom">
+<h3 id="references">References</h3>
+<div id="references-listing"></div>
 <h3 id="updates-and-corrections">Corrections</h3>
 <p>If you see mistakes or want to suggest changes, please <a href="https://github.com/graphdr/workshop-data-stories/issues/new">create an issue</a> on the source repository.</p>
 </div>

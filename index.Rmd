@@ -4,6 +4,9 @@ description: |
   Extend your graphical repertoire and 
   enhance your ability to tell stories with data. 
 site: distill::distill_website
+bibliography: references.bib
+nocite: |
+  @Doumont:2009, @Kostelnick+Hassett:2003, @Tufte:1983, @Tufte:1997, @Wainer:1997, @Cairo:2019, @Cleveland:1993, @Robbins:2013, @Wainer:2014
 ---
 
 ## Welcome
@@ -25,6 +28,19 @@ The workshop has three sessions focusing on different aspects of storytelling wi
     <td>**Session 3**<br>[Critical thinking about visual information](session3.html)</td>
   </tr>
 </table>
+
+
+
+## Resources
+
+Blogs
+
+- [The Functional Art](http://www.thefunctionalart.com/), Alberto Cairo 
+- [Evergreen Data](https://stephanieevergreen.com/blog/), Stephanie Evergreen
+- [Visual Business Intelligence](https://www.perceptualedge.com/blog/), Stephen Few
+- [Storytelling with Data](https://www.storytellingwithdata.com/blog), Cole Nussbaumer Knaflic and team 
+
+Books (below)
 
 
 
