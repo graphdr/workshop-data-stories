@@ -31,7 +31,9 @@ library(magick)
 class: right
 
 ```{r}
+# construct cover page images 
 a <- image_read("slides/img/pie-preview.png")
+g <- image_read("slides/img/three-d-pie-preview.png")
 b <- image_read("slides/img/three-d-bar-preview.png")
 c <- image_read("slides/img/stacked-bar-03.png")
 c <- image_colorize(c,  opacity = 25, color = "white")
@@ -40,22 +42,28 @@ e <- image_read("slides/img/evergreen-face.png")
 
 std_width  <- "900"
 half_width <- "450"
-a <- image_scale(a, "700")
+a <- image_scale(a, "x600")
+g <- image_scale(g, "x400")
+a <- image_append(c(a, g), stack = FALSE)
+a <- image_scale(a, std_width)
+
 b <- image_scale(b, std_width)
 c <- image_scale(c, std_width)
+
 d <- image_scale(d, half_width)
 e <- image_scale(e, half_width)
-f <- image_append(c(d,e), stack = FALSE)
+d <- image_append(c(d,e), stack = FALSE)
 
-border_dim <- "15x15"
+border_dim <- "0x20"
 a <- image_border(a, "white", border_dim)
 b <- image_border(b, "white", border_dim)
 c <- image_border(c, "white", border_dim)
-f <- image_border(f, "white", border_dim)
+d <- image_border(d, "white", border_dim)
 
 z <- image_append(c(a, b), stack = TRUE)
 z <- image_append(c(z, c), stack = TRUE)
-z <- image_append(c(z, f), stack = TRUE)
+z <- image_append(c(z, d), stack = TRUE)
+z <- image_border(z, "white", "0x30")
 
 image_write(z, 
         path = "slides/img/day1-cover-preview.png", 
@@ -105,9 +113,7 @@ class: left
 .left-column[
 <img src="img/day1-cover-preview.png" alt="dot chart">
 ]
-
-#### $\quad$
-
+<br>
 #### $\quad$ Effective alternatives to pie charts
 
 #### $\quad$
