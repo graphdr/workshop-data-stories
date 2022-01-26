@@ -31,17 +31,28 @@ The workshop has three sessions focusing on different aspects of storytelling wi
 
 
 
-## Resources
+## Blogs to browse {.appendix}
 
-Blogs
-
-- [The Functional Art](http://www.thefunctionalart.com/), Alberto Cairo 
-- [Evergreen Data](https://stephanieevergreen.com/blog/), Stephanie Evergreen
-- [Visual Business Intelligence](https://www.perceptualedge.com/blog/), Stephen Few
-- [Storytelling with Data](https://www.storytellingwithdata.com/blog), Cole Nussbaumer Knaflic and team 
-
-Books (below)
+[The Functional Art](http://www.thefunctionalart.com/), Alberto Cairo    
+[Evergreen Data](https://stephanieevergreen.com/blog/), Stephanie Evergreen    
+[Visual Business Intelligence](https://www.perceptualedge.com/blog/), Stephen Few    
+[Storytelling with Data](https://www.storytellingwithdata.com/blog), Cole Nussbaumer Knaflic and team   
 
 
 
 
+
+## Acknowledgments {.appendix}
+
+**R package authors**    
+[`data.table`](https://CRAN.R-project.org/package=data.table) Fast aggregation of large data, Matt Dowle and Arun Srinivasan    
+[`ggplot2`](https://CRAN.R-project.org/package=ggplot2) Elegant data visualizations using the grammar of graphics, Hadley Wickham, Winston Chang, et al.   
+[`distill`](https://CRAN.R-project.org/package=distill), Scientific and technical article format for the web, JJ Allaire, Rich Iannone, et al.    
+[`xaringan`](https://CRAN.R-project.org/package=xaringan) Create HTML5 slides with R Markdown, Yihui Xie       
+
+
+
+
+
+
+ 
