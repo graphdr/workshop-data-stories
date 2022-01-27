@@ -3,7 +3,7 @@
   <head>
     <title>Perception, reasoning, and credibility</title>
     <meta charset="utf-8" />
-    <meta name="date" content="2022-01-25" />
+    <meta name="date" content="2022-01-27" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/middlebury.css" rel="stylesheet" />
@@ -861,21 +861,43 @@ class:inverse, center, middle
 ---
 class: left
 
-# Stacked bars: what conclusions would you report?
+# Survey: “What was your reason for taking this postdoc?”
 
-.left[The survey question was “What was your primary reason for taking this postdoc?”]
-
-
+&lt;img src="img/stacked-bar-04.png" alt="stacked bar chart" height="275"&gt;
 
 
 
-![](slides-day1-01_files/figure-html/unnamed-chunk-24-1.png)&lt;!-- --&gt;
+
+
+First, let's agree on what the chart *shows*.  
+
+- What does a color represent?    
+
+- What does a single color-segment of a bar represent?   
+
+- What does the changing height over time of a segment represent?
+
+
 
 &lt;div class="my-footer"&gt;
 &lt;span&gt;
 Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlook of engineering PhDs” &lt;em&gt;J of Engineering Education&lt;/em&gt; 110 (4): 977–1002.  
 &lt;/span&gt;
 &lt;/div&gt; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -890,22 +912,63 @@ Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlo
 ---
 class: left
 
-# Stacked-bar charts are a poor choice for multivariate data
+# What ideas are conveyed by the chart?
 
 &lt;img src="img/stacked-bar-04.png" alt="stacked bar chart" height="275"&gt;
 
-We have three variables: year, reason, and percent response. 
+Now we can consider what the chart says.
 
-- Each reason varies over time    
+- Describe a trend for one of the six reasons for obtaining postdoc training. 
 
-- None of the interior segments have a common baseline, so their trends cannot be easily observed
+- Compare two of the reasons over time.    
+
+- Describe the main idea this chart conveys to you. 
 
 
-&lt;div class="my-footer"&gt;
-&lt;span&gt;
-Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlook of engineering PhDs” &lt;em&gt;J of Engineering Education&lt;/em&gt; 110 (4): 977–1002.  
-&lt;/span&gt;
-&lt;/div&gt; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# What can we say about the variables?  
+
+&lt;img src="img/stacked-bar-04.png" alt="stacked bar chart" height="275"&gt;
+
+1. Time (discrete years) is one categorical variable.
+
+2. The other categorical variable is `___________________________`
+
+3. The quantitative variable is `___________________________`
+
+4. Which is the independent variable?  `___________________________`
+
+
+
+
+
+
+
+
+
+
+---
+class:inverse, center, middle
+
+Time for think-write-share
+
 
 
 
@@ -923,15 +986,9 @@ class: left
 
 # The appropriate design for a time series is a line graph
 
-Too much variation and overlap to see any trend clearly
-
 ![](slides-day1-01_files/figure-html/unnamed-chunk-25-1.png)&lt;!-- --&gt;
 
-&lt;div class="my-footer"&gt;
-&lt;span&gt;
-Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlook of engineering PhDs” &lt;em&gt;J of Engineering Education&lt;/em&gt; 110 (4): 977–1002.  
-&lt;/span&gt;
-&lt;/div&gt; 
+
 
 
 
@@ -946,18 +1003,26 @@ Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlo
 ---
 class: left
 
-# Separating reasons into individual panels clarifies the data
+# The appropriate design for a time series is a line graph
+
+Separating reasons into individual panels clarifies the data
 
 ![](slides-day1-01_files/figure-html/unnamed-chunk-26-1.png)&lt;!-- --&gt;
 
-But are we any closer to seeing a story? What stories (if any) do you see? 
+- Describe the main idea this chart conveys to you. 
 
-&lt;div class="my-footer"&gt;
-&lt;span&gt;
-Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlook of engineering PhDs” &lt;em&gt;J of Engineering Education&lt;/em&gt; 110 (4): 977–1002.  
-&lt;/span&gt;
-&lt;/div&gt; 
 
+
+
+
+
+
+
+
+---
+class:inverse, center, middle
+
+Time for think-write-share
 
 
 
@@ -972,27 +1037,42 @@ Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlo
 ---
 class: left
 
-# Emphasizing the trivial can obscure a story
+# The problem is time
 
-Time is trivial in this case.   
+Time&amp;mdash;in this case&amp;mdash;is not a useful independent variable
+
+- Time locks us into the graphical conventions of time series. 
+
+- What Howard Wainer calls *emphasizing the trivial*.  
+
+
+&lt;div class="my-footer"&gt;
+&lt;span&gt;
+Howard Wainer (1997) &lt;em&gt;Visual Revelations&lt;/em&gt;, Lawrence Erlbaum Assoc., Mahwah, NJ, p. 30.  
+&lt;/span&gt;
+&lt;/div&gt;
+
+
+
+
+--
 
 &lt;br&gt;
+Suppose we drop the year variable
 
-Suppose we ignore the year data.     
+- a single quantity: set of reported percentages
 
-- We end up with two variables: reasons and a distribution of percent selecting a reason.      
-
-- The appropriate graph design for distributions is a box-and-whisker plot 
+- conditioned by a category: reasons for postdoc training 
 
 
-&lt;br&gt;
+
+
+--
+
+- boxplots summarize distributions
 
 .center[
-
 ![](slides-day1-01_files/figure-html/unnamed-chunk-27-1.png)&lt;!-- --&gt;
-
-Conventions of the box and whisker plot
-
 ]
 
 
@@ -1005,24 +1085,22 @@ Conventions of the box and whisker plot
 
 
 
+
 ---
 class: left
 
-# What stories do you see? 
-
-- We see the distributions, median values, and spread across all years (1995&amp;ndash;2011). 
-
-- Rows are ordered by the median values. 
-
-&lt;br&gt;
+# Our final design shows distributions of annual percentages 
 
 ![](slides-day1-01_files/figure-html/unnamed-chunk-28-1.png)&lt;!-- --&gt;
 
-&lt;div class="my-footer"&gt;
-&lt;span&gt;
-Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlook of engineering PhDs” &lt;em&gt;J of Engineering Education&lt;/em&gt; 110 (4): 977–1002.  
-&lt;/span&gt;
-&lt;/div&gt; 
+
+- Describe the main idea this chart conveys to you.
+
+
+
+
+
+
 
 
 
@@ -1201,7 +1279,7 @@ Alberto Cairo (2019) &lt;em&gt;How Charts Lie&lt;/em&gt;, W.W. Norton
 ---
 class: left
 
-# Ideas to take away and consider
+# Ideas to consider
 
 
 - **Understand** the data structure and content 

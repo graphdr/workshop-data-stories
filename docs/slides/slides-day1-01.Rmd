@@ -821,9 +821,9 @@ class:inverse, center, middle
 ---
 class: left
 
-# Stacked bars: what conclusions would you report?
+# Survey: “What was your reason for taking this postdoc?”
 
-.left[The survey question was “What was your primary reason for taking this postdoc?”]
+<img src="img/stacked-bar-04.png" alt="stacked bar chart" height="275">
 
 ```{r echo = FALSE}
 dt <- fread("data/fig2.csv")
@@ -833,10 +833,8 @@ dt[reason %chin% "Additional training in PhD field",
    reason := "Additional training in field"]
 ```
 
-
-
 ```{r echo=FALSE, fig.asp=0.35, fig.width=14}
-ggplot(dt, aes(x = year, y = pct, color = reason, fill = reason)) +
+p <- ggplot(dt, aes(x = year, y = pct, color = reason, fill = reason)) +
   geom_bar(stat = "identity") + 
   scale_color_brewer(palette="BrBG") + 
   scale_fill_brewer(palette="BrBG") +
@@ -850,11 +848,35 @@ ggplot(dt, aes(x = year, y = pct, color = reason, fill = reason)) +
         legend.key.height = unit(15, "mm"))
 ```
 
+First, let's agree on what the chart *shows*.  
+
+- What does a color represent?    
+
+- What does a single color-segment of a bar represent?   
+
+- What does the changing height over time of a segment represent?
+
+
+
 <div class="my-footer">
 <span>
 Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlook of engineering PhDs” <em>J of Engineering Education</em> 110 (4): 977–1002.  
 </span>
 </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -869,22 +891,63 @@ Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlo
 ---
 class: left
 
-# Stacked-bar charts are a poor choice for multivariate data
+# What ideas are conveyed by the chart?
 
 <img src="img/stacked-bar-04.png" alt="stacked bar chart" height="275">
 
-We have three variables: year, reason, and percent response. 
+Now we can consider what the chart says.
 
-- Each reason varies over time    
+- Describe a trend for one of the six reasons for obtaining postdoc training. 
 
-- None of the interior segments have a common baseline, so their trends cannot be easily observed
+- Compare two of the reasons over time.    
+
+- Describe the main idea this chart conveys to you. 
 
 
-<div class="my-footer">
-<span>
-Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlook of engineering PhDs” <em>J of Engineering Education</em> 110 (4): 977–1002.  
-</span>
-</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: left
+
+# What can we say about the variables?  
+
+<img src="img/stacked-bar-04.png" alt="stacked bar chart" height="275">
+
+1. Time (discrete years) is one categorical variable.
+
+2. The other categorical variable is `___________________________`
+
+3. The quantitative variable is `___________________________`
+
+4. Which is the independent variable?  `___________________________`
+
+
+
+
+
+
+
+
+
+
+---
+class:inverse, center, middle
+
+Time for think-write-share
+
 
 
 
@@ -902,8 +965,6 @@ class: left
 
 # The appropriate design for a time series is a line graph
 
-Too much variation and overlap to see any trend clearly
-
 ```{r echo=FALSE, fig.asp=0.4, fig.width=16} 
 ggplot(dt, aes(x = year, y = pct, color = reason)) +
   geom_line(linetype = 2) +
@@ -913,11 +974,7 @@ ggplot(dt, aes(x = year, y = pct, color = reason)) +
   scale_color_brewer(palette = "Dark2")
 ```
 
-<div class="my-footer">
-<span>
-Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlook of engineering PhDs” <em>J of Engineering Education</em> 110 (4): 977–1002.  
-</span>
-</div> 
+
 
 
 
@@ -932,9 +989,11 @@ Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlo
 ---
 class: left
 
-# Separating reasons into individual panels clarifies the data
+# The appropriate design for a time series is a line graph
 
-```{r echo=FALSE, fig.asp=0.45, fig.width=13}
+Separating reasons into individual panels clarifies the data
+
+```{r echo=FALSE, fig.asp=0.4, fig.width=13}
 ggplot(dt, aes(x = year, y = pct)) +
   geom_line(linetype = 2) +
   geom_point(size = 4) +
@@ -944,14 +1003,20 @@ ggplot(dt, aes(x = year, y = pct)) +
 
 ```
 
-But are we any closer to seeing a story? What stories (if any) do you see? 
+- Describe the main idea this chart conveys to you. 
 
-<div class="my-footer">
-<span>
-Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlook of engineering PhDs” <em>J of Engineering Education</em> 110 (4): 977–1002.  
-</span>
-</div> 
 
+
+
+
+
+
+
+
+---
+class:inverse, center, middle
+
+Time for think-write-share
 
 
 
@@ -966,24 +1031,42 @@ Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlo
 ---
 class: left
 
-# Emphasizing the trivial can obscure a story
+# The problem is time
 
-Time is trivial in this case.   
+Time&mdash;in this case&mdash;is not a useful independent variable
+
+- Time locks us into the graphical conventions of time series. 
+
+- What Howard Wainer calls *emphasizing the trivial*.  
+
+
+<div class="my-footer">
+<span>
+Howard Wainer (1997) <em>Visual Revelations</em>, Lawrence Erlbaum Assoc., Mahwah, NJ, p. 30.  
+</span>
+</div>
+
+
+
+
+--
 
 <br>
+Suppose we drop the year variable
 
-Suppose we ignore the year data.     
+- a single quantity: set of reported percentages
 
-- We end up with two variables: reasons and a distribution of percent selecting a reason.      
-
-- The appropriate graph design for distributions is a box-and-whisker plot 
+- conditioned by a category: reasons for postdoc training 
 
 
-<br>
+
+
+--
+
+- boxplots summarize distributions
 
 .center[
-
-```{r echo=FALSE, fig.asp=0.25, fig.width=10}
+```{r echo=FALSE, fig.asp=0.15, fig.width=10}
 z <- copy(dt)
 z <- z[reason == "Work with a specific person or place"]
 ggplot(z, aes(x = pct, y = reason)) +
@@ -1008,10 +1091,8 @@ ggplot(z, aes(x = pct, y = reason)) +
            ) +
   theme(text = element_text(size = 20))
 ```
-
-Conventions of the box and whisker plot
-
 ]
+
 
 
 
@@ -1026,13 +1107,7 @@ Conventions of the box and whisker plot
 ---
 class: left
 
-# What stories do you see? 
-
-- We see the distributions, median values, and spread across all years (1995&ndash;2011). 
-
-- Rows are ordered by the median values. 
-
-<br>
+# Our final design shows distributions of annual percentages 
 
 ```{r echo=FALSE, fig.asp=0.35, fig.width=13}
 ggplot(dt, aes(x = pct, y = reorder(reason, pct, median))) +
@@ -1046,11 +1121,14 @@ ggplot(dt, aes(x = pct, y = reorder(reason, pct, median))) +
 
 ```
 
-<div class="my-footer">
-<span>
-Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlook of engineering PhDs” <em>J of Engineering Education</em> 110 (4): 977–1002.  
-</span>
-</div> 
+
+- Describe the main idea this chart conveys to you.
+
+
+
+
+
+
 
 
 
@@ -1229,7 +1307,7 @@ Alberto Cairo (2019) <em>How Charts Lie</em>, W.W. Norton
 ---
 class: left
 
-# Ideas to take away and consider
+# Ideas to consider
 
 
 - **Understand** the data structure and content 
