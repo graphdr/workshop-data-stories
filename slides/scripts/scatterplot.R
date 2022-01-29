@@ -1,4 +1,5 @@
 # scatterplot
+library(data.table)
 
 # gapminder: world regions
 regions <- fread("data/world-regions.csv", header =  TRUE)
