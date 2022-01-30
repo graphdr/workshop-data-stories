@@ -26,6 +26,12 @@ library(knitr)
 library(kableExtra)
 library(graphclassmate)
 library(magick)
+
+options(
+  datatable.print.nrows = 16,
+  datatable.print.topn = 6,
+  datatable.print.class = TRUE
+)
 ```
 
 class: right

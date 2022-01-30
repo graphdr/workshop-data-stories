@@ -65,6 +65,7 @@ dt[four_regions == "africa"   , four_regions := "Africa"]
 dt1 <- copy(dt)
 dt1 <- dt1[year == max(year)]
 
+
 # all years for time series
 dt2 <- copy(dt)
 

@@ -1,4 +1,5 @@
 # scatterplot
+library(data.table)
 
 # gapminder: world regions
 regions <- fread("data/world-regions.csv", header =  TRUE)
@@ -63,6 +64,7 @@ dt[four_regions == "africa"   , four_regions := "Africa"]
 # max year for scatterplots
 dt1 <- copy(dt)
 dt1 <- dt1[year == max(year)]
+
 
 # all years for time series
 dt2 <- copy(dt)

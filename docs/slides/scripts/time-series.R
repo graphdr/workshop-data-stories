@@ -81,8 +81,24 @@ SH <- SH[, month := factor(month, levels = c("September",
 SH <- SH[order(month, year)]
 dt4 <- rbindlist(list(dt4, SH))
 
+
+
+
+# 4-country time series in 2 dimensions
+dt <- readRDS(file = "data/life-exp.rds")
+dt5 <- copy(dt)
+dt5 <- dt5[country %chin% c("United States", "Russia", "South Korea", "Peru")]
+setorderv(dt5, c("country", "year"))
+dt5[, gdp_k := per_capita_gdp/1000]
+dt5 <- dt5[, .(country, year, lifeExp, gdp_k)]
+
+
+
+
+
 # save 
 saveRDS(dt1, file = "data/time-series.rds")
 saveRDS(dt2, file = "data/time-series-superpose.rds")
 saveRDS(dt3, file = "data/time-series-facet.rds")
 saveRDS(dt4, file = "data/time-series-cyclic.rds")
+saveRDS(dt5, file = "data/time-series-2d.rds")
