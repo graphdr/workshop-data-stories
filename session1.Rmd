@@ -21,10 +21,11 @@ The rationale behind alternative designs is illustrated with the goals of
 - Making it easier to reason quantitatively about the data
 - Enhancing our credibility with the audience
 
+**Materials**
 
-[[**handout**]](slides/handouts-day1-01.pdf) I suggest you have a printed copy of this handout to write in during the workshop. We have a number of think- write-share activities that for many people work best in writing. 
+- [worksheets](slides/handouts-day1-01.pdf)  I suggest you have a printed copy of these worksheets to write in during the workshop. We have a number of think-write-share activities that for many people work best in writing. 
 
 
-[[**slides**]](slides/slides-day1-01.html) used during the workshop. 
+- [slides](slides/slides-day1-01.html) used during the workshop. 
 
 

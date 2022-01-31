@@ -24,8 +24,11 @@ The session should encourage you to:
 - Explore different graph types suited to the data and the question 
 - Keep reading and learning&mdash;an unfamiliar design may be just what you need
 
-[[**handout**]](slides/handouts-day2-01.pdf) I suggest you have a printed copy of this handout to write in during the workshop. We have a number of think- write-share activities that for many people work best in writing. 
+
+**Materials**
+
+- [worksheets](slides/handouts-day2-01.pdf)  I suggest you have a printed copy of these worksheets to write in during the workshop. We have a number of think-write-share activities that for many people work best in writing. 
 
 
-[[**slides**]](slides/slides-day2-01.html) used during the workshop. 
+- [slides](slides/slides-day2-01.html) used during the workshop.
  

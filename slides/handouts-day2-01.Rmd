@@ -29,11 +29,11 @@ knitr::opts_chunk$set(cache.extra = packageVersion('tufte'))
 options(htmltools.dir.version = FALSE)
 ```
 
-# Expanding your graphical repertoire: Four main topics
-
-`r margin_note("I suggest you have a printed copy of this handout to write in during the workshop. We have a number of think-write-share activities that for many people work best when thoughts are written down.")`
+# Expanding your graphical repertoire: Four main topics[^1] 
 
 ![](img/handout-day2-outline.png){width="75%"}
+
+`r margin_note("I suggest you have a printed copy of these worksheets to write in during the workshop. We have a number of think-write-share activities that for many people work best when thoughts are written down.")`
 
 ```{r fig.height = 0.1}
 put_gap()
@@ -61,19 +61,16 @@ put_gap()
 
 ## Dot plot
 
+![](img/handout-02-01.png){width="80%"}    
+`r newthought("data from")`[^2]    
+
+```{r fig.height = 0.2}
+put_gap()
+```
+
+- Describe the main idea(s) this chart conveys to you.
+
 ```{marginfigure, echo = TRUE}
-$\quad$
-  
-$\quad$
-  
-$\quad$
-  
-$\quad$
-  
-$\quad$
-  
-$\quad$
-    
 $\quad$
   
 *Variables + Argument &#x2192; Design*
@@ -86,9 +83,6 @@ $\quad$
   
 *Argument*: Comparison
 ```
-![](img/handout-02-01.png){width="80%"}
-
-- Describe the main idea(s) this chart conveys to you.
 
 ```{r fig.height = 2}
 put_gap()
@@ -108,13 +102,16 @@ put_gap()
 
 ## Multiway dot chart, superposed
 
-![](img/handout-02-02.png){width="160%"}
+![](img/handout-02-02.png){width="160%"}    
+`r newthought("data from")`[^2]    
+
+```{r fig.height = 0.2}
+put_gap()
+```
 
 - Describe the main idea(s) this chart conveys to you.
 
 ```{marginfigure, echo = TRUE}
-$\quad$
-  
 $\quad$
   
 *Variables + Argument &#x2192; Design*
@@ -142,26 +139,31 @@ put_gap()
 
 
 
+
+
+
 # `r "\U00A7"` Revealing correlations
+
+
+
+
+
 
 
 ## Scatterplot
 
+![](img/handout-02-03.png){width="80%"}    
+`r newthought("data from")` [^3][^4]    
+
+```{r fig.height = 0.2}
+put_gap()
+```
+
+- Describe the main idea(s) this chart conveys to you.
+
 ```{marginfigure, echo = TRUE}
 $\quad$
-
-$\quad$
-
-$\quad$
-
-$\quad$
-
-$\quad$
-
-$\quad$
-
-$\quad$
-
+  
 *Variables + Argument &#x2192; Design*
 
 $\quad$
@@ -172,10 +174,6 @@ $\quad$
 
 *Argument*: Correlation
 ```
-
-![](img/handout-02-03.png){width="80%"}
-
-- Describe the main idea(s) this chart conveys to you.
 
 ```{r fig.height = 2}
 put_gap()
@@ -198,13 +196,16 @@ put_gap()
 
 ## Scatterplot, faceted
 
-![](img/handout-02-04.png){width="160%"}
+![](img/handout-02-04.png){width="160%"}    
+`r newthought("data from")` [^3][^4]    
+
+```{r fig.height = 0.2}
+put_gap()
+```
 
 - Describe the main idea(s) this chart conveys to you.
 
 ```{marginfigure, echo = TRUE}
-$\quad$
-  
 $\quad$
   
 *Variables + Argument &#x2192; Design*
@@ -224,7 +225,7 @@ put_gap()
 
 - What questions does the chart raise?
 
-```{r fig.height = 2}
+```{r fig.height = 1}
 put_gap()
 ```
 
@@ -245,19 +246,18 @@ put_gap()
 
 ## Time series
 
+![](img/handout-02-05.png){width="80%"}    
+`r newthought("data from")`[^4]    
+
+```{r fig.height = 0.2}
+put_gap()
+```
+
+- Describe the main idea(s) this chart conveys to you.
+
 ```{marginfigure, echo = TRUE}
 $\quad$
   
-$\quad$
-  
-$\quad$
-  
-$\quad$
-  
-$\quad$
-  
-$\quad$
-
 *Variables + Argument &#x2192; Design*
   
 $\quad$
@@ -268,9 +268,6 @@ $\quad$
   
 *Argument*: Evolution
 ```
-![](img/handout-02-05.png){width="80%"}
-
-- Describe the main idea(s) this chart conveys to you.
 
 ```{r fig.height = 2}
 put_gap()
@@ -290,15 +287,18 @@ put_gap()
 
 ## Time series, faceted
 
-![](img/handout-02-06.png){width="160%"}
+![](img/handout-02-06.png){width="160%"}    
+`r newthought("data from")`[^4]    
+
+```{r fig.height = 0.2}
+put_gap()
+```
 
 - Describe the main idea(s) this chart conveys to you.
 
 ```{marginfigure, echo = TRUE}
 $\quad$
-
-$\quad$
-
+  
 $\quad$
 
 *Variables + Argument &#x2192; Design*
@@ -338,15 +338,16 @@ put_gap()
 
 ## Connected scatterplot, faceted
 
-![](img/handout-02-07.png){width="160%"}
+![](img/handout-02-07.png){width="160%"}    
+`r newthought("data from")` [^3][^4]    
+
+```{r fig.height = 0.2}
+put_gap()
+```
 
 - Describe the main idea(s) this chart conveys to you.
 
 ```{marginfigure, echo = TRUE}
-$\quad$
-  
-$\quad$
-  
 $\quad$
   
 *Variables + Argument &#x2192; Design*
@@ -386,13 +387,16 @@ put_gap()
 
 ## Cyclic time series, superposed
 
-![](img/handout-02-08.png){width="160%"}
+![](img/handout-02-08.png){width="160%"}    
+`r newthought("data from")`[^5]    
+
+```{r fig.height = 0.2}
+put_gap()
+```
 
 - Describe the main idea(s) this chart conveys to you.
 
 ```{marginfigure, echo = TRUE}
-$\quad$
-  
 $\quad$
   
 $\quad$
@@ -438,13 +442,16 @@ put_gap()
 
 ## Strip chart, superposed
 
-![](img/handout-02-09.png){width="160%"}
+![](img/handout-02-09.png){width="160%"}    
+`r newthought("data from")`[^6]    
+
+```{r fig.height = 0.2}
+put_gap()
+```
 
 - Describe the main idea(s) this chart conveys to you.
 
 ```{marginfigure, echo = TRUE}
-$\quad$
-  
 $\quad$
   
 *Variables + Argument &#x2192; Design*
@@ -478,7 +485,12 @@ put_gap()
 
 ## Box and whisker chart
 
-![](img/handout-02-10.png){width="160%"}
+![](img/handout-02-10.png){width="160%"}    
+`r newthought("data from")`[^7]    
+    
+```{r fig.height = 0.2}
+put_gap()
+```
 
 - Describe the main idea(s) this chart conveys to you.
 
@@ -517,6 +529,67 @@ put_gap()
 
 
 
+
+
+
+# Ideas to consider
+
+\begin{fullwidth}
+\subsection{Chart selection}
+\begin{itemize}
+\item What are your variables, by name?
+\item Is a variable quantitative or categorical?
+\item Is a categorical variable naturally ordered (ordinal) or not (nominal)?
+\item Starting with a small number of variables, what chart types match the data structure?
+\item How does the chart type change as you add new variables?
+\end{itemize}
+
+$\quad$
+
+\subsection{Chart aesthetics}
+\begin{itemize}
+\item Superposed designs work best with small numbers of subsets or when the subsets visually cluster.
+\item Faceted designs permit a greater number of subsets to be compared.
+\item Deliberately assign the size, shape, and color of every visual element.
+\item Use color deliberately. Choose colors that are safe for color-vision-deficient viewers.
+\end{itemize}
+
+$\quad$
+
+\subsection{Audience and message}
+\begin{itemize}
+\item What is your story?
+\item Does the visual evidence directly support your verbal argument?
+\item Have you placed the story in context visually?
+\item Who is your audience?
+\item Will the audience resist your conventions?
+\item If so, is overcoming audience resistance worth the effort?
+\end{itemize}
+
+$\quad$
+
+\subsection{Ethics of visual rhetoric}
+\begin{itemize}
+\item Is your design equitable and inclusive?
+\item Are you seeing only what you want to see? What the audience wants to see?
+\item All there alternative explanations for what the chart shows?
+\item Are your data dubious? Insufficient?
+\item Have you concealed information? Concealed a large uncertainty?
+\item Does your chart suggest misleading patterns?
+\end{itemize}
+\end{fullwidth}
+
+```{r fig.height = 0.5}
+put_gap()
+```
+
+[^1]: The four main types of argument are adapted from @Doumont:2009. 
+[^2]: @CDC-Wonder:2022
+[^3]: @Gapminder+GDP:2022    
+[^4]: @Gapminder+LifeExp:2022  
+[^5]: @NASA+Snow+Ice:2017 
+[^6]: @R-GDAdata  
+[^7]: @R-graphclassmate 
 
 # References
 

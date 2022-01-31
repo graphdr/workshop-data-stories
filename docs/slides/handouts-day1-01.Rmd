@@ -31,13 +31,15 @@ options(htmltools.dir.version = FALSE)
 
 # Limitations of common graph types: Four main topics
 
-`r margin_note("I suggest you have a printed copy of this handout to write in during the workshop. We have a number of think-write-share activities that for many people work best when thoughts are written down.")`
+`r margin_note("I suggest you have a printed copy of these worksheets to write in during the workshop. We have a number of think-write-share activities that for many people work best when thoughts are written down.")`
 
 ![](img/handout-day1-outline.png){width="75%"}
 
 ```{r fig.height = 0.1}
 put_gap()
 ```
+
+
 
 
 
@@ -59,12 +61,10 @@ put_gap()
 
 - Total should be 100%.  
 
-```{r fig.height = 0.1}
-put_gap()
-```
+![](img/handout-01-01.png){width="140%"}    
+`r newthought("data from")`[^1] 
 
-![](img/handout-01-01.png){width="140%"}
-*Data source:* [@WorldBank:2022].
+[^1]: @WorldBank:2022
 
 
 
@@ -76,8 +76,6 @@ put_gap()
 
 
 ## Judging values along a common axis is a high-accuracy task
-
-
 
 ```{marginfigure, echo = TRUE}
 ![](img/pie-preview.png){width="50%"}    
@@ -104,22 +102,17 @@ put_gap()
 
 
 
+
+
 ## 3D effects distort our judgment even further
 
 - Fill in the blanks with your visual estimates of each pie slice 
 
 - Total should be 100% 
 
-```{r fig.height = 0.2}
-put_gap()
-```
+![](img/handout-01-03.png){width="150%"}    
+`r newthought("data from")`[^1] 
 
-![](img/handout-01-03.png){width="150%"}
-
-
-```{r fig.height = 0.1}
-put_gap()
-```
 
 
 
@@ -155,25 +148,22 @@ put_gap()
 
 
 
+
 # `r "\U00A7"` Effective alternatives to bar charts 
+
+
+
+
+
+
 
 
 ## 3D effects always distort our judgment
 
 - Fill in the blanks with your visual estimates of each bar length 
 
-```{r fig.height = 0.2}
-put_gap()
-```
-
 ![](img/handout-01-05.png){width="150%"}
-
-```{r fig.height = 0.1}
-put_gap()
-```
-
-
-
+`r newthought("data from")`[^1] 
 
 
 
@@ -254,14 +244,16 @@ put_gap()
 
 ## Survey: “What was your reason for taking this postdoc?”
 
-Before we can talk about what the chart *says*, we have to agree on what it *shows*. (*Data from:* [@Main+Wang+Tan:2021])
+Before we can talk about what the chart *says*, we have to agree on what it *shows*.
 
 ````{r fig.height = 0.2}
 put_gap()
 ```
 
 ![](img/stacked-bar-04.png){width="150%"}
+`r newthought("data from")`[^2] 
 
+[^2]: @Main+Wang+Tan:2021
 
 `r newthought("")`Write your responses below. 
 
@@ -279,12 +271,9 @@ put_gap()
 
 - What does the changing height over time of a segment represent?
 
-````{r fig.height = 1}
+````{r fig.height = 0.5}
 put_gap()
 ```
-
-
-
 
 
 
@@ -302,6 +291,7 @@ put_gap()
 ```
 
 ![](img/stacked-bar-04.png){width="150%"}
+`r newthought("data from")`[^2] 
 
 `r newthought("")`Write your responses below. 
 
@@ -319,7 +309,7 @@ put_gap()
 
 - Describe the main idea this chart conveys to you. 
 
-````{r fig.height = 1}
+````{r fig.height = 0.5}
 put_gap()
 ```
 
@@ -347,6 +337,7 @@ put_gap()
 ```
 
 ![](img/stacked-bar-04.png){width="150%"}
+`r newthought("data from")`[^2] 
 
 `r newthought("Fill in the blanks")` to begin summarizing the data structure.  
 
@@ -358,7 +349,7 @@ put_gap()
 
 4. Which is the independent variable? ___________________________ . 
 
-````{r fig.height = 3}
+````{r fig.height = 2.5}
 put_gap()
 ```
 
@@ -383,6 +374,7 @@ put_gap()
 ```
 
 ![](img/handout-01-13.png){width="125%"}
+`r newthought("data from")`[^2] 
 
 - Describe the main idea this chart conveys to you.
 
@@ -411,13 +403,6 @@ Designed to show a summary of the distribution of a single quantitative variable
 ![](img/handout-01-14.png){width="75%"}
 
 
-````{r fig.height = 0.7}
-put_gap()
-```
-
-
-
-
 
 
 
@@ -434,12 +419,13 @@ put_gap()
 
 # Our final design shows distributions of annual percentages 
 
-![](img/handout-01-15.png){width="140%"}
+![](img/handout-01-15.png){width="130%"}
+`r newthought("data from")`[^2] 
 
-- Describe the main idea this chart conveys to you.
+- Describe the main idea(s) this chart conveys to you.
 
 
-````{r fig.height = 1.5}
+````{r fig.height = 4.5}
 put_gap()
 ```
 
@@ -460,28 +446,26 @@ Match the expert to the advice (fill in the blanks with letters)
 
 ```{r}
 x <- wrapr::build_frame(
-  "Expert"              , "Letter", "Empasizes the importance of" |
-  " ", " ", " " |
-  "A. Alerto Cairo"     , "______" , "message"    |
-  " ", " ", " " |
+  "Expert [reference]", "Letter", "Empasizes the importance of"|
+  " ", " ", " "|
+  "A. \\citet{Cairo:2019}", "______" , "message"|
+  " ", " ", " "|
     
-  "B. Jean-luc Doumont" , "______" , "variables"  |
-  " ", " ", " " |
+  "B. \\citet{Doumont:2009}", "______" , "variables"|
+  " ", " ", " "|
     
-  "C. Stephanie Evegreen", "______" , "revealing the complex"|
-    " ", " ", " " |
+  "C. \\citet{Evergreen:2017}", "______" , "revealing the complex"|
+    " ", " ", " "|
     
-  "D. Edward Tufte"     , "______" , "knowing your main point"      |
-  " ", " ", " " |
+  "D. \\citet{Tufte:1983}", "______" , "knowing your main point"|
+  " ", " ", " "|
     
-  " "                   , "______" , "not lying to yourself" |
+  " ", "______" , "not lying to yourself"|
     
   " ", " ", " ")
 
 knitr::kable(x)
 ```
-*Additional reading:*    
-[@Cairo:2019], [@Doumont:2009], [@Evergreen:2017], [@Tufte:1983]
 
 
 
@@ -489,10 +473,9 @@ knitr::kable(x)
 
 
 
-
-
-
-
+````{r fig.height = 0.3}
+put_gap()
+```
 
 
 
@@ -500,42 +483,35 @@ knitr::kable(x)
 
 - Understand the data structure and content
 
-````{r fig.height = 0.4}
+````{r fig.height = 0.3}
 put_gap()
 ```
 
 - Explore a story's context, causality, and complexity
 
-````{r fig.height = 0.4}
+````{r fig.height = 0.3}
 put_gap()
 ```
 
 - Align visual and verbal logic by revising iteratively
 
-````{r fig.height = 0.4}
+````{r fig.height = 0.3}
 put_gap()
 ```
 
 - Edit to suit the rhetorical goals for each audience
 
-````{r fig.height = 0.4}
+````{r fig.height = 0.3}
 put_gap()
 ```
 
 - Control every pixel---avoid thoughtless conformity
 
-````{r fig.height = 0.4}
+````{r fig.height = 0.3}
 put_gap()
 ```
 
 - Question are you seeing only what you want to believe?
-
-````{r fig.height = 0.4}
-put_gap()
-```
-
-
-
 
 
 
