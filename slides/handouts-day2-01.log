@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.30)  30 JAN 2022 19:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2022.1.30)  31 JAN 2022 15:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -803,7 +803,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 6.25204pt on input line 85.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 85.
-<img/handout-day2-outline.png, id=34, 689.57625pt x 805.50937pt>
+<img/handout-day2-outline.png, id=38, 689.57625pt x 805.50937pt>
 File: img/handout-day2-outline.png Graphic file (type png)
 <use img/handout-day2-outline.png>
 Package pdftex.def Info: img/handout-day2-outline.png  used on input line 87.
@@ -811,7 +811,7 @@ Package pdftex.def Info: img/handout-day2-outline.png  used on input line 87.
 
 LaTeX Warning: Marginpar on page 1 moved.
 
-<handouts-day2-01_files/figure-latex/unnamed-chunk-1-1.pdf, id=36, 289.08pt x 7
+<handouts-day2-01_files/figure-latex/unnamed-chunk-1-1.pdf, id=40, 289.08pt x 7
 .02625pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (t
 ype pdf)
@@ -824,7 +824,7 @@ Overfull \hbox (12.01648pt too wide) in paragraph at lines 91--92
 [][]  
  []
 
-<handouts-day2-01_files/figure-latex/unnamed-chunk-2-1.pdf, id=37, 289.08pt x 1
+<handouts-day2-01_files/figure-latex/unnamed-chunk-2-1.pdf, id=41, 289.08pt x 1
 44.54pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file (t
 ype pdf)
@@ -832,29 +832,24 @@ ype pdf)
 Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-2-1.
 pdf  used on input line 96.
 (pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
-<img/handout-02-01.png, id=38, 318.43968pt x 187.45032pt>
-File: img/handout-02-01.png Graphic file (type png)
-<use img/handout-02-01.png>
-Package pdftex.def Info: img/handout-02-01.png  used on input line 104.
-(pdftex.def)             Requested size: 249.60156pt x 146.92857pt.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 10.42007pt on input line 105.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 7.91925pt on input line 105.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 10.42007pt on input line 105.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 7.91925pt on input line 105.
 [1
 
 {c:/Users/layto/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdfte
 x.map} <./img/handout-day2-outline.png> <./handouts-day2-01_files/figure-latex/
 unnamed-chunk-1-1.pdf> <./handouts-day2-01_files/figure-latex/unnamed-chunk-2-1
 .pdf>]
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 105.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 105.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 105.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 105.
 
 LaTeX Warning: Marginpar on page 2 moved.
 
-<handouts-day2-01_files/figure-latex/unnamed-chunk-3-1.pdf, id=61, 289.08pt x 1
+<handouts-day2-01_files/figure-latex/unnamed-chunk-3-1.pdf, id=64, 289.08pt x 1
 4.0525pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file (t
 ype pdf)
@@ -867,91 +862,110 @@ Overfull \hbox (12.01648pt too wide) in paragraph at lines 107--108
 [][]  
  []
 
+<img/handout-02-01.png, id=65, 318.43968pt x 187.45032pt>
+File: img/handout-02-01.png Graphic file (type png)
+<use img/handout-02-01.png>
+Package pdftex.def Info: img/handout-02-01.png  used on input line 109.
+(pdftex.def)             Requested size: 249.60156pt x 146.92857pt.
+<handouts-day2-01_files/figure-latex/unnamed-chunk-4-1.pdf, id=66, 289.08pt x 2
+1.07875pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file (t
+ype pdf)
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-4-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-4-1.
+pdf  used on input line 111.
+(pdftex.def)             Requested size: 312.01648pt x 22.75117pt.
+
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 111--112
+[][]  
+ []
+
 LaTeX Font Info:    Trying to load font information for TS1+pplj on input line 
-112.
+116.
 (c:/Users/layto/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/psnfss/ts1pplj.fd
 File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
 )
 Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family pplj in TS1 encoding.
-(textcomp)             Default family used instead on input line 118.
-<handouts-day2-01_files/figure-latex/unnamed-chunk-5-1.pdf, id=62, 289.08pt x 1
-44.54pt>
-File: handouts-day2-01_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (t
-ype pdf)
-<use handouts-day2-01_files/figure-latex/unnamed-chunk-5-1.pdf>
-Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-5-1.
-pdf  used on input line 129.
-(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
-
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 129--130
-[][]  
- []
-
-<handouts-day2-01_files/figure-latex/unnamed-chunk-6-1.pdf, id=63, 289.08pt x 1
+(textcomp)             Default family used instead on input line 122.
+<handouts-day2-01_files/figure-latex/unnamed-chunk-6-1.pdf, id=67, 289.08pt x 1
 44.54pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (t
 ype pdf)
 <use handouts-day2-01_files/figure-latex/unnamed-chunk-6-1.pdf>
 Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-6-1.
-pdf  used on input line 137.
+pdf  used on input line 133.
 (pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 137--138
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 133--134
 [][]  
  []
 
-<img/handout-02-02.png, id=64, 1373.88281pt x 398.23781pt>
-File: img/handout-02-02.png Graphic file (type png)
-<use img/handout-02-02.png>
-Package pdftex.def Info: img/handout-02-02.png  used on input line 143.
-(pdftex.def)             Requested size: 499.18849pt x 144.69627pt.
-
-Overfull \hbox (187.18849pt too wide) in paragraph at lines 143--143
-[]  
- []
-
-[2 <./img/handout-02-01.png> <./handouts-day2-01_files/figure-latex/unnamed-chu
-nk-3-1.pdf> <./handouts-day2-01_files/figure-latex/unnamed-chunk-5-1.pdf> <./ha
-ndouts-day2-01_files/figure-latex/unnamed-chunk-6-1.pdf>]
-
-LaTeX Warning: Marginpar on page 3 moved.
-
-<handouts-day2-01_files/figure-latex/unnamed-chunk-7-1.pdf, id=86, 289.08pt x 1
-4.0525pt>
+<handouts-day2-01_files/figure-latex/unnamed-chunk-7-1.pdf, id=68, 289.08pt x 1
+08.405pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (t
 ype pdf)
 <use handouts-day2-01_files/figure-latex/unnamed-chunk-7-1.pdf>
 Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-7-1.
-pdf  used on input line 146.
-(pdftex.def)             Requested size: 312.01648pt x 15.16745pt.
+pdf  used on input line 141.
+(pdftex.def)             Requested size: 312.01648pt x 117.00616pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 146--147
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 141--142
+[][]  
+ []
+
+[2 <./handouts-day2-01_files/figure-latex/unnamed-chunk-3-1.pdf> <./img/handout
+-02-01.png> <./handouts-day2-01_files/figure-latex/unnamed-chunk-4-1.pdf> <./ha
+ndouts-day2-01_files/figure-latex/unnamed-chunk-6-1.pdf> <./handouts-day2-01_fi
+les/figure-latex/unnamed-chunk-7-1.pdf>]
+
+LaTeX Warning: Marginpar on page 3 moved.
+
+<handouts-day2-01_files/figure-latex/unnamed-chunk-8-1.pdf, id=93, 289.08pt x 2
+1.07875pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (t
+ype pdf)
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-8-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-8-1.
+pdf  used on input line 150.
+(pdftex.def)             Requested size: 312.01648pt x 22.75117pt.
+
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 150--151
+[][]  
+ []
+
+<img/handout-02-02.png, id=94, 1373.88281pt x 398.23781pt>
+File: img/handout-02-02.png Graphic file (type png)
+<use img/handout-02-02.png>
+Package pdftex.def Info: img/handout-02-02.png  used on input line 152.
+(pdftex.def)             Requested size: 499.18849pt x 144.69627pt.
+
+Overfull \hbox (199.18849pt too wide) in paragraph at lines 152--153
+[][]  
+ []
+
+<handouts-day2-01_files/figure-latex/unnamed-chunk-9-1.pdf, id=95, 289.08pt x 2
+1.07875pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (t
+ype pdf)
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-9-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-9-1.
+pdf  used on input line 154.
+(pdftex.def)             Requested size: 312.01648pt x 22.75117pt.
+
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 154--155
 [][]  
  []
 
 Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family pplj in TS1 encoding.
-(textcomp)             Default family used instead on input line 157.
-<handouts-day2-01_files/figure-latex/unnamed-chunk-9-1.pdf, id=87, 289.08pt x 1
-44.54pt>
-File: handouts-day2-01_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (t
-ype pdf)
-<use handouts-day2-01_files/figure-latex/unnamed-chunk-9-1.pdf>
-Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-9-1.
-pdf  used on input line 168.
-(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
-
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 168--169
-[][]  
- []
-
-<handouts-day2-01_files/figure-latex/unnamed-chunk-10-1.pdf, id=88, 289.08pt x 
+(textcomp)             Default family used instead on input line 165.
+<handouts-day2-01_files/figure-latex/unnamed-chunk-11-1.pdf, id=96, 289.08pt x 
 144.54pt>
-File: handouts-day2-01_files/figure-latex/unnamed-chunk-10-1.pdf Graphic file (
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (
 type pdf)
-<use handouts-day2-01_files/figure-latex/unnamed-chunk-10-1.pdf>
-Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-10-1
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-11-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-11-1
 .pdf  used on input line 176.
 (pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
 
@@ -959,415 +973,452 @@ Overfull \hbox (12.01648pt too wide) in paragraph at lines 176--177
 [][]  
  []
 
-<img/handout-02-03.png, id=89, 623.32875pt x 465.99094pt>
-File: img/handout-02-03.png Graphic file (type png)
-<use img/handout-02-03.png>
-Package pdftex.def Info: img/handout-02-03.png  used on input line 184.
-(pdftex.def)             Requested size: 249.6029pt x 186.59927pt.
-[3 <./img/handout-02-02.png> <./handouts-day2-01_files/figure-latex/unnamed-chu
-nk-7-1.pdf> <./handouts-day2-01_files/figure-latex/unnamed-chunk-9-1.pdf> <./ha
-ndouts-day2-01_files/figure-latex/unnamed-chunk-10-1.pdf>]
-
-LaTeX Warning: Marginpar on page 4 moved.
-
-
-LaTeX Warning: Marginpar on page 4 moved.
-
-
-LaTeX Warning: Marginpar on page 4 moved.
-
-<handouts-day2-01_files/figure-latex/unnamed-chunk-11-1.pdf, id=110, 289.08pt x
- 14.0525pt>
-File: handouts-day2-01_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (
+<handouts-day2-01_files/figure-latex/unnamed-chunk-12-1.pdf, id=97, 289.08pt x 
+144.54pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (
 type pdf)
-<use handouts-day2-01_files/figure-latex/unnamed-chunk-11-1.pdf>
-Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-11-1
-.pdf  used on input line 187.
-(pdftex.def)             Requested size: 312.01648pt x 15.16745pt.
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-12-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-12-1
+.pdf  used on input line 184.
+(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 187--188
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 184--185
 [][]  
  []
 
-Package textcomp Info: Symbol \textrightarrow not provided by
-(textcomp)             font family pplj in TS1 encoding.
-(textcomp)             Default family used instead on input line 198.
+[3 <./handouts-day2-01_files/figure-latex/unnamed-chunk-8-1.pdf> <./img/handout
+-02-02.png> <./handouts-day2-01_files/figure-latex/unnamed-chunk-9-1.pdf> <./ha
+ndouts-day2-01_files/figure-latex/unnamed-chunk-11-1.pdf> <./handouts-day2-01_f
+iles/figure-latex/unnamed-chunk-12-1.pdf>]
 
 LaTeX Warning: Marginpar on page 4 moved.
 
-<handouts-day2-01_files/figure-latex/unnamed-chunk-13-1.pdf, id=111, 289.08pt x
- 144.54pt>
+
+LaTeX Warning: Marginpar on page 4 moved.
+
+
+LaTeX Warning: Marginpar on page 4 moved.
+
+<handouts-day2-01_files/figure-latex/unnamed-chunk-13-1.pdf, id=121, 289.08pt x
+ 14.0525pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-13-1.pdf Graphic file (
 type pdf)
 <use handouts-day2-01_files/figure-latex/unnamed-chunk-13-1.pdf>
 Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-13-1
-.pdf  used on input line 209.
-(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
+.pdf  used on input line 195.
+(pdftex.def)             Requested size: 312.01648pt x 15.16745pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 209--210
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 195--196
 [][]  
  []
 
-<handouts-day2-01_files/figure-latex/unnamed-chunk-14-1.pdf, id=112, 289.08pt x
- 72.27pt>
+<img/handout-02-03.png, id=122, 623.32875pt x 465.99094pt>
+File: img/handout-02-03.png Graphic file (type png)
+<use img/handout-02-03.png>
+Package pdftex.def Info: img/handout-02-03.png  used on input line 197.
+(pdftex.def)             Requested size: 249.6029pt x 186.59927pt.
+<handouts-day2-01_files/figure-latex/unnamed-chunk-14-1.pdf, id=123, 289.08pt x
+ 21.07875pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (
 type pdf)
 <use handouts-day2-01_files/figure-latex/unnamed-chunk-14-1.pdf>
 Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-14-1
-.pdf  used on input line 217.
-(pdftex.def)             Requested size: 312.01648pt x 78.00409pt.
+.pdf  used on input line 199.
+(pdftex.def)             Requested size: 312.01648pt x 22.75117pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 217--218
-[][]  
- []
-
-<img/handout-02-04.png, id=113, 1346.02875pt x 528.47438pt>
-File: img/handout-02-04.png Graphic file (type png)
-<use img/handout-02-04.png>
-Package pdftex.def Info: img/handout-02-04.png  used on input line 222.
-(pdftex.def)             Requested size: 499.19354pt x 195.9921pt.
-
-Overfull \hbox (187.19354pt too wide) in paragraph at lines 222--222
-[]  
- []
-
-[4 <./img/handout-02-03.png> <./handouts-day2-01_files/figure-latex/unnamed-chu
-nk-11-1.pdf> <./handouts-day2-01_files/figure-latex/unnamed-chunk-13-1.pdf> <./
-handouts-day2-01_files/figure-latex/unnamed-chunk-14-1.pdf>]
-
-LaTeX Warning: Marginpar on page 5 moved.
-
-
-LaTeX Warning: Marginpar on page 5 moved.
-
-
-LaTeX Warning: Marginpar on page 5 moved.
-
-<handouts-day2-01_files/figure-latex/unnamed-chunk-15-1.pdf, id=137, 289.08pt x
- 14.0525pt>
-File: handouts-day2-01_files/figure-latex/unnamed-chunk-15-1.pdf Graphic file (
-type pdf)
-<use handouts-day2-01_files/figure-latex/unnamed-chunk-15-1.pdf>
-Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-15-1
-.pdf  used on input line 225.
-(pdftex.def)             Requested size: 312.01648pt x 15.16745pt.
-
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 225--226
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 199--200
 [][]  
  []
 
 Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family pplj in TS1 encoding.
-(textcomp)             Default family used instead on input line 236.
-
-LaTeX Warning: Marginpar on page 5 moved.
-
-<handouts-day2-01_files/figure-latex/unnamed-chunk-17-1.pdf, id=138, 289.08pt x
+(textcomp)             Default family used instead on input line 210.
+<handouts-day2-01_files/figure-latex/unnamed-chunk-16-1.pdf, id=124, 289.08pt x
  144.54pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (
+type pdf)
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-16-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-16-1
+.pdf  used on input line 221.
+(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
+
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 221--222
+[][]  
+ []
+
+<handouts-day2-01_files/figure-latex/unnamed-chunk-17-1.pdf, id=125, 289.08pt x
+ 72.27pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-17-1.pdf Graphic file (
 type pdf)
 <use handouts-day2-01_files/figure-latex/unnamed-chunk-17-1.pdf>
 Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-17-1
-.pdf  used on input line 247.
-(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
+.pdf  used on input line 229.
+(pdftex.def)             Requested size: 312.01648pt x 78.00409pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 247--248
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 229--230
 [][]  
  []
 
-<handouts-day2-01_files/figure-latex/unnamed-chunk-18-1.pdf, id=139, 289.08pt x
- 72.27pt>
+[4 <./handouts-day2-01_files/figure-latex/unnamed-chunk-13-1.pdf> <./img/handou
+t-02-03.png> <./handouts-day2-01_files/figure-latex/unnamed-chunk-14-1.pdf> <./
+handouts-day2-01_files/figure-latex/unnamed-chunk-16-1.pdf> <./handouts-day2-01
+_files/figure-latex/unnamed-chunk-17-1.pdf>]
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+<handouts-day2-01_files/figure-latex/unnamed-chunk-18-1.pdf, id=151, 289.08pt x
+ 28.105pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (
 type pdf)
 <use handouts-day2-01_files/figure-latex/unnamed-chunk-18-1.pdf>
 Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-18-1
-.pdf  used on input line 255.
-(pdftex.def)             Requested size: 312.01648pt x 78.00409pt.
+.pdf  used on input line 237.
+(pdftex.def)             Requested size: 312.01648pt x 30.33492pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 255--256
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 237--238
 [][]  
  []
 
-<img/handout-02-05.png, id=140, 624.08156pt x 479.54156pt>
-File: img/handout-02-05.png Graphic file (type png)
-<use img/handout-02-05.png>
-Package pdftex.def Info: img/handout-02-05.png  used on input line 263.
-(pdftex.def)             Requested size: 249.59962pt x 191.79128pt.
-[5 <./img/handout-02-04.png> <./handouts-day2-01_files/figure-latex/unnamed-chu
-nk-15-1.pdf> <./handouts-day2-01_files/figure-latex/unnamed-chunk-17-1.pdf> <./
-handouts-day2-01_files/figure-latex/unnamed-chunk-18-1.pdf>]
+<img/handout-02-04.png, id=152, 1346.02875pt x 528.47438pt>
+File: img/handout-02-04.png Graphic file (type png)
+<use img/handout-02-04.png>
+Package pdftex.def Info: img/handout-02-04.png  used on input line 239.
+(pdftex.def)             Requested size: 499.19354pt x 195.9921pt.
 
-LaTeX Warning: Marginpar on page 6 moved.
+Overfull \hbox (199.19354pt too wide) in paragraph at lines 239--240
+[][]  
+ []
 
-<handouts-day2-01_files/figure-latex/unnamed-chunk-19-1.pdf, id=159, 289.08pt x
- 14.0525pt>
+<handouts-day2-01_files/figure-latex/unnamed-chunk-19-1.pdf, id=153, 289.08pt x
+ 21.07875pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-19-1.pdf Graphic file (
 type pdf)
 <use handouts-day2-01_files/figure-latex/unnamed-chunk-19-1.pdf>
 Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-19-1
-.pdf  used on input line 266.
-(pdftex.def)             Requested size: 312.01648pt x 15.16745pt.
+.pdf  used on input line 241.
+(pdftex.def)             Requested size: 312.01648pt x 22.75117pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 266--267
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 241--242
 [][]  
  []
 
 Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family pplj in TS1 encoding.
-(textcomp)             Default family used instead on input line 277.
-<handouts-day2-01_files/figure-latex/unnamed-chunk-21-1.pdf, id=160, 289.08pt x
+(textcomp)             Default family used instead on input line 252.
+<handouts-day2-01_files/figure-latex/unnamed-chunk-21-1.pdf, id=154, 289.08pt x
  144.54pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (
 type pdf)
 <use handouts-day2-01_files/figure-latex/unnamed-chunk-21-1.pdf>
 Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-21-1
-.pdf  used on input line 288.
+.pdf  used on input line 263.
 (pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 288--289
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 263--264
 [][]  
  []
 
-<handouts-day2-01_files/figure-latex/unnamed-chunk-22-1.pdf, id=161, 289.08pt x
+<handouts-day2-01_files/figure-latex/unnamed-chunk-22-1.pdf, id=155, 289.08pt x
  72.27pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (
 type pdf)
 <use handouts-day2-01_files/figure-latex/unnamed-chunk-22-1.pdf>
 Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-22-1
-.pdf  used on input line 296.
+.pdf  used on input line 271.
 (pdftex.def)             Requested size: 312.01648pt x 78.00409pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 296--297
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 271--272
 [][]  
  []
 
-<img/handout-02-06.png, id=162, 1326.45563pt x 387.69844pt>
-File: img/handout-02-06.png Graphic file (type png)
-<use img/handout-02-06.png>
-Package pdftex.def Info: img/handout-02-06.png  used on input line 301.
-(pdftex.def)             Requested size: 499.20078pt x 145.90714pt.
+[5 <./handouts-day2-01_files/figure-latex/unnamed-chunk-18-1.pdf> <./img/handou
+t-02-04.png> <./handouts-day2-01_files/figure-latex/unnamed-chunk-19-1.pdf> <./
+handouts-day2-01_files/figure-latex/unnamed-chunk-21-1.pdf> <./handouts-day2-01
+_files/figure-latex/unnamed-chunk-22-1.pdf>]
 
-Overfull \hbox (187.20078pt too wide) in paragraph at lines 301--301
-[]  
- []
+LaTeX Warning: Marginpar on page 6 moved.
 
-[6 <./img/handout-02-05.png> <./handouts-day2-01_files/figure-latex/unnamed-chu
-nk-19-1.pdf> <./handouts-day2-01_files/figure-latex/unnamed-chunk-21-1.pdf> <./
-handouts-day2-01_files/figure-latex/unnamed-chunk-22-1.pdf>]
-
-LaTeX Warning: Marginpar on page 7 moved.
-
-<handouts-day2-01_files/figure-latex/unnamed-chunk-23-1.pdf, id=183, 289.08pt x
+<handouts-day2-01_files/figure-latex/unnamed-chunk-23-1.pdf, id=178, 289.08pt x
  14.0525pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (
 type pdf)
 <use handouts-day2-01_files/figure-latex/unnamed-chunk-23-1.pdf>
 Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-23-1
-.pdf  used on input line 304.
+.pdf  used on input line 282.
 (pdftex.def)             Requested size: 312.01648pt x 15.16745pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 304--305
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 282--283
+[][]  
+ []
+
+<img/handout-02-05.png, id=179, 624.08156pt x 479.54156pt>
+File: img/handout-02-05.png Graphic file (type png)
+<use img/handout-02-05.png>
+Package pdftex.def Info: img/handout-02-05.png  used on input line 284.
+(pdftex.def)             Requested size: 249.59962pt x 191.79128pt.
+<handouts-day2-01_files/figure-latex/unnamed-chunk-24-1.pdf, id=180, 289.08pt x
+ 21.07875pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-24-1.pdf Graphic file (
+type pdf)
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-24-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-24-1
+.pdf  used on input line 286.
+(pdftex.def)             Requested size: 312.01648pt x 22.75117pt.
+
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 286--287
 [][]  
  []
 
 Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family pplj in TS1 encoding.
-(textcomp)             Default family used instead on input line 317.
-
-LaTeX Warning: Marginpar on page 7 moved.
-
-<handouts-day2-01_files/figure-latex/unnamed-chunk-25-1.pdf, id=184, 289.08pt x
- 144.54pt>
-File: handouts-day2-01_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (
-type pdf)
-<use handouts-day2-01_files/figure-latex/unnamed-chunk-25-1.pdf>
-Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-25-1
-.pdf  used on input line 329.
-(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
-
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 329--330
-[][]  
- []
-
-<handouts-day2-01_files/figure-latex/unnamed-chunk-26-1.pdf, id=185, 289.08pt x
+(textcomp)             Default family used instead on input line 297.
+<handouts-day2-01_files/figure-latex/unnamed-chunk-26-1.pdf, id=181, 289.08pt x
  144.54pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-26-1.pdf Graphic file (
 type pdf)
 <use handouts-day2-01_files/figure-latex/unnamed-chunk-26-1.pdf>
 Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-26-1
-.pdf  used on input line 337.
+.pdf  used on input line 308.
 (pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 337--338
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 308--309
 [][]  
  []
 
-<img/handout-02-07.png, id=186, 1333.23094pt x 388.45125pt>
-File: img/handout-02-07.png Graphic file (type png)
-<use img/handout-02-07.png>
-Package pdftex.def Info: img/handout-02-07.png  used on input line 343.
-(pdftex.def)             Requested size: 499.18733pt x 145.44362pt.
-
-Overfull \hbox (187.18733pt too wide) in paragraph at lines 343--343
-[]  
- []
-
-[7 <./img/handout-02-06.png> <./handouts-day2-01_files/figure-latex/unnamed-chu
-nk-23-1.pdf> <./handouts-day2-01_files/figure-latex/unnamed-chunk-25-1.pdf> <./
-handouts-day2-01_files/figure-latex/unnamed-chunk-26-1.pdf>]
-
-LaTeX Warning: Marginpar on page 8 moved.
-
-
-LaTeX Warning: Marginpar on page 8 moved.
-
-
-LaTeX Warning: Marginpar on page 8 moved.
-
-<handouts-day2-01_files/figure-latex/unnamed-chunk-27-1.pdf, id=208, 289.08pt x
- 14.0525pt>
+<handouts-day2-01_files/figure-latex/unnamed-chunk-27-1.pdf, id=182, 289.08pt x
+ 86.3225pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (
 type pdf)
 <use handouts-day2-01_files/figure-latex/unnamed-chunk-27-1.pdf>
 Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-27-1
-.pdf  used on input line 346.
-(pdftex.def)             Requested size: 312.01648pt x 15.16745pt.
+.pdf  used on input line 316.
+(pdftex.def)             Requested size: 312.01648pt x 93.17155pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 346--347
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 316--317
 [][]  
  []
 
-Package textcomp Info: Symbol \textrightarrow not provided by
-(textcomp)             font family pplj in TS1 encoding.
-(textcomp)             Default family used instead on input line 357.
+[6 <./handouts-day2-01_files/figure-latex/unnamed-chunk-23-1.pdf> <./img/handou
+t-02-05.png> <./handouts-day2-01_files/figure-latex/unnamed-chunk-24-1.pdf> <./
+handouts-day2-01_files/figure-latex/unnamed-chunk-26-1.pdf> <./handouts-day2-01
+_files/figure-latex/unnamed-chunk-27-1.pdf>]
 
-LaTeX Warning: Marginpar on page 8 moved.
+LaTeX Warning: Marginpar on page 7 moved.
 
-<handouts-day2-01_files/figure-latex/unnamed-chunk-29-1.pdf, id=209, 289.08pt x
- 144.54pt>
+<handouts-day2-01_files/figure-latex/unnamed-chunk-28-1.pdf, id=205, 289.08pt x
+ 21.07875pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-28-1.pdf Graphic file (
+type pdf)
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-28-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-28-1
+.pdf  used on input line 324.
+(pdftex.def)             Requested size: 312.01648pt x 22.75117pt.
+
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 324--325
+[][]  
+ []
+
+<img/handout-02-06.png, id=206, 1326.45563pt x 387.69844pt>
+File: img/handout-02-06.png Graphic file (type png)
+<use img/handout-02-06.png>
+Package pdftex.def Info: img/handout-02-06.png  used on input line 326.
+(pdftex.def)             Requested size: 499.20078pt x 145.90714pt.
+
+Overfull \hbox (199.20078pt too wide) in paragraph at lines 326--327
+[][]  
+ []
+
+<handouts-day2-01_files/figure-latex/unnamed-chunk-29-1.pdf, id=207, 289.08pt x
+ 21.07875pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-29-1.pdf Graphic file (
 type pdf)
 <use handouts-day2-01_files/figure-latex/unnamed-chunk-29-1.pdf>
 Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-29-1
-.pdf  used on input line 370.
-(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
+.pdf  used on input line 328.
+(pdftex.def)             Requested size: 312.01648pt x 22.75117pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 370--371
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 328--329
 [][]  
  []
 
-<handouts-day2-01_files/figure-latex/unnamed-chunk-30-1.pdf, id=210, 289.08pt x
+Package textcomp Info: Symbol \textrightarrow not provided by
+(textcomp)             font family pplj in TS1 encoding.
+(textcomp)             Default family used instead on input line 341.
+<handouts-day2-01_files/figure-latex/unnamed-chunk-31-1.pdf, id=208, 289.08pt x
  144.54pt>
-File: handouts-day2-01_files/figure-latex/unnamed-chunk-30-1.pdf Graphic file (
-type pdf)
-<use handouts-day2-01_files/figure-latex/unnamed-chunk-30-1.pdf>
-Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-30-1
-.pdf  used on input line 378.
-(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
-
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 378--379
-[][]  
- []
-
-<img/handout-02-08.png, id=211, 1327.96124pt x 389.20406pt>
-File: img/handout-02-08.png Graphic file (type png)
-<use img/handout-02-08.png>
-Package pdftex.def Info: img/handout-02-08.png  used on input line 384.
-(pdftex.def)             Requested size: 499.20003pt x 146.30748pt.
-
-Overfull \hbox (187.20003pt too wide) in paragraph at lines 384--384
-[]  
- []
-
-[8 <./img/handout-02-07.png> <./handouts-day2-01_files/figure-latex/unnamed-chu
-nk-27-1.pdf> <./handouts-day2-01_files/figure-latex/unnamed-chunk-29-1.pdf> <./
-handouts-day2-01_files/figure-latex/unnamed-chunk-30-1.pdf>]
-
-LaTeX Warning: Marginpar on page 9 moved.
-
-<handouts-day2-01_files/figure-latex/unnamed-chunk-31-1.pdf, id=230, 289.08pt x
- 14.0525pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-31-1.pdf Graphic file (
 type pdf)
 <use handouts-day2-01_files/figure-latex/unnamed-chunk-31-1.pdf>
 Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-31-1
-.pdf  used on input line 387.
-(pdftex.def)             Requested size: 312.01648pt x 15.16745pt.
+.pdf  used on input line 353.
+(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 387--388
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 353--354
 [][]  
  []
 
-Package textcomp Info: Symbol \textrightarrow not provided by
-(textcomp)             font family pplj in TS1 encoding.
-(textcomp)             Default family used instead on input line 400.
-
-LaTeX Warning: Marginpar on page 9 moved.
-
-<handouts-day2-01_files/figure-latex/unnamed-chunk-33-1.pdf, id=231, 289.08pt x
+<handouts-day2-01_files/figure-latex/unnamed-chunk-32-1.pdf, id=209, 289.08pt x
  144.54pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-32-1.pdf Graphic file (
+type pdf)
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-32-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-32-1
+.pdf  used on input line 361.
+(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
+
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 361--362
+[][]  
+ []
+
+[7 <./handouts-day2-01_files/figure-latex/unnamed-chunk-28-1.pdf> <./img/handou
+t-02-06.png> <./handouts-day2-01_files/figure-latex/unnamed-chunk-29-1.pdf> <./
+handouts-day2-01_files/figure-latex/unnamed-chunk-31-1.pdf> <./handouts-day2-01
+_files/figure-latex/unnamed-chunk-32-1.pdf>]
+
+LaTeX Warning: Marginpar on page 8 moved.
+
+
+LaTeX Warning: Marginpar on page 8 moved.
+
+
+LaTeX Warning: Marginpar on page 8 moved.
+
+<handouts-day2-01_files/figure-latex/unnamed-chunk-33-1.pdf, id=234, 289.08pt x
+ 21.07875pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-33-1.pdf Graphic file (
 type pdf)
 <use handouts-day2-01_files/figure-latex/unnamed-chunk-33-1.pdf>
 Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-33-1
-.pdf  used on input line 412.
-(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
+.pdf  used on input line 371.
+(pdftex.def)             Requested size: 312.01648pt x 22.75117pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 412--413
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 371--372
 [][]  
  []
 
-<handouts-day2-01_files/figure-latex/unnamed-chunk-34-1.pdf, id=232, 289.08pt x
- 144.54pt>
+<img/handout-02-07.png, id=235, 1333.23094pt x 388.45125pt>
+File: img/handout-02-07.png Graphic file (type png)
+<use img/handout-02-07.png>
+Package pdftex.def Info: img/handout-02-07.png  used on input line 373.
+(pdftex.def)             Requested size: 499.18733pt x 145.44362pt.
+
+Overfull \hbox (199.18733pt too wide) in paragraph at lines 373--374
+[][]  
+ []
+
+<handouts-day2-01_files/figure-latex/unnamed-chunk-34-1.pdf, id=236, 289.08pt x
+ 28.105pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-34-1.pdf Graphic file (
 type pdf)
 <use handouts-day2-01_files/figure-latex/unnamed-chunk-34-1.pdf>
 Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-34-1
-.pdf  used on input line 420.
-(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
+.pdf  used on input line 375.
+(pdftex.def)             Requested size: 312.01648pt x 30.33492pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 420--421
-[][]  
- []
-
-<img/handout-02-09.png, id=233, 1341.51187pt x 265.74281pt>
-File: img/handout-02-09.png Graphic file (type png)
-<use img/handout-02-09.png>
-Package pdftex.def Info: img/handout-02-09.png  used on input line 428.
-(pdftex.def)             Requested size: 499.19693pt x 98.88692pt.
-
-Overfull \hbox (187.19693pt too wide) in paragraph at lines 428--428
-[]  
- []
-
-[9 <./img/handout-02-08.png> <./handouts-day2-01_files/figure-latex/unnamed-chu
-nk-31-1.pdf> <./handouts-day2-01_files/figure-latex/unnamed-chunk-33-1.pdf> <./
-handouts-day2-01_files/figure-latex/unnamed-chunk-34-1.pdf>]
-
-LaTeX Warning: Marginpar on page 10 moved.
-
-<handouts-day2-01_files/figure-latex/unnamed-chunk-35-1.pdf, id=253, 289.08pt x
- 14.0525pt>
-File: handouts-day2-01_files/figure-latex/unnamed-chunk-35-1.pdf Graphic file (
-type pdf)
-<use handouts-day2-01_files/figure-latex/unnamed-chunk-35-1.pdf>
-Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-35-1
-.pdf  used on input line 431.
-(pdftex.def)             Requested size: 312.01648pt x 15.16745pt.
-
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 431--432
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 375--376
 [][]  
  []
 
 Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family pplj in TS1 encoding.
-(textcomp)             Default family used instead on input line 442.
-<handouts-day2-01_files/figure-latex/unnamed-chunk-37-1.pdf, id=254, 289.08pt x
+(textcomp)             Default family used instead on input line 386.
+<handouts-day2-01_files/figure-latex/unnamed-chunk-36-1.pdf, id=237, 289.08pt x
+ 144.54pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-36-1.pdf Graphic file (
+type pdf)
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-36-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-36-1
+.pdf  used on input line 399.
+(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
+
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 399--400
+[][]  
+ []
+
+<handouts-day2-01_files/figure-latex/unnamed-chunk-37-1.pdf, id=238, 289.08pt x
  144.54pt>
 File: handouts-day2-01_files/figure-latex/unnamed-chunk-37-1.pdf Graphic file (
 type pdf)
 <use handouts-day2-01_files/figure-latex/unnamed-chunk-37-1.pdf>
 Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-37-1
+.pdf  used on input line 407.
+(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
+
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 407--408
+[][]  
+ []
+
+[8 <./handouts-day2-01_files/figure-latex/unnamed-chunk-33-1.pdf> <./img/handou
+t-02-07.png> <./handouts-day2-01_files/figure-latex/unnamed-chunk-34-1.pdf> <./
+handouts-day2-01_files/figure-latex/unnamed-chunk-36-1.pdf> <./handouts-day2-01
+_files/figure-latex/unnamed-chunk-37-1.pdf>]
+
+LaTeX Warning: Marginpar on page 9 moved.
+
+<handouts-day2-01_files/figure-latex/unnamed-chunk-38-1.pdf, id=260, 289.08pt x
+ 21.07875pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-38-1.pdf Graphic file (
+type pdf)
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-38-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-38-1
+.pdf  used on input line 416.
+(pdftex.def)             Requested size: 312.01648pt x 22.75117pt.
+
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 416--417
+[][]  
+ []
+
+<img/handout-02-08.png, id=261, 1327.96124pt x 389.20406pt>
+File: img/handout-02-08.png Graphic file (type png)
+<use img/handout-02-08.png>
+Package pdftex.def Info: img/handout-02-08.png  used on input line 418.
+(pdftex.def)             Requested size: 499.20003pt x 146.30748pt.
+
+Overfull \hbox (199.20003pt too wide) in paragraph at lines 418--419
+[][]  
+ []
+
+<handouts-day2-01_files/figure-latex/unnamed-chunk-39-1.pdf, id=262, 289.08pt x
+ 21.07875pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-39-1.pdf Graphic file (
+type pdf)
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-39-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-39-1
+.pdf  used on input line 420.
+(pdftex.def)             Requested size: 312.01648pt x 22.75117pt.
+
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 420--421
+[][]  
+ []
+
+Package textcomp Info: Symbol \textrightarrow not provided by
+(textcomp)             font family pplj in TS1 encoding.
+(textcomp)             Default family used instead on input line 433.
+<handouts-day2-01_files/figure-latex/unnamed-chunk-41-1.pdf, id=263, 289.08pt x
+ 144.54pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-41-1.pdf Graphic file (
+type pdf)
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-41-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-41-1
+.pdf  used on input line 445.
+(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
+
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 445--446
+[][]  
+ []
+
+<handouts-day2-01_files/figure-latex/unnamed-chunk-42-1.pdf, id=264, 289.08pt x
+ 144.54pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-42-1.pdf Graphic file (
+type pdf)
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-42-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-42-1
 .pdf  used on input line 453.
 (pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
 
@@ -1375,43 +1426,44 @@ Overfull \hbox (12.01648pt too wide) in paragraph at lines 453--454
 [][]  
  []
 
-<handouts-day2-01_files/figure-latex/unnamed-chunk-38-1.pdf, id=255, 289.08pt x
- 144.54pt>
-File: handouts-day2-01_files/figure-latex/unnamed-chunk-38-1.pdf Graphic file (
-type pdf)
-<use handouts-day2-01_files/figure-latex/unnamed-chunk-38-1.pdf>
-Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-38-1
-.pdf  used on input line 461.
-(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
+[9 <./handouts-day2-01_files/figure-latex/unnamed-chunk-38-1.pdf> <./img/handou
+t-02-08.png> <./handouts-day2-01_files/figure-latex/unnamed-chunk-39-1.pdf> <./
+handouts-day2-01_files/figure-latex/unnamed-chunk-41-1.pdf> <./handouts-day2-01
+_files/figure-latex/unnamed-chunk-42-1.pdf>]
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 461--462
+LaTeX Warning: Marginpar on page 10 moved.
+
+<handouts-day2-01_files/figure-latex/unnamed-chunk-43-1.pdf, id=287, 289.08pt x
+ 21.07875pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-43-1.pdf Graphic file (
+type pdf)
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-43-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-43-1
+.pdf  used on input line 465.
+(pdftex.def)             Requested size: 312.01648pt x 22.75117pt.
+
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 465--466
 [][]  
  []
 
-<img/handout-02-10.png, id=256, 1347.53438pt x 313.17pt>
-File: img/handout-02-10.png Graphic file (type png)
-<use img/handout-02-10.png>
-Package pdftex.def Info: img/handout-02-10.png  used on input line 466.
-(pdftex.def)             Requested size: 499.19678pt x 116.01443pt.
+<img/handout-02-09.png, id=288, 1341.51187pt x 265.74281pt>
+File: img/handout-02-09.png Graphic file (type png)
+<use img/handout-02-09.png>
+Package pdftex.def Info: img/handout-02-09.png  used on input line 467.
+(pdftex.def)             Requested size: 499.19693pt x 98.88692pt.
 
-Overfull \hbox (187.19678pt too wide) in paragraph at lines 466--466
-[]  
+Overfull \hbox (199.19693pt too wide) in paragraph at lines 467--468
+[][]  
  []
 
-[10 <./img/handout-02-09.png> <./handouts-day2-01_files/figure-latex/unnamed-ch
-unk-35-1.pdf> <./handouts-day2-01_files/figure-latex/unnamed-chunk-37-1.pdf> <.
-/handouts-day2-01_files/figure-latex/unnamed-chunk-38-1.pdf>]
-
-LaTeX Warning: Marginpar on page 11 moved.
-
-<handouts-day2-01_files/figure-latex/unnamed-chunk-39-1.pdf, id=277, 289.08pt x
- 14.0525pt>
-File: handouts-day2-01_files/figure-latex/unnamed-chunk-39-1.pdf Graphic file (
+<handouts-day2-01_files/figure-latex/unnamed-chunk-44-1.pdf, id=289, 289.08pt x
+ 21.07875pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-44-1.pdf Graphic file (
 type pdf)
-<use handouts-day2-01_files/figure-latex/unnamed-chunk-39-1.pdf>
-Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-39-1
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-44-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-44-1
 .pdf  used on input line 469.
-(pdftex.def)             Requested size: 312.01648pt x 15.16745pt.
+(pdftex.def)             Requested size: 312.01648pt x 22.75117pt.
 
 Overfull \hbox (12.01648pt too wide) in paragraph at lines 469--470
 [][]  
@@ -1419,46 +1471,125 @@ Overfull \hbox (12.01648pt too wide) in paragraph at lines 469--470
 
 Package textcomp Info: Symbol \textrightarrow not provided by
 (textcomp)             font family pplj in TS1 encoding.
-(textcomp)             Default family used instead on input line 482.
-<handouts-day2-01_files/figure-latex/unnamed-chunk-41-1.pdf, id=278, 289.08pt x
+(textcomp)             Default family used instead on input line 480.
+<handouts-day2-01_files/figure-latex/unnamed-chunk-46-1.pdf, id=290, 289.08pt x
  144.54pt>
-File: handouts-day2-01_files/figure-latex/unnamed-chunk-41-1.pdf Graphic file (
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-46-1.pdf Graphic file (
 type pdf)
-<use handouts-day2-01_files/figure-latex/unnamed-chunk-41-1.pdf>
-Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-41-1
-.pdf  used on input line 493.
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-46-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-46-1
+.pdf  used on input line 491.
 (pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 493--494
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 491--492
 [][]  
  []
 
-<handouts-day2-01_files/figure-latex/unnamed-chunk-42-1.pdf, id=279, 289.08pt x
+<handouts-day2-01_files/figure-latex/unnamed-chunk-47-1.pdf, id=291, 289.08pt x
  144.54pt>
-File: handouts-day2-01_files/figure-latex/unnamed-chunk-42-1.pdf Graphic file (
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-47-1.pdf Graphic file (
 type pdf)
-<use handouts-day2-01_files/figure-latex/unnamed-chunk-42-1.pdf>
-Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-42-1
-.pdf  used on input line 501.
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-47-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-47-1
+.pdf  used on input line 499.
 (pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 501--502
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 499--500
 [][]  
  []
 
-[11 <./img/handout-02-10.png> <./handouts-day2-01_files/figure-latex/unnamed-ch
-unk-39-1.pdf> <./handouts-day2-01_files/figure-latex/unnamed-chunk-41-1.pdf> <.
-/handouts-day2-01_files/figure-latex/unnamed-chunk-42-1.pdf>]
-<handouts-day2-01_files/figure-latex/unnamed-chunk-43-1.pdf, id=297, 289.08pt x
+[10 <./handouts-day2-01_files/figure-latex/unnamed-chunk-43-1.pdf> <./img/hando
+ut-02-09.png> <./handouts-day2-01_files/figure-latex/unnamed-chunk-44-1.pdf> <.
+/handouts-day2-01_files/figure-latex/unnamed-chunk-46-1.pdf> <./handouts-day2-0
+1_files/figure-latex/unnamed-chunk-47-1.pdf>]
+
+LaTeX Warning: Marginpar on page 11 moved.
+
+
+LaTeX Warning: Marginpar on page 11 moved.
+
+
+LaTeX Warning: Marginpar on page 11 moved.
+
+<handouts-day2-01_files/figure-latex/unnamed-chunk-48-1.pdf, id=317, 289.08pt x
+ 28.105pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-48-1.pdf Graphic file (
+type pdf)
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-48-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-48-1
+.pdf  used on input line 509.
+(pdftex.def)             Requested size: 312.01648pt x 30.33492pt.
+
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 509--510
+[][]  
+ []
+
+<img/handout-02-10.png, id=318, 1347.53438pt x 313.17pt>
+File: img/handout-02-10.png Graphic file (type png)
+<use img/handout-02-10.png>
+Package pdftex.def Info: img/handout-02-10.png  used on input line 511.
+(pdftex.def)             Requested size: 499.19678pt x 116.01443pt.
+
+Overfull \hbox (199.19678pt too wide) in paragraph at lines 511--512
+[][]  
+ []
+
+<handouts-day2-01_files/figure-latex/unnamed-chunk-49-1.pdf, id=319, 289.08pt x
+ 21.07875pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-49-1.pdf Graphic file (
+type pdf)
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-49-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-49-1
+.pdf  used on input line 513.
+(pdftex.def)             Requested size: 312.01648pt x 22.75117pt.
+
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 513--514
+[][]  
+ []
+
+Package textcomp Info: Symbol \textrightarrow not provided by
+(textcomp)             font family pplj in TS1 encoding.
+(textcomp)             Default family used instead on input line 526.
+<handouts-day2-01_files/figure-latex/unnamed-chunk-51-1.pdf, id=320, 289.08pt x
+ 144.54pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-51-1.pdf Graphic file (
+type pdf)
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-51-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-51-1
+.pdf  used on input line 537.
+(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
+
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 537--538
+[][]  
+ []
+
+<handouts-day2-01_files/figure-latex/unnamed-chunk-52-1.pdf, id=321, 289.08pt x
+ 144.54pt>
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-52-1.pdf Graphic file (
+type pdf)
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-52-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-52-1
+.pdf  used on input line 545.
+(pdftex.def)             Requested size: 312.01648pt x 156.00822pt.
+
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 545--546
+[][]  
+ []
+
+[11 <./handouts-day2-01_files/figure-latex/unnamed-chunk-48-1.pdf> <./img/hando
+ut-02-10.png> <./handouts-day2-01_files/figure-latex/unnamed-chunk-49-1.pdf> <.
+/handouts-day2-01_files/figure-latex/unnamed-chunk-51-1.pdf> <./handouts-day2-0
+1_files/figure-latex/unnamed-chunk-52-1.pdf>]
+<handouts-day2-01_files/figure-latex/unnamed-chunk-53-1.pdf, id=344, 289.08pt x
  36.135pt>
-File: handouts-day2-01_files/figure-latex/unnamed-chunk-43-1.pdf Graphic file (
+File: handouts-day2-01_files/figure-latex/unnamed-chunk-53-1.pdf Graphic file (
 type pdf)
-<use handouts-day2-01_files/figure-latex/unnamed-chunk-43-1.pdf>
-Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-43-1
-.pdf  used on input line 551.
+<use handouts-day2-01_files/figure-latex/unnamed-chunk-53-1.pdf>
+Package pdftex.def Info: handouts-day2-01_files/figure-latex/unnamed-chunk-53-1
+.pdf  used on input line 595.
 (pdftex.def)             Requested size: 312.01648pt x 39.00203pt.
 
-Overfull \hbox (12.01648pt too wide) in paragraph at lines 551--552
+Overfull \hbox (12.01648pt too wide) in paragraph at lines 595--596
 [][]  
  []
 
@@ -1467,16 +1598,16 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
 1.
 (c:/Users/layto/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [12 <./handouts-day2-01_files/figure-latex/unnamed-chunk-43-1.pdf>]) [13] (./
+) [12 <./handouts-day2-01_files/figure-latex/unnamed-chunk-53-1.pdf>]) [13] (./
 handouts-day2-01.aux)
 Package rerunfilecheck Info: File `handouts-day2-01.out' has not changed.
-(rerunfilecheck)             Checksum: C99C45C2FF090737F3BE813B54527A9D;1170.
+(rerunfilecheck)             Checksum: 7586BCA3BCA256D3E8146D253D475042;1269.
  ) 
 Here is how much of TeX's memory you used:
- 14118 strings out of 480227
- 241781 string characters out of 5893515
- 528554 words of memory out of 5000000
- 31653 multiletter control sequences out of 15000+600000
+ 14214 strings out of 480227
+ 247230 string characters out of 5893515
+ 528741 words of memory out of 5000000
+ 31738 multiletter control sequences out of 15000+600000
  533960 words of font info for 133 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  81i,11n,80p,379b,520s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1488,10 +1619,10 @@ ist/fonts/type1/public/fpl/fplrc8a.pfb><c:/Users/layto/AppData/Roaming/TinyTeX/
 texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb><c:/Users/layto/AppData/Roaming/
 TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/Users/layto/AppData/
 Roaming/TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on handouts-day2-01.pdf (13 pages, 1524792 bytes).
+Output written on handouts-day2-01.pdf (13 pages, 1558263 bytes).
 PDF statistics:
- 401 PDF objects out of 1000 (max. 8388607)
- 254 compressed objects within 3 object streams
- 59 named destinations out of 1000 (max. 500000)
- 1301 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 450 PDF objects out of 1000 (max. 8388607)
+ 282 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 1359 words of extra memory for PDF output out of 10000 (max. 10000000)
 

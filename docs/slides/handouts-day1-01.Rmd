@@ -55,16 +55,15 @@ put_gap()
 
 
 
-## Judging pie slices is a low-accuracy task
+## Judging pie slices is a low-accuracy task[^1]
 
 - Fill in the blanks with your visual estimates of each pie slice. 
 
 - Total should be 100%.  
 
 ![](img/handout-01-01.png){width="140%"}    
-`r newthought("data from")`[^1] 
 
-[^1]: @WorldBank:2022
+
 
 
 
@@ -104,14 +103,20 @@ put_gap()
 
 
 
-## 3D effects distort our judgment even further
+
+
+
+## 3D effects distort our judgment even further[^1]
 
 - Fill in the blanks with your visual estimates of each pie slice 
 
 - Total should be 100% 
 
 ![](img/handout-01-03.png){width="150%"}    
-`r newthought("data from")`[^1] 
+
+
+
+
 
 
 
@@ -158,13 +163,15 @@ put_gap()
 
 
 
-## 3D effects always distort our judgment
+## 3D effects always distort our judgment[^1]
 
 - Fill in the blanks with your visual estimates of each bar length 
 
 ![](img/handout-01-05.png){width="150%"}
-`r newthought("data from")`[^1] 
-
+ 
+```{r fig.height = 0.2}
+put_gap()
+```
 
 
 
@@ -240,9 +247,12 @@ put_gap()
 
 
 
+
+
+
 # `r "\U00A7"` Aligning the design to the story
 
-## Survey: “What was your reason for taking this postdoc?”
+## Survey: “What was your reason for taking this postdoc?”[^2] 
 
 Before we can talk about what the chart *says*, we have to agree on what it *shows*.
 
@@ -251,9 +261,8 @@ put_gap()
 ```
 
 ![](img/stacked-bar-04.png){width="150%"}
-`r newthought("data from")`[^2] 
 
-[^2]: @Main+Wang+Tan:2021
+
 
 `r newthought("")`Write your responses below. 
 
@@ -282,7 +291,7 @@ put_gap()
 
 
 
-## What ideas are conveyed by the chart?  
+## What ideas are conveyed by the chart?[^2]  
 
 We agree on what the chart *shows*; now we can consider what it *says*.  
 
@@ -291,19 +300,18 @@ put_gap()
 ```
 
 ![](img/stacked-bar-04.png){width="150%"}
-`r newthought("data from")`[^2] 
 
 `r newthought("")`Write your responses below. 
 
 - Describe a trend for one of the six reasons for obtaining postdoc training.
 
-````{r fig.height = 1}
+````{r fig.height = 1.5}
 put_gap()
 ```
 
 - Compare two of the reasons over time.  
 
-````{r fig.height = 1}
+````{r fig.height = 1.5}
 put_gap()
 ```
 
@@ -328,7 +336,7 @@ put_gap()
 
 
 
-# What can we say about the variables?  
+# What can we say about the variables?[^2]   
 
 Choosing an effective chart design depends in part on what variables you have.   
 
@@ -337,7 +345,10 @@ put_gap()
 ```
 
 ![](img/stacked-bar-04.png){width="150%"}
-`r newthought("data from")`[^2] 
+
+````{r fig.height = 0.4}
+put_gap()
+```
 
 `r newthought("Fill in the blanks")` to begin summarizing the data structure.  
 
@@ -349,7 +360,7 @@ put_gap()
 
 4. Which is the independent variable? ___________________________ . 
 
-````{r fig.height = 2.5}
+````{r fig.height = 2.3}
 put_gap()
 ```
 
@@ -365,7 +376,7 @@ put_gap()
 
 
 
-# The appropriate design for a time series is a line graph
+# The appropriate design for a time series is a line graph[^2] 
 
 Separating the reasons into individual panels clarifies the data
 
@@ -374,7 +385,6 @@ put_gap()
 ```
 
 ![](img/handout-01-13.png){width="125%"}
-`r newthought("data from")`[^2] 
 
 - Describe the main idea this chart conveys to you.
 
@@ -400,8 +410,15 @@ put_gap()
 
 Designed to show a summary of the distribution of a single quantitative variable. 
 
+````{r fig.height = 0.2}
+put_gap()
+```
+
 ![](img/handout-01-14.png){width="75%"}
 
+````{r fig.height = 0.5}
+put_gap()
+```
 
 
 
@@ -416,14 +433,15 @@ Designed to show a summary of the distribution of a single quantitative variable
 
 
 
-
-# Our final design shows distributions of annual percentages 
+# Our final design shows distributions of annual percentages[^2] 
 
 ![](img/handout-01-15.png){width="130%"}
-`r newthought("data from")`[^2] 
+
+````{r fig.height = 0.2}
+put_gap()
+```
 
 - Describe the main idea(s) this chart conveys to you.
-
 
 ````{r fig.height = 4.5}
 put_gap()
@@ -442,40 +460,40 @@ put_gap()
 
 # `r "\U00A7"` Advice from experts
 
-Match the expert to the advice (fill in the blanks with letters)
+Match the expert to the advice.[^3][^4][^5][^6]  
+
+`r newthought("Fill in the blanks")` with letters A--D. 
 
 ```{r}
 x <- wrapr::build_frame(
-  "Expert [reference]", "Letter", "Empasizes the importance of"|
+  "Expert", "Letter", "Emphasizes the importance of"|
   " ", " ", " "|
-  "A. \\citet{Cairo:2019}", "______" , "message"|
-  " ", " ", " "|
-    
-  "B. \\citet{Doumont:2009}", "______" , "variables"|
+  "A. Alberto Cairo"      , "______" , "message"|
   " ", " ", " "|
     
-  "C. \\citet{Evergreen:2017}", "______" , "revealing the complex"|
+  "B. Jean-luc Doumont"   , "______" , "variables"|
+  " ", " ", " "|
+    
+  "C. Stephanie Evergreen", "______" , "revealing the complex"|
     " ", " ", " "|
     
-  "D. \\citet{Tufte:1983}", "______" , "knowing your main point"|
+  "D. Edward Tufte"       , "______" , "knowing your main point"|
   " ", " ", " "|
     
-  " ", "______" , "not lying to yourself"|
+  " "                     , "______" , "not lying to yourself"|
     
   " ", " ", " ")
 
 knitr::kable(x)
 ```
 
-
-
-
-
-
-
 ````{r fig.height = 0.3}
 put_gap()
 ```
+
+
+
+
 
 
 
@@ -483,35 +501,48 @@ put_gap()
 
 - Understand the data structure and content
 
-````{r fig.height = 0.3}
+````{r fig.height = 0.2}
 put_gap()
 ```
 
 - Explore a story's context, causality, and complexity
 
-````{r fig.height = 0.3}
+````{r fig.height = 0.2}
 put_gap()
 ```
 
 - Align visual and verbal logic by revising iteratively
 
-````{r fig.height = 0.3}
+````{r fig.height = 0.2}
 put_gap()
 ```
 
 - Edit to suit the rhetorical goals for each audience
 
-````{r fig.height = 0.3}
+````{r fig.height = 0.2}
 put_gap()
 ```
 
 - Control every pixel---avoid thoughtless conformity
 
-````{r fig.height = 0.3}
+````{r fig.height = 0.2}
 put_gap()
 ```
 
 - Question are you seeing only what you want to believe?
+
+
+
+
+
+[^1]: Data source: @WorldBank:2022
+[^2]: Data adapted from @Main+Wang+Tan:2021
+[^3]: @Cairo:2019
+[^4]: @Doumont:2009
+[^5]: @Evergreen:2017
+[^6]: @Tufte:1983
+
+
 
 
 

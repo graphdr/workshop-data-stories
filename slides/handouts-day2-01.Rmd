@@ -61,10 +61,15 @@ put_gap()
 
 ## Dot plot
 
-![](img/handout-02-01.png){width="80%"}    
-`r newthought("data from")`[^2]    
+Infant mortality in the US by maternal age group.[^2]
 
 ```{r fig.height = 0.2}
+put_gap()
+```
+
+![](img/handout-02-01.png){width="80%"}    
+
+```{r fig.height = 0.3}
 put_gap()
 ```
 
@@ -90,7 +95,7 @@ put_gap()
 
 - What questions does the chart raise?
 
-```{r fig.height = 2}
+```{r fig.height = 1.5}
 put_gap()
 ```
 
@@ -100,12 +105,19 @@ put_gap()
 
 
 
-## Multiway dot chart, superposed
+
+
+## Multiway dot chart, superposed 
+
+Infant mortality in the US by maternal age group, maternal race, and geographical region.[^2]
+
+```{r fig.height = 0.3}
+put_gap()
+```
 
 ![](img/handout-02-02.png){width="160%"}    
-`r newthought("data from")`[^2]    
 
-```{r fig.height = 0.2}
+```{r fig.height = 0.3}
 put_gap()
 ```
 
@@ -150,12 +162,17 @@ put_gap()
 
 
 
-## Scatterplot
+# Scatterplot
 
-![](img/handout-02-03.png){width="80%"}    
-`r newthought("data from")` [^3][^4]    
+GDP[^3] and life expectancy at birth[^4] by country. 
 
 ```{r fig.height = 0.2}
+put_gap()
+```
+
+![](img/handout-02-03.png){width="80%"}
+
+```{r fig.height = 0.3}
 put_gap()
 ```
 
@@ -196,10 +213,15 @@ put_gap()
 
 ## Scatterplot, faceted
 
-![](img/handout-02-04.png){width="160%"}    
-`r newthought("data from")` [^3][^4]    
+GDP[^3] and life expectancy at birth[^4] by region and country. 
 
-```{r fig.height = 0.2}
+```{r fig.height = 0.4}
+put_gap()
+```
+
+![](img/handout-02-04.png){width="160%"}    
+
+```{r fig.height = 0.3}
 put_gap()
 ```
 
@@ -244,12 +266,17 @@ put_gap()
 
 
 
-## Time series
+## Time series 
 
-![](img/handout-02-05.png){width="80%"}    
-`r newthought("data from")`[^4]    
+Life expectancy at birth[^4] in the US. 
 
 ```{r fig.height = 0.2}
+put_gap()
+```
+
+![](img/handout-02-05.png){width="80%"}    
+
+```{r fig.height = 0.3}
 put_gap()
 ```
 
@@ -275,7 +302,7 @@ put_gap()
 
 - What questions does the chart raise?
 
-```{r fig.height = 1}
+```{r fig.height = 1.2}
 put_gap()
 ```
 
@@ -285,12 +312,20 @@ put_gap()
 
 
 
+
+
+
 ## Time series, faceted
 
-![](img/handout-02-06.png){width="160%"}    
-`r newthought("data from")`[^4]    
+Life expectancy at birth[^4] in selected countries 
 
-```{r fig.height = 0.2}
+```{r fig.height = 0.3}
+put_gap()
+```
+
+![](img/handout-02-06.png){width="160%"}    
+
+```{r fig.height = 0.3}
 put_gap()
 ```
 
@@ -338,10 +373,15 @@ put_gap()
 
 ## Connected scatterplot, faceted
 
-![](img/handout-02-07.png){width="160%"}    
-`r newthought("data from")` [^3][^4]    
+GDP[^3] and life expectancy at birth[^4] over time in selected countries. 
 
-```{r fig.height = 0.2}
+```{r fig.height = 0.3}
+put_gap()
+```
+
+![](img/handout-02-07.png){width="160%"}    
+
+```{r fig.height = 0.4}
 put_gap()
 ```
 
@@ -387,10 +427,15 @@ put_gap()
 
 ## Cyclic time series, superposed
 
-![](img/handout-02-08.png){width="160%"}    
-`r newthought("data from")`[^5]    
+Extent of polar ice by month over a span of 43 years.[^5]
 
-```{r fig.height = 0.2}
+```{r fig.height = 0.3}
+put_gap()
+```
+
+![](img/handout-02-08.png){width="160%"}    
+
+```{r fig.height = 0.3}
 put_gap()
 ```
 
@@ -442,10 +487,15 @@ put_gap()
 
 ## Strip chart, superposed
 
-![](img/handout-02-09.png){width="160%"}    
-`r newthought("data from")`[^6]    
+Speeds by event and sex of skiers at the world speed competition in Verbier, Switzerland, April 2011.[^6]  
 
-```{r fig.height = 0.2}
+```{r fig.height = 0.3}
+put_gap()
+```
+
+![](img/handout-02-09.png){width="160%"}    
+
+```{r fig.height = 0.3}
 put_gap()
 ```
 
@@ -485,10 +535,15 @@ put_gap()
 
 ## Box and whisker chart
 
+Years to graduate for US undergraduate students[^7][^8] by sex and path (traditional or non-traditional experience).
+
+```{r fig.height = 0.4}
+put_gap()
+```
+
 ![](img/handout-02-10.png){width="160%"}    
-`r newthought("data from")`[^7]    
     
-```{r fig.height = 0.2}
+```{r fig.height = 0.3}
 put_gap()
 ```
 
@@ -583,13 +638,14 @@ $\quad$
 put_gap()
 ```
 
-[^1]: The four main types of argument are adapted from @Doumont:2009. 
-[^2]: @CDC-Wonder:2022
-[^3]: @Gapminder+GDP:2022    
-[^4]: @Gapminder+LifeExp:2022  
-[^5]: @NASA+Snow+Ice:2017 
-[^6]: @R-GDAdata  
-[^7]: @R-graphclassmate 
+[^1]: The four main types of argument are adapted from @Doumont:2009.    
+[^2]: Data source: @CDC-Wonder:2022    
+[^3]: Data source: @GDP:2022    
+[^4]: Data source: @LifeExp:2022    
+[^5]: Data source: @NASA+Snow+Ice:2017    
+[^6]: Data source: @R-GDAdata    
+[^7]: Data source: @R-graphclassmate from the MIDFIELD database.
+[^8]: Data source: @MIDFIELD:2021
 
 # References
 
