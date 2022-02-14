@@ -59,7 +59,7 @@ put_gap()
 
 - Fill in the blanks with your visual estimates of each pie slice. 
 
-- Total should be 100%.  
+- Total should be 100%
 
 ![](img/handout-01-01.png){width="140%"}    
 
@@ -499,7 +499,7 @@ put_gap()
 
 # Ideas to consider
 
-- Understand the data structure and content
+- Characterize the data structure and content
 
 ````{r fig.height = 0.2}
 put_gap()

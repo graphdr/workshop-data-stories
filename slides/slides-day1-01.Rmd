@@ -195,7 +195,7 @@ top5 %>%
   column_spec(1, color = "black", background = "white")
 ```
 
-The total should be 100&.
+The total should be 100%.
 ]
 
 <div class="my-footer">
@@ -949,10 +949,7 @@ class: left
 
 
 
----
-class:inverse, center, middle
 
-Time for think-write-share
 
 
 
@@ -1019,10 +1016,7 @@ ggplot(dt, aes(x = year, y = pct)) +
 
 
 
----
-class:inverse, center, middle
 
-Time for think-write-share
 
 
 
@@ -1316,7 +1310,7 @@ class: left
 # Ideas to consider
 
 
-- **Understand** the data structure and content 
+- **Characterize** the data structure and content 
 
 - **Explore** a story's context, causality, and complexity
 
