@@ -2,7 +2,7 @@
 title:  "Data stories: Perception, reasoning, & credibility"
 runningheader: "Session 1: Data stories" # only for pdf output
 author: "Richard Layton"
-date:   "Session 1, 2022--02--14"
+date:   "Session 1, 2022--02--16"
 output:
   tufte::tufte_handout:
     citation_package: natbib

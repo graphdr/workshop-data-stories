@@ -80,10 +80,11 @@ image_write(z,
 <img src="img/day1-cover-preview.png" alt="dot chart">
 ]
 
+# Limitations of common graph types
 
-# Perception, reasoning, and credibility
+## Perception, reasoning, and credibility
 
-## Limitations of common graph types
+
 
 <br>
 
@@ -91,13 +92,12 @@ image_write(z,
 
 Richard Layton   
 
-2022-02-14
+2022 MIDFIELD Institute
 
 <br>
 
 <br>
 
-<https://graphdr.github.io/data-stories/>
 
 <https://github.com/graphdr>
 
@@ -830,7 +830,14 @@ class:inverse, center, middle
 ---
 class: left
 
-# Survey: “What was your reason for taking this postdoc?”
+# Charts encode information
+
+
+
+
+Survey: “What was your reason for taking this postdoc?”
+
+<br>
 
 <img src="img/stacked-bar-04.png" alt="stacked bar chart" height="275">
 
@@ -857,13 +864,12 @@ p <- ggplot(dt, aes(x = year, y = pct, color = reason, fill = reason)) +
         legend.key.height = unit(15, "mm"))
 ```
 
-First, let's agree on what the chart *shows*.  
+<br>
+ 
 
-- What does a color represent?    
+*Information.* Pick a color. Describe the information it encodes.  
 
-- What does a single color-segment of a bar represent?   
 
-- What does the changing height over time of a segment represent?
 
 
 
@@ -900,17 +906,17 @@ Data source: Main, Joyce B., Yanbing Wang, and Li Tan (2021) “The career outlo
 ---
 class: left
 
-# What ideas are conveyed by the chart?
+# Charts convey meaning
+
+Survey: “What was your reason for taking this postdoc?”
+
+<br>
 
 <img src="img/stacked-bar-04.png" alt="stacked bar chart" height="275">
 
-Now we can consider what the chart says.
+<br>
 
-- Describe a trend for one of the six reasons for obtaining postdoc training. 
-
-- Compare two of the reasons over time.    
-
-- Describe the main idea this chart conveys to you. 
+*Meaning.* Describe a story this chart *conveys to you.*
 
 
 
@@ -926,33 +932,30 @@ Now we can consider what the chart says.
 ---
 class: left
 
-# Variables can be classified  
+# Classify your variables 
 
 ```{r}
-x <- wrapr::build_frame(
+wrapr::build_frame(
+  "item", "description" |
   "numeric", "(quantitative) a characteristic whose values are numbers" |
     "discrete", "Countable and can assume only a finite number of real values on a given interval" |
     "continuous", "Measureable and can assume an infinite number of real values on a given interval" |
     "categorical", "(qualitative) a characteristic that can’t be quantified" |
     "ordinal", "Levels have a natural order, e.g., days of the week, education level, age group" |
     "nominal", "Levels are unordered, e.g., gender, eye color, mode of transportation" 
-)
-
-x %>%
-  kbl(align = "ll") %>%
+) |>
+  kbl(align = "ll", col.names = NULL) |>
   kable_paper(lightable_options = "basic", 
               full_width = TRUE, 
-              font_size = 24) %>%
-  column_spec(2, color = "black", background = "white") %>%
-  column_spec(1, color = "black", background = "white") %>%
-  row_spec(0, bold = TRUE, color = "#8c510a", background = "#f6e8c3") %>%
-  row_spec(3, bold = TRUE, color = "#8c510a", background = "#f6e8c3")
-
-
-
+              font_size = 24) |>
+  column_spec(2, color = "black", background = "white") |>
+  column_spec(1, color = "black", background = "white") |>
+  row_spec(c(1, 4), bold = TRUE, color = "#01665e", background = "#c7eae5")
 ```
 
+<br>
 
+*variables $\rightarrow$ chart design  $\rightarrow$  message $\rightarrow$ research question  $\rightarrow$ variables $\rightarrow$ chart design  $\rightarrow$  message $\rightarrow$ ...*
 
 
 
@@ -969,13 +972,13 @@ class: left
 
 <img src="img/stacked-bar-04.png" alt="stacked bar chart" height="275">
 
-1. Time (discrete years) is one categorical variable.
+1. Time (discrete years) is a **categorical variable**.
 
 2. The other categorical variable is `___________________________`
 
 3. The quantitative variable is `___________________________`
 
-4. Which is the independent variable?  `___________________________`
+4. The independent variable is  `___________________________`
 
 
 
@@ -1043,7 +1046,8 @@ ggplot(dt, aes(x = year, y = pct)) +
 
 ```
 
-- Describe the main idea this chart conveys to you. 
+
+*Meaning.* Describe a story this chart *conveys to you.*
 
 
 
@@ -1159,7 +1163,9 @@ ggplot(dt, aes(x = pct, y = reorder(reason, pct, median))) +
 ```
 
 
-- Describe the main idea this chart conveys to you.
+<br>
+
+*Meaning.* Describe a story this chart *conveys to you.*
 
 
 
@@ -1191,7 +1197,7 @@ In going from this design...
 .pull-right[
 ...to this design... 
 
-<img src="img/boxplot-preview.png" alt="stacked bar preview" style="height:250px;">
+<img src="img/boxplot-preview-2.png" alt="stacked bar preview" style="height:250px;">
 ]
 
 - we improve the audience's **perception** of the stories in the data 
