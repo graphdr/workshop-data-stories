@@ -39,6 +39,10 @@ The workshop has three sessions focusing on different aspects of storytelling wi
 [Storytelling with Data](https://www.storytellingwithdata.com/blog), Cole Nussbaumer Knaflic and team   
 
 
+## 2022 MIDFIELD Institute
+
+- [slides](slides/graph-limitations.html) Graph limitations 
+
 
 
 

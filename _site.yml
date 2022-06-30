@@ -17,8 +17,6 @@ navbar:
       href: session2.html
     - text: "Session 3"
       href: session3.html
-    - text: "Graph limitations"
-      href: graph-limitations.html
   right:
     - text: "License"
       href: license.html 
