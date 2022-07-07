@@ -1,8 +1,7 @@
 ---
 title:  "Creating more effective charts"
 runningheader: "Visualization 1: More effective charts" # only for pdf output
-author: "Perception, reasoning, and credibility"
-date: "2022 MIDFIELD Institute"
+author: "2022 MIDFIELD Institute"
 output:
   tufte::tufte_handout:
     citation_package: default
@@ -13,6 +12,14 @@ nocite: |
   @Robbins:2013, @Cairo:2019, @Doumont:2009, @Evergreen:2017, @Tufte:1983, 
   @WorldBank:2022, @Main+Wang+Tan:2021
 ---
+
+```{marginfigure, echo=TRUE}
+*Richard Layton* resides online at  
+
+- <https://www.graphdoctor.com>    
+- <https://github.com/graphdr>    
+```
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
@@ -31,6 +38,13 @@ library(tufterhandout)
 knitr::opts_chunk$set(cache.extra = packageVersion('tufte'))
 options(htmltools.dir.version = FALSE)
 ```
+
+```{r fig.height = 0.1}
+put_gap()
+```
+
+
+# Perception, reasoning, and credibility 
 
 
 ```{marginfigure, echo=TRUE}
@@ -71,10 +85,6 @@ put_gap()
 ```
 
 ![](img/handout-01-01-v2.png){width="150%"}    
-
-```{r fig.height = 0.3}
-put_gap()
-```
 
 ```{marginfigure, echo=TRUE}
 Data source: World Bank (2022)

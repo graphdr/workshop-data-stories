@@ -102,12 +102,13 @@ s <- image_border(s, "white", "0x30")
 
 2022 MIDFIELD Institute
 
-Richard Layton
+Richard Layton   
 
 <br>
 
 <br>
 
+<https://www.graphdoctor.com>
 
 <https://github.com/graphdr>
 
