@@ -1,4 +1,5 @@
 ---
+title: "Expanding your graphgical repertoire"
 output:
   xaringan::moon_reader:
     css: ["default", "middlebury", "middlebury-fonts", "custom.css"]
@@ -14,8 +15,11 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
-options(htmltools.dir.version = FALSE)
-knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
+knitr::opts_chunk$set(echo=FALSE, 
+                      warning=FALSE, 
+                      message=FALSE, 
+                      comment=NULL, 
+                      fig.align = "center")
 knitr::opts_knit$set(root.dir = "../")
 
 library("data.table")
@@ -403,14 +407,6 @@ ggsave(
 )
 ```
 
-<br>
-
-```{r echo=FALSE}
-my_table(x)
-```
-
-
-
 
 
 
@@ -446,12 +442,6 @@ ggsave(
 )
 ```
 
-<br>
-
-```{r}
-my_table(x)
-```
-
 
 
 
@@ -475,15 +465,6 @@ p <- ggplot(dt, aes(x = log10(N), y = reorder(origin, N, median))) +
   scale_x_continuous(limits = c(2, 6), breaks = seq(1, 6, 1)) +
   labs(x = "Number of graduates (log base 10)", 
        y = "") 
-  # theme(legend.position = "none") 
-  # annotate("text",
-  #          x = c(10, 114),
-  #          y = c(3.3, 3.3),
-  #          label = c("International", "Domestic"),
-  #          size = 6,
-  #          hjust = c(0, 1))
-
-
 p
 
 ggsave(
@@ -493,12 +474,6 @@ ggsave(
   units = c("in"),
   dpi = 300
 )
-```
-
-<br>
-
-```{r echo=FALSE}
-my_table(x)
 ```
 
 
@@ -707,58 +682,44 @@ class: left
 
 # Data
 
-Number of engineering students persisting through year 4 and graduating by year 6
+Engineering students at 14 institutions persisting to year 4 and graduating by year 6, 1987--2019
 
 ```{r}
-# Data source
-# Ohland MW, Brawner CE, Camacho MM, Layton RA, Long RA, Lord SM, Wasburn MH (2011) Race, gender, and measures of success in engineering education. Journal of Engineering Education, 100(2):225–252.
+options(datatable.print.nrows = 16,datatable.print.topn = 8)
+d <- fread("data/four-year-six-year.csv")
+```
 
-d <- wrapr::build_frame(
-  "institution","sex","persist_8","grad_6" |
-1, "Female",  865,  836 |
-1, "Male",   3564, 3421 |
-2, "Female",  374,  236 |
-2, "Male",    644,  325 |
-3, "Female",  203,  158 |
-3, "Male",    610,  405 |
-4, "Female", 2744, 2620 |
-4, "Male",   9539, 8840 |
-5, "Female",  761,  686 |
-5, "Male",   1362, 1097 |
-6, "Female", 2194, 1976 |
-6, "Male",   7929, 6847 |
-7, "Female",  169,  155 |
-7, "Male",   1174, 1032 |
-8, "Female",  715,  626 |
-8, "Male",   3034, 2375 |
-9, "Female", 1506, 1475 |
-9, "Male",   7529, 7260
+
+.pull-left[
+```{r}
+d[]
+```
+]
+
+.pull-right[
+
+<br>
+
+```{r echo=FALSE}
+x <- wrapr::build_frame(
+  "variable", "type" |
+    "institution", "categorical" |
+    "sex", "categorical" |
+    "4-yr persisters", "quantitative" |
+    "6-yr completers", "quantitative"
 )
-d <- data.table(d)
-fwrite(d, "data/session-2-correlate-persisters.csv")
-
-tbl <- copy(d)
-setnames(tbl, old = c("persist_8" ,"grad_6"), new = c("persist", "grad"))
-tbl <- dcast(tbl, institution ~ sex, value.var = c("persist","grad"))
-tbl[, institution := paste("Institution", institution)]
+my_table(x)
 ```
+]
 
 
-```{r}
-tbl |>
-  kbl(col.names = c(" ", "Female", "Male", "Female", "Male")) |>
-  kable_styling(font_size = 18) |>
-  add_header_above(c("Institution" = 1, "Persist through Year 4" = 2, "Graduate by Year 6" = 2), background = "#c7eae5") |>
-  kable_paper(lightable_options = "basic", full_width = FALSE) |>
-  row_spec(0, background = "#c7eae5") |>
-  column_spec(1:5, 
-              color = "black", 
-              background = "white", 
-              width = "1.5in")
-```
+
+
+
+
 
 <div class="my-footer">
-<span>Data source: 2011 MIDFIELD  
+<span>Data source: 2022 MIDFIELD  
 </span>
 </div> 
 
@@ -778,23 +739,13 @@ class: left
 
 # Scatterplots are designed to reveal correlation
 
-.pull-left[
-```{r}
-d$persist_8 <- d$persist_8 / 1000
-d$grad_6 <- d$grad_6 / 1000
-
-d_by_inst <- d[, .(persist_8 = sum(persist_8), grad_6 = sum(grad_6)), by = c("institution")]
-
-
-
-p <- ggplot(d_by_inst, aes(x = persist_8, y = grad_6)) +
+```{r fig.height=7, fig.width=7}
+p <- ggplot(d, aes(x = y4/1000, y = y6/1000)) +
   geom_smooth(method = "lm", se = FALSE, size = 0.6, color = "gray") +
-  geom_point(size = 6, shape = 21, color = rcb("dark_BG"), fill = rcb("mid_BG")) +
-  coord_fixed(ratio = 1) +
-  scale_x_continuous(limits = c(0, 15)) +
-  scale_y_continuous(limits = c(0, 15)) +
+  uniform_point + 
   labs(x = "4-yr persisters (thousands)", 
-       y = "6-yr completers (thousands)") + 
+       y = "6-yr completers (thousands)", 
+       title = "") + 
   theme_graphclass(font_size = 20) 
 
 p
@@ -807,21 +758,7 @@ ggsave(
   dpi = 300
 )
 ```
-]
-.pull-right[
 
-<br>
-
-```{r echo=FALSE}
-x <- wrapr::build_frame(
-  "variable", "type" |
-    "institution", "categorical" |
-    "4-yr persisters", "quantitative" |
-    "6-yr completers", "quantitative" 
-)
-my_table(x)
-```
-]
 
 
 
@@ -848,22 +785,19 @@ class: left
 
 # Add a category
 
-.pull-left[
-```{r}
-p <- ggplot(d, aes(x = persist_8, y = grad_6, color = sex, fill = sex)) +
+```{r fig.height=7, fig.width=7}
+p <- ggplot(d, aes(x = y4/1000, y = y6/1000, color = sex, fill = sex)) +
   geom_smooth(method = "lm", se = FALSE, size = 0.6) +
   superpose_point + 
   superpose_color +
   superpose_fill_mid +
-  coord_fixed(ratio = 1) +
-  scale_x_continuous(limits = c(0, 10), breaks = seq(0, 12, 2)) +
-  scale_y_continuous(limits = c(0, 10), breaks = seq(0, 12, 2)) +
   labs(x = "4-yr persisters (thousands)", 
-       y = "6-yr completers (thousands)") + 
+       y = "6-yr completers (thousands)", 
+       title = "") + 
   theme_graphclass(font_size = 20) +
-  theme(legend.position = "none") +
-  geom_text(data = d[institution == 4], 
-            aes(x = persist_8, y = grad_6, label = sex), 
+  theme(legend.position = "none")  +
+  geom_text(data = d[institution == "B"], 
+            aes(x = y4/1000, y = y6/1000, label = sex), 
             vjust = -1, hjust = 1, size = 7)
 
 p
@@ -876,28 +810,14 @@ ggsave(
   dpi = 300
 )
 ```
-]
-.pull-right[
 
-<br>
 
-```{r echo=FALSE}
-x <- wrapr::build_frame(
-  "variable", "type" |
-    "institution", "categorical" |
-    "sex", "categorical" |
-    "4-yr persisters", "quantitative" |
-    "6-yr completers", "quantitative"
-)
-my_table(x)
-```
-]
 
 
 
 ```{r}
 # -------------------- COVER PAGE -------------------- 
-p <- ggplot(d, aes(x = persist_8, y = grad_6, color = sex, fill = sex)) +
+p <- ggplot(d, aes(x = y4/1000, y = y6/1000, color = sex, fill = sex)) +
   geom_smooth(method = "lm", se = FALSE, size = 0.5) +
   geom_point(size = 2, shape = 21) +
   superpose_color +
@@ -928,16 +848,13 @@ class: left
 
 # One facet per sex
 
-```{r echo=FALSE, fig.width=16}
-p <- ggplot(d, aes(x = persist_8, y = grad_6, color = sex, fill = sex)) +
+```{r fig.height=7, fig.width=14}
+p <- ggplot(d, aes(x = y4/1000, y = y6/1000, color = sex, fill = sex)) +
   geom_smooth(method = "lm", se = FALSE, size = 0.6) +
   superpose_point + 
   superpose_color +
   superpose_fill_mid +
   facet_wrap(vars(sex))+
-  coord_fixed(ratio = 1) +
-  scale_x_continuous(limits = c(0, 10), breaks = seq(0, 12, 2)) +
-  scale_y_continuous(limits = c(0, 10), breaks = seq(0, 12, 2)) +
   labs(x = "4-yr persisters (thousands)", 
        y = "6-yr completers (thousands)") + 
   theme_graphclass(font_size = 20) +
@@ -971,40 +888,38 @@ class: left
 
 # One facet per institution
 
-```{r echo=FALSE, fig.width=16, fig.asp = 0.5}
+```{r fig.width=16, fig.height=6}
 dt <- copy(d)
-dt[, institution := paste("Institution", institution)]
-p <- ggplot(dt, aes(x = persist_8, y = grad_6, color = sex, fill = sex)) +
-  geom_smooth(method = "lm", se = FALSE, size = 0.6) +
-  superpose_point + 
+# dt[, institution := paste("Institution", institution)]
+p <- ggplot(dt, aes(x = y4/1000, y = y6/1000, color = sex, fill = sex)) +
+  superpose_point +
   superpose_color +
   superpose_fill_mid +
-  facet_wrap(vars(reorder(institution, grad_6, median)), 
-             ncol = 5, 
+  # coord_equal() +
+  facet_wrap(vars(reorder(institution, y6, median)),
+             ncol = 7,
              as.table = FALSE)+
-  # coord_fixed(ratio = 1) +
-  scale_x_continuous(limits = c(0, 10), breaks = seq(0, 12, 2)) +
-  scale_y_continuous(limits = c(0, 10), breaks = seq(0, 12, 2)) +
-  labs(x = "4-yr persisters (thousands)", 
-       y = "6-yr completers (thousands)") + 
+  labs(x = "4-yr persisters (thousands)",
+       y = "6-yr completers (thousands)") +
   theme_graphclass(font_size = 20) +
   theme(legend.position = "none") +
-  geom_text(data = dt[institution == "Institution 1"], 
-            aes(x = persist_8, y = grad_6, label = sex), 
-            vjust = 0.5, hjust = c(-0.2, -0.4), size = 7)
+  geom_text(data = dt[institution == "Institution G"],
+            aes(x = y4/1000, y = y6/1000, label = sex),
+            vjust = 0.5, hjust = c(-0.2, -0.4), size = 7) +
+  scale_x_continuous(limits = c(-1, 19), breaks = seq(0, 15, 5)) +
+  scale_y_continuous(limits = c(-1, 17), breaks = seq(0, 15, 5))
 p
 
-p <- p +
-  scale_x_continuous(limits = c(0, 10), breaks = seq(0, 8, 4)) +
-  scale_y_continuous(limits = c(0, 10), breaks = seq(0, 8, 4))
 ggsave(
-  filename = "results/day-2-correlation-04.png", 
-  width = 12,
-  height = 6,
+  filename = "results/day-2-correlation-04.png",
+  width = 16,
+  height = 5.5,
   units = c("in"),
   dpi = 300
 )
 ```
+
+
 
 
 
@@ -1020,58 +935,59 @@ class: left
 
 # Change the quantitative variable
 
-```{r echo=FALSE, fig.width=16, fig.asp = 0.4}
-d_totals <- copy(d_by_inst)
-setnames(d_totals, old = c("persist_8", "grad_6"), new = c("inst_persist", "inst_grad"))
-d <- d_totals[d, on = c("institution")]
-d[, persist := round(100 * persist_8 / inst_persist, 1)]
-d[, grad := round(100 * grad_6 / inst_grad, 1)]
-d <- d[, .(institution, sex, grad_6, persist, grad, persist_8)]
-dt <- copy(d)
-dt[, institution := paste("Institution", institution)]
-dt <- dt[sex == "Female", .(institution, persist, grad, persist_8)]
+Engineering students at 14 institutions persisting to year 4 and graduating by year 6, 1987&ndash;2019
 
-p <- ggplot(dt) +
-  geom_segment(data = dt, 
-               aes(x = persist, 
-               xend = grad, 
-               y = reorder(institution, grad), 
-               yend = reorder(institution, grad)), 
-               size = 2, 
-               color = rcb("dark_BG"))+
-  geom_point(aes(x = persist, y = reorder(institution, grad)), 
+```{r fig.height=6.5, fig.width=14}
+pop <- copy(d)
+
+# sum N by inst
+pop[, `:=`(N4 = sum(y4), N6 = sum(y6)), by = c("institution")]
+pop <- pop[sex == "Female"]
+
+# compute percent of cohort, female
+pop[, `:=`(pct_y4 = 100*y4/N4, pct_y6 = 100*y6/N6)]
+
+# factor
+pop[, institution := reorder(institution, pct_y6, decreasing = FALSE)]
+
+
+p <- ggplot(pop) +
+  geom_segment(aes(x = pct_y4, xend = pct_y6, 
+                   y = institution, yend = institution), 
+               color = rcb("dark_BG"), 
+               size = 2) +
+  geom_point(aes(x = pct_y4, y = institution), 
              color = rcb("dark_BG"), 
-             fill = rcb("light_BG"), 
+             fill = rcb("pale_BG"), 
              shape = 21, 
              size = 6) +
-  geom_point(aes(x = grad, y = reorder(institution, grad)), 
+  geom_point(aes(x = pct_y6, y = institution), 
              color = rcb("dark_BG"), 
-             fill = rcb("dark_BG"), 
-             shape = 21,  
              size = 6) +
-  labs(y = "", 
+  labs(y = "Institution    ", 
        x = "4-yr and 6-yr cohorts, % Female") +
-  geom_text(data = dt[institution == "Institution 3"],  
-            aes(x = persist, y = institution, label = "Year 4"), 
-            vjust = -0.8, 
-            hjust = 1, 
-            size = 7
-            ) +
-    geom_text(data = dt[institution == "Institution 3"],  
-            aes(x = grad, y = institution, label = "Year 6"), 
-            vjust = -0.8, 
-            hjust = 0, 
-            size = 7
-            ) +
-  scale_x_continuous(limits = c(10, 50), breaks = seq(0, 100, 10)) +
-  theme_graphclass(font_size = 20)
+  geom_text(data = pop[institution == "N"],  
+            aes(x = pct_y4, y = institution, label = "Year 4"), 
+            vjust = -0.6, 
+            hjust = 1.2, 
+            size = 7, 
+            color = rcb("mid_BG")) +
+  geom_text(data = pop[institution == "N"],  
+            aes(x = pct_y6, y = institution, label = "Year 6"), 
+            vjust = -0.6, 
+            hjust = -0.3, 
+            size = 7, 
+            color = rcb("dark_BG")) +
+  scale_x_continuous(limits = c(10, 41), breaks = seq(0, 100, 5)) +
+  theme_graphclass(font_size = 20) +
+  theme(axis.title.y = element_text(angle = 0, vjust = 0.5))
 
 p
 
 ggsave(
   filename = "results/day-2-correlation-05.png", 
   width = 12,
-  height = 5,
+  height = 6.5,
   units = c("in"),
   dpi = 300
 )
@@ -1154,77 +1070,21 @@ dt <- fread("data/budget-justice.csv",
 
 # add governor names
 dt[, gov := fcase(
-  year < 2004, "Gray Davis", 
-  year >= 2004 & year < 2011, "A. Schwarzenegger", 
-  year >= 2011, "Jerry Brown")]
+  year < 2004, "Davis", 
+  year >= 2004 & year < 2011, "Schwarzenegger", 
+  year >= 2011, "Brown")]
 ```
 
 .pull-left[
 ```{r}
-x <- copy(dt)
-setcolorder(x, c("year", "gov"))
-setnames(x, 
-         old = c("year", "gov", "white_pct", "fund_frac"), 
-         new = c("Year", "Governor", "% UG White", "Funding metric"))
-x[, Year := as.character(Year)]
-x[1:10] |>
-  # kbl(col.names = NULL) |>
-  kbl() |>
-  kable_styling(position = "center", font_size = 18) |>
-  # add_header_above(c("Variables" = ncol(x))) |>
-  kable_paper(lightable_options = "basic", full_width = FALSE) |>
-  row_spec(0, background = "#c7eae5") |>
-  column_spec(1:dim(x)[2], 
-              color = "black", 
-              background = "white") |>
-  column_spec(c(1), width = "0.6in") |>
-  column_spec(c(2), width = "1.4in") |>
-  column_spec(c(3, 4), width = "1.2in") 
+options(datatable.print.topn = 19)
+setcolorder(dt, c("year", "gov"))
+dt[]
 ```
 ]
 .pull-right[
-```{r}
-x[11:19] |>
-  # kbl(col.names = NULL) |>
-  kbl() |>
-  kable_styling(position = "center", font_size = 18) |>
-  # add_header_above(c("Variables" = ncol(x))) |>
-  kable_paper(lightable_options = "basic", full_width = FALSE) |>
-  row_spec(0, background = "#c7eae5") |>
-  column_spec(1:dim(x)[2], 
-              color = "black", 
-              background = "white") |>
-  column_spec(c(1), width = "0.6in") |>
-  column_spec(c(2), width = "1.4in") |>
-  column_spec(c(3, 4), width = "1.2in") 
-```
-]
 
-
-
-<div class="my-footer">
-<span>Data source:  
-C. Newfield (2021) Budget justice: Addressing the structural racism of higher education funding, <em>Academe</em> 107(2), 57--64.
-</div> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-class: left
-
-# Classify variables
+<br>
 
 ```{r echo=FALSE}
 x <- wrapr::build_frame(
@@ -1238,11 +1098,27 @@ my_table(x) |>
   column_spec(1, width = "3in") |>
   column_spec(2, width = "2in")
 ```
+]
+
+
 
 <div class="my-footer">
 <span>Data source:  
 C. Newfield (2021) Budget justice: Addressing the structural racism of higher education funding, <em>Academe</em> 107(2), 57--64.
 </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1360,11 +1236,6 @@ p <- ggplot(data = dt_idx,
            vjust = -0.5, 
            size = 7) +
 
-  # delineate gubernatorial terms
-  # geom_vline(xintercept = c(2004, 2011),
-  #            color = "gray30",
-  #            size = 0.5,
-  #            linetype = 2) +
   geom_text(data = dt_idx[data_series == "fund_frac" & year %in% c(2001, 2008, 2014)],
             mapping = aes(y = -56, label = gov),
             color = "black", 
@@ -1468,15 +1339,15 @@ class:left
 # add end-of-term dummy rows grouping by governor
 dum_row <- copy(dt)
 dum_row <- dum_row[year == 2004 | year == 2011]
-dum_row[year == 2004, gov := "Gray Davis"]
-dum_row[year == 2011, gov := "A. Schwarzenegger"]
+dum_row[year == 2004, gov := "Davis"]
+dum_row[year == 2011, gov := "Schwarzenegger"]
 dt_conn <- rbindlist(list(dt, dum_row))
 
 # add a column to ensure correct order
 dt_conn[, order_gov := fcase(
-  gov %chin% "Gray Davis", 1, 
-  gov %chin% "A. Schwarzenegger", 2,
-  gov %chin% "Jerry Brown", 3 
+  gov %chin% "Davis", 1, 
+  gov %chin% "Schwarzenegger", 2,
+  gov %chin% "Brown", 3 
 )]
 setkeyv(dt_conn, c("year", "order_gov"))
 
@@ -1510,7 +1381,7 @@ p <- ggplot(dt_conn, aes(x = 100 - white_pct,
             size = 7) 
 
 # first connected scatterplot chart, connect the dots
-q <- p + geom_path(linetype = 1, size = 0.5)
+q <- p + geom_path(linetype = 2, size = 0.5)
 q
 
 ggsave(

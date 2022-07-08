@@ -6,7 +6,7 @@
       "description": "Some brief background ",
       "author": [],
       "contents": "\r\nData graphics\r\nI started doing data visualization work with an engineering education\r\nresearch group around 2008 and haven’t stopped. The iterative process we\r\ndeveloped to “find the story” in our data has been instrumental in\r\nshaping my approach to data graphics. You can read more about our\r\nresearch at https://midfield.online/.\r\n\r\nI occasionally write about visual rhetoric, graph design, and R on my\r\nData Stories blog.\r\nOur day 3 case study is built on one of those essays.\r\nMusic\r\nMy dad was a guitar player and taught me my first chords. I’ve been\r\nsongwriting and performing since my teens. I posted some draft tracks to\r\nSoundCloud.\r\n\r\nA favorite musical pilgrimage is the annual Swannanoa Gathering near\r\nAsheville, NC in late July.\r\nWork life\r\nI am a graduate of California State University, Northridge (1991),\r\nand the University of Washington (1993, 1995), all in mechanical\r\nengineering. I taught at Rose-Hulman Institute of Technology from\r\n2000-2020. My favorite courses were design, system dynamics, measurement\r\nsystems, and data visualization. I retired from teaching in 2020.\r\n\r\nLinks\r\nblog https://graphdr.github.io/data-stories/\r\nrepo https://github.com/graphdr\r\nmail\r\ngraphdoctor@gmail.com\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-07-06T23:31:14-04:00"
+      "last_modified": "2022-07-08T11:31:05-04:00"
     },
     {
       "path": "index.html",
@@ -14,7 +14,7 @@
       "description": "Extend your graphical repertoire and \nenhance your ability to tell stories with data. \n",
       "author": [],
       "contents": "\r\nWelcome\r\nThe workshop has three sessions focusing on different aspects of\r\nstorytelling with data.\r\n\r\n\r\n\r\nSession 1Limitations of\r\ncommon graph types\r\n\r\n\r\n\r\n\r\nSession 2Expanding your\r\ngraphical reprtoire\r\n\r\n\r\n\r\n\r\nSession 3Critical thinking\r\nabout visual information\r\n\r\nBlogs to browse\r\nThe Functional Art,\r\nAlberto CairoEvergreen Data,\r\nStephanie EvergreenVisual Business\r\nIntelligence, Stephen FewStorytelling with\r\nData, Cole Nussbaumer Knaflic and team\r\nMIDFIELD Institute\r\nSlides and handouts for the 2022 MIDFIELD Institute derived from the\r\nData Stories Workshop materials.[slides] Graph\r\nlimitations\r\nAcknowledgments\r\nR package authorsdata.table\r\nFast aggregation of large data, Matt Dowle and Arun Srinivasanggplot2\r\nElegant data visualizations using the grammar of graphics, Hadley\r\nWickham, Winston Chang, et al.distill,\r\nScientific and technical article format for the web, JJ Allaire, Rich\r\nIannone, et al.xaringan\r\nCreate HTML5 slides with R Markdown, Yihui Xie\r\n\r\n\r\n\r\nCairo, Alberto. 2019. How Charts Lie. New York:\r\nW.W. Norton.\r\n\r\n\r\nCleveland, William S. 1993. Visualizing Data.\r\nSummit, NJ: Hobart Press.\r\n\r\n\r\nDoumont, Jean-luc. 2009. Trees, Maps, and\r\nTheorems. Belgium: Principiae.\r\n\r\n\r\nKostelnick, Charles, and Michael Hassett. 2003. Shaping\r\nInformation. Carbondale, IL: Southern Illinois\r\nuniversity Press.\r\n\r\n\r\nRobbins, Naomi. 2013. Creating More Effective\r\nGraphs. Wayne, NJ: Chart House.\r\n\r\n\r\nTufte, Edward. 1983. The Visual Display of\r\nQuantitative Information. Cheshire, CT: Graphics\r\nPress.\r\n\r\n\r\n———. 1997. Visual Explanations. Cheshire, CT:\r\nGraphics Press.\r\n\r\n\r\nWainer, Howard. 1997. Visual Revelations. Mahwah,\r\nNJ: Lawrence Erlbaum Assoc.\r\n\r\n\r\n———. 2014. Medical Illuminations. UK: Oxford\r\nUniv. Press.\r\n\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-07-06T23:31:15-04:00"
+      "last_modified": "2022-07-08T11:31:06-04:00"
     },
     {
       "path": "license.html",
@@ -22,7 +22,7 @@
       "description": "For text, images, code, and data.",
       "author": [],
       "contents": "\r\nThe following licenses apply to the text, images, code, and data in\r\nthis website. My goal is to minimize legal encumbrances to the\r\ndissemination, sharing, use, and re-use of this work. However, the\r\nexisting rights of authors whose work is cited are reserved to those\r\nauthors.\r\nCC-BY\r\n4.0 for my text and images\r\nGPL-3 for my\r\ncode\r\nCC0\r\nfor data\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-07-06T23:31:15-04:00"
+      "last_modified": "2022-07-08T11:31:06-04:00"
     },
     {
       "path": "session1.html",
@@ -30,7 +30,7 @@
       "description": "Limitations of common graph types. Demonstrating how to avoid   \nlimitations and improve perception, reasoning, and credibility. ",
       "author": [],
       "contents": "\r\nLimitations of common graph types\r\nIn the first session we demonstrate the perceptual limitations of\r\ncommon graph types and suggest more effective alternatives.\r\n\r\nThe rationale behind alternative designs is illustrated with the\r\ngoals of\r\nImproving perception of stories in the data\r\nMaking it easier to reason quantitatively about the data\r\nEnhancing our credibility with the audience\r\nMaterials\r\nworksheets I suggest\r\nyou have a printed copy of these worksheets to write in during the\r\nworkshop. We have a number of think-write-share activities that for many\r\npeople work best in writing.\r\nslides used during the\r\nworkshop.\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-07-06T23:31:17-04:00"
+      "last_modified": "2022-07-08T11:31:12-04:00"
     },
     {
       "path": "session2.html",
@@ -38,7 +38,7 @@
       "description": "Expanding your graphical repertoire. Illustrating a repertoire of \ngraph types and how they are suited to specific data structures.",
       "author": [],
       "contents": "\r\nExpanding your graphical repertoire\r\nIn the second session we illustrate a repertoire of graph types and\r\nhow they are suited to specific data structures and answering specific\r\ntypes of questions.\r\n\r\nThe session should encourage you to:\r\nUnderstand the structure of your data\r\nUnderstand the type of question the data can answer\r\nExplore different graph types suited to the data and the\r\nquestion\r\nKeep reading and learning—an unfamiliar design may be just what you\r\nneed\r\nMaterials\r\nworksheets I suggest\r\nyou have a printed copy of these worksheets to write in during the\r\nworkshop. We have a number of think-write-share activities that for many\r\npeople work best in writing.\r\nslides used during the\r\nworkshop.\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-07-06T23:31:17-04:00"
+      "last_modified": "2022-07-08T11:31:12-04:00"
     },
     {
       "path": "session3.html",
@@ -46,7 +46,7 @@
       "description": "Critical thinking about visual information&mdash;a case study. \nDetecting and correcting deliberate visual lies that attempt \nto restrict reproductive rights. ",
       "author": [],
       "contents": "\r\nCritical thinking about visual information—a case\r\nstudy\r\nIn the third session we study the visual rhetoric of a deliberate\r\nvisual lie in the pursuit of restricting reproductive rights. We focus\r\non\r\nHow the authors abuse the conventions of visual rhetoric to serve\r\ntheir rhetorical goals\r\nWhat legitimate stories these data tell\r\nWhat legitimate questions the data raise\r\n[slides] in progress\r\n\r\n\r\n\r\n",
-      "last_modified": "2022-07-06T23:31:18-04:00"
+      "last_modified": "2022-07-08T11:31:13-04:00"
     }
   ],
   "collections": []

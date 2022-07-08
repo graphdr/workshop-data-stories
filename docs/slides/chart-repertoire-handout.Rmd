@@ -72,13 +72,17 @@ put_gap()
 
 
 
+```{r}
+# slide index
+ii = 3
+```
 
 # `r "\U00A7"` Comparing data
 
-## [4] Data
+## [`r ii = ii + 1; ii`] Data
 
 ```{marginfigure, echo=TRUE}
-Square brackets *[N]*  give the slide number. 
+Square brackets *[i]*  give the slide number. 
 ```
 
 Representation at graduation in 3 engineering programs, 19 US institutions, 1987--2018
@@ -89,45 +93,45 @@ dt <- fread("data/session-2-compare-repr-at-grad.csv")
 dt[]
 ```
 
-## [5] Dot chart
+## [`r ii = ii + 1; ii`] Dot chart
 
 ![](../results/day-2-compare-01.png){width="140%"}
 
-## [6] Add a second category
+## [`r ii = ii + 1; ii`] Add a second category
 
 ![](../results/day-2-compare-02.png){width="140%"}
 
-## [7] Exchange mapping of categorical variables
+## [`r ii = ii + 1; ii`] Exchange mapping of categorical variables
 
 ![](../results/day-2-compare-03.png){width="140%"}
 
-## [8] Logarithmic scale for orders of magnitude differences
+
+
+
+
+
+
+
+
+
+
+## [`r ii = ii + 1; ii`] Logarithmic scale for orders of magnitude differences
 
 ![](../results/day-2-compare-04.png){width="140%"}
 
-## [9] One program per facet
+## [`r ii = ii + 1; ii`] One program per facet
 
 ![](../results/day-2-compare-05.png){width="140%"}
 
-## [10] Add a third category 
+## [`r ii = ii + 1; ii`] Add a third category 
 
 ![](../results/day-2-compare-06.png){width="140%"}
 
-## [11] Combine categories
+## [`r ii = ii + 1; ii`] Combine categories
 
 ![](../results/day-2-compare-07.png){width="140%"}
 
-
-
-
-
-
-
-
-
-
-
-## [12] Discussion: Comparing data
+## [`r ii = ii + 1; ii`] Discussion: Comparing data
 
 What points seem most important to you so far?
 
@@ -145,9 +149,9 @@ put_gap()
 
 # `r "\U00A7"` Revealing correlations
 
-## [14] Data
+## [`r ii = ii + 2; ii`] Data
 
-Engineering students persisting thru year 4 and graduating by year 6
+Engineering students at 14 institutions persisting to year 4 and graduating by year 6, 1987-2019
 
 ```{r}
 #| comment: NULL
@@ -155,23 +159,25 @@ options(
   datatable.print.nrows = 6,
   datatable.print.topn = 3
 )
-dt <- fread("data/session-2-correlate-persisters.csv")
-tbl <- copy(dt)
-setnames(tbl, old = c("persist_8" ,"grad_6"), new = c("yr_4", "yr_6"))
-tbl <- dcast(tbl, institution ~ sex, value.var = c("yr_4","yr_6"))
-tbl[, institution := paste("Institution", institution)]
-tbl[]
+dt <- fread("data/four-year-six-year.csv")
+dt[]
 ```
 
-## [15] Scatterplots are designed to reveal correlation
+## [`r ii = ii + 1; ii`] Scatterplots are designed to reveal correlation
 
-![](../results/day-2-correlation-01.png){width="53%"}
+![](../results/day-2-correlation-01.png){width="51%"}
 
-## [16] Add a category
+## [`r ii = ii + 1; ii`] Add a category
 
-![](../results/day-2-correlation-02.png){width="53%"}
+![](../results/day-2-correlation-02.png){width="51%"}
 
-## [17] One facet per sex
+
+
+
+
+
+
+## [`r ii = ii + 1; ii`] One facet per sex
 
 ![](../results/day-2-correlation-03.png){width="120%"}
 
@@ -179,26 +185,39 @@ tbl[]
 put_gap()
 ```
 
+## [`r ii = ii + 1; ii`] One facet per institution
 
-## [18] One facet per institution
+![](../results/day-2-correlation-04.png){width="150%"}
 
-![](../results/day-2-correlation-04.png){width="120%"}
-
-## [19] Change the quantitative variable
-
-![](../results/day-2-correlation-05.png){width="120%"}
-
-
-
-
-
-
-```{r fig.height=2}
+```{r fig.height=1}
 put_gap()
 ```
 
 
-## [20] Discussion: Revealing correlations
+
+
+
+
+
+
+
+
+
+## [`r ii = ii + 1; ii`] Change the quantitative variable
+
+Engineering students at 14 institutions persisting to year 4 and graduating by year 6, 1987--2019
+
+```{r fig.height=0.2}
+put_gap()
+```
+
+![](../results/day-2-correlation-05.png){width="130%"}
+
+```{r fig.height=0.5}
+put_gap()
+```
+
+## [`r ii = ii + 1; ii`] Discussion: Revealing correlations
 
 - We saw a correlation.
 
@@ -226,13 +245,9 @@ put_gap()
 
 
 
-
-
-
-
 # `r "\U00A7"` Showing evolution
 
-## [22] Data
+## [`r ii = ii + 2; ii`] Data
 
 University of California: funding and percent White enrollment, 1999--2017
 
@@ -259,23 +274,25 @@ setnames(dt,
 dt[]
 ```
 
-## [24] Two time series
+
+
+## [`r ii = ii + 1; ii`] Two time series
 
 ![](../results/day-2-evolution-01.png){width="130%"}
 
-## [25] Indexed time series
+## [`r ii = ii + 1; ii`] Indexed time series
 
 ![](../results/day-2-evolution-02.png){width="130%"}
 
-## [26] Parallel lines indicate possible correlation
+## [`r ii = ii + 1; ii`] Parallel lines indicate possible correlation
 
 ![](../results/day-2-evolution-03.png){width="130%"}
 
-## [27] Connected scatterplot
+## [`r ii = ii + 1; ii`] Connected scatterplot
 
 ![](../results/day-2-evolution-04.png){width="130%"}
 
-## [28] Data     
+## [`r ii = ii + 1; ii`] Data     
 
 Extent of polar ice (millions sq km) 1979--2021
 
@@ -287,11 +304,11 @@ setcolorder(dt, c("hemis", "month", "year"))
 dt[]
 ```
 
-## [29] Cyclic time series
+## [`r ii = ii + 1; ii`] Cyclic time series
 
 ![](../results/day-2-evolution-05.png){width="150%"}
 
-## [30] Add a category
+## [`r ii = ii + 1; ii`] Add a category
 
 ![](../results/day-2-evolution-06.png){width="150%"}
 
@@ -304,7 +321,7 @@ dt[]
 
 
 
-## [31] Discussion: Showing evolution
+## [`r ii = ii + 1; ii`] Discussion: Showing evolution
 
 - Which time series chart design might be used in your own work? 
 
@@ -333,7 +350,7 @@ put_gap()
 
 # `r "\U00A7"` Displaying distributions
 
-## [33] Data 
+## [`r ii = ii + 2; ii`] Data 
 
 World speed skiing (km/hr) competitions  1953--1995
 
@@ -354,19 +371,19 @@ setkeyv(x, c("Event", "Year", "Sex"))
 x[]
 ```
 
-## [34] Strip chart
+## [`r ii = ii + 1; ii`] Strip chart
 
 ![](../results/day-2-distributions-01.png){width="140%"}
 
-## [35] Add a category
+## [`r ii = ii + 1; ii`] Add a category
 
 ![](../results/day-2-distributions-02.png){width="140%"}
 
-## [36] Add a second category
+## [`r ii = ii + 1; ii`] Add a second category
 
 ![](../results/day-2-distributions-03.png){width="140%"}
 
-## [37] Data
+## [`r ii = ii + 1; ii`] Data
 
 MIDFIELD graduates (N = 270k), enrolled in Engineering, excluding 10th and 90th quantiles
 
@@ -380,15 +397,15 @@ setkeyv(dt, c("path", "sex"))
 dt[]
 ```
 
-## [38] Box and whisker chart
+## [`r ii = ii + 1; ii`] Box and whisker chart
 
 ![](../results/day-2-distributions-04.png){width="140%"}
 
-## [39] Add a category
+## [`r ii = ii + 1; ii`] Add a category
 
 ![](../results/day-2-distributions-05.png){width="140%"}
 
-## [40] Combine a second category
+## [`r ii = ii + 1; ii`] Combine a second category
 
 ![](../results/day-2-distributions-06.png){width="140%"}
 
@@ -400,7 +417,7 @@ dt[]
 
 
 
-## [41] Discussion: Displaying distributions
+## [`r ii = ii + 1; ii`] Discussion: Displaying distributions
 
 What MIDFIELD distributions would you like to see:
 
@@ -434,7 +451,7 @@ put_gap()
 
 # `r "\U00A7"` Closing discussion 
 
-## [43] Variables, design, message 
+## [`r ii = ii + 2; ii`] Variables, design, message 
 
 - For you, what was the muddiest point in the session? 
 
